@@ -17,7 +17,7 @@
             <a href="/" class="overflow-hidden flex items-center">
                 <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20">
             </a>
-            <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow md2:shadow-none">
+            <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow-md md2:shadow-none">
                 <ul class="flex flex-col md2:flex-row items-center gap-8 md2:gap-4">
                     <li>
                         <a href="/" class="hover:text-[#138942] font-bold outline-none">Home</a>
