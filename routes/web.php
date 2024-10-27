@@ -17,3 +17,5 @@ Route::get("/virtual-card", [IndexController::class, "virtualCard"]);
 Route::get("/news", [IndexController::class, "news"]);
 Route::get("/contact", [IndexController::class, "contact"]);
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
+
+Route::get("/login", [IndexController::class, "login"]);

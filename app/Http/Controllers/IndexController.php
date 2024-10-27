@@ -48,4 +48,8 @@ class IndexController extends Controller {
     public function becomeAMember() {
         return view("become-a-member");
     }
+
+    public function login() {
+        return view("auth.login");
+    }
 }
