@@ -15,7 +15,7 @@
                 <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
             </label>
             <a href="/" class="overflow-hidden flex items-center">
-                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20">
+                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20 md:p-2">
             </a>
             <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow-md md2:shadow-none">
                 <ul class="flex flex-col md2:flex-row items-center gap-8 md2:gap-4">
@@ -71,7 +71,7 @@
                 </ul>
             </div>
         </header>
-        <main class="h-dvh">
+        <main>
             @yield("content")
         </main>
         <footer class="bg-[#1B5E1F] w-full px-24 py-16 flex justify-end">
