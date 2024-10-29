@@ -18,4 +18,6 @@ Route::get("/news", [IndexController::class, "news"]);
 Route::get("/contact", [IndexController::class, "contact"]);
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
 
+Route::get("/credits", [IndexController::class, "credits"]);
+
 Route::get("/login", [IndexController::class, "login"]);

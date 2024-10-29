@@ -49,6 +49,10 @@ class IndexController extends Controller {
         return view("become-a-member");
     }
 
+    public function credits() {
+        return view("credits");
+    }
+
     public function login() {
         return view("auth.login");
     }

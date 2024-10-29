@@ -71,7 +71,7 @@
                 </ul>
             </div>
         </header>
-        <main>
+        <main class="max-w-7xl mx-auto">
             @yield("content")
         </main>
         <footer class="bg-[#1B5E1F] w-full px-24 py-16 flex justify-end">
