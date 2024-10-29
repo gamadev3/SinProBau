@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Arial", ...defaultTheme.fontFamily.sans],
+                arial: ["Arial", ...defaultTheme.fontFamily.sans],
             },
             screens: {
                 md2: "1087px",
