@@ -15,7 +15,7 @@
                 <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
             </label>
             <a href="/" class="overflow-hidden flex items-center">
-                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20 md:p-2">
+                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20 md:p-4">
             </a>
             <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow-md md2:shadow-none">
                 <ul class="flex flex-col md2:flex-row items-center gap-8 md2:gap-4">
@@ -23,7 +23,7 @@
                         <a href="/" class="hover:text-[#138942] font-bold outline-none">Home</a>
                     </li>
                     <li class="relative group">
-                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none">Convenções <img src="/images/li_chevron-down.svg" alt="Arrow">
+                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Convenções <img src="/images/li_chevron-down.svg" alt="Arrow">
                             <div class="absolute z-10 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="relative group">
-                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none">Sindicato <img src="/images/li_chevron-down.svg" alt="Arrow">
+                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/li_chevron-down.svg" alt="Arrow">
                             <div class="absolute z-10 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
