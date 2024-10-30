@@ -7,7 +7,7 @@
         @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
     <body class="font-arial">
-        <header class="sticky top-0 w-full bg-white h-20 px-14 flex justify-between items-center shadow">
+        <header class="z-50 sticky top-0 w-full bg-white h-20 px-14 flex justify-between items-center shadow">
             <label class="menu md2:hidden w-9 h-10 cursor-pointer flex flex-col items-center justify-center">
                 <input class="menuCheckbox hidden peer" type="checkbox" />
                 <div class="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]"></div>
@@ -24,7 +24,7 @@
                     </li>
                     <li class="relative group">
                         <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Convenções <img src="/images/li_chevron-down.svg" alt="Arrow">
-                            <div class="absolute z-10 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                            <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
                                         <a href="/conventions/basic-education" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">Educação Básica</a>
@@ -44,7 +44,7 @@
                     </li>
                     <li class="relative group">
                         <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/li_chevron-down.svg" alt="Arrow">
-                            <div class="absolute z-10 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                            <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
                                         <a href="/syndicate/about" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">Sobre</a>
@@ -71,7 +71,7 @@
                 </ul>
             </div>
         </header>
-        <main class="max-w-7xl mx-auto">
+        <main>
             @yield("content")
         </main>
         <footer class="bg-[#1B5E1F] w-full px-24 py-16 flex justify-end">
