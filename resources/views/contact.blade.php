@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Contato")
 
 @section("content")
-    <div class="w-full flex flex-col md:flex-row gap-8 px-10 md:px-20 py-10 md:py-20">
+    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-8 px-10 md:px-20 py-10 md:py-20">
         <div class="w-full md:w-1/2 flex flex-col gap-4 md:gap-2">
             <h1 class="text-3xl font-bold">Contato</h1>
             <p>Preencha o formulário abaixo com os seus dados que o mais breve possível entraremos em contato</p>
@@ -37,7 +37,4 @@
             <button type="submit" class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center">Submit</button>
         </form>
     </div>
-    {{-- <div class="w-full h-full flex justify-center items-center">
-        <h1>Contato</h1>
-    </div> --}}
 @endsection
