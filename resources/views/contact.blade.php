@@ -19,20 +19,20 @@
             <div class="min- grid gap-2 mb-6 md:grid-cols-2">
                 <div>
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nome</label>
-                    <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#A5D6A7] focus:border-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu nome" required />
+                    <input type="text" id="first_name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu nome" required />
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
-                    <input type="email" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#A5D6A7] focus:border-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu e-mail" required />
+                    <input type="email" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu e-mail" required />
                 </div>
                 <div>
                     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Celular</label>
-                        <input type="tel" id="phone" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#A5D6A7] focus:border-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu telefone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                        <input type="tel" id="phone" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu telefone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                 </div>
             </div>
             <div class="mb-6">
                 <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900">Observações</label>
-                <textarea type="text" id="large-input" class="block w-full h-40 p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-[#A5D6A7] focus:border-[#A5D6A7] outline-none" placeholder="Digite alguma observação"></textarea>
+                <textarea type="text" id="large-input" class="block w-full h-40 p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] outline-none" placeholder="Digite alguma observação"></textarea>
             </div>
             <button type="submit" class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center">Submit</button>
         </form>

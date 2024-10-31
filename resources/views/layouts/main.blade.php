@@ -15,7 +15,7 @@
                 <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
             </label>
             <a href="/" class="overflow-hidden flex items-center">
-                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md2:h-20 md:p-4">
+                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md:h-20 md2:h-20 md:p-4">
             </a>
             <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow-md md2:shadow-none">
                 <ul class="flex flex-col md2:flex-row items-center gap-8 md2:gap-4">
@@ -66,7 +66,7 @@
                         <a href="/contact" class="hover:text-[#138942] font-bold outline-none">Contato</a>
                     </li>
                     <li>
-                        <a href="/become-a-member" class="text-[#138942] px-10 py-2 bg-transparent border-[#138942] border-2 rounded-md hover:bg-[#138942] hover:text-[#fff]">Seja Sócio</a>
+                        <a href="/become-a-member" class="mt-auto text-[#138942] hover:text-white border-2 border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-10 py-2.5 text-center">Seja Sócio</a>
                     </li>
                 </ul>
             </div>
@@ -74,12 +74,17 @@
         <main>
             @yield("content")
         </main>
-        <footer class="bg-[#1B5E1F] w-full px-24 py-16 flex justify-end">
-            <div>
-                <p class="text-white">SINDICATO DOS PROFESSORES DE BAURU</p>
-                <p class="text-white">Rua Capitão Gomes Duarte,</p>
-                <p class="text-white">6-74 - Bauru - SP</p>
-                <p class="text-white">Fone-Fax: (14) 3879-5313</p>
+        <footer class="w-full flex flex-col">
+            <div class="w-full bg-[#1B5E1F] flex flex-col px-24 py-16">
+                <div class="self-end">
+                    <p class="text-white">SINDICATO DOS PROFESSORES DE BAURU</p>
+                    <p class="text-white">Rua Capitão Gomes Duarte,</p>
+                    <p class="text-white">6-74 - Bauru - SP</p>
+                    <p class="text-white">Fone-Fax: (14) 3879-5313</p>
+                </div>
+            </div>
+            <div class="bg-[#1A2C17] py-2 px-2">
+                <p class="text-white text-center text-xs">Sindicato dos Professores de Bauru 2024 - Todos os direitos reservados</p>
             </div>
         </footer>
 
