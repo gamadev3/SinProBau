@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Middleware\FirebaseAuthMiddleware;
 
 Route::get("/", [IndexController::class, "index"]);
 
@@ -21,3 +22,7 @@ Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
 Route::get("/credits", [IndexController::class, "credits"]);
 
 Route::get("/login", [IndexController::class, "login"]);
+
+// Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
+    Route::get("/system", [IndexController::class, "system"]);
+// });
