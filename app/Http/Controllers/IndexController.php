@@ -53,7 +53,70 @@ class IndexController extends Controller {
     }
 
     public function syndicateDirectors() {
-        return view("syndicate.directors");
+        $directors = [
+            [
+                "role" => "Presidente",
+                "name" => "Sebastiao Clementino da Silva",
+                "image" => "diretoria-2.jpeg"
+            ],
+            [
+                "role" => "Vice - Presidente",
+                "name" => "Elvio Gilberto da Silva",
+                "image" => "diretoria-3.jpeg"
+            ],
+            [
+                "role" => "Secretária Geral",
+                "name" => "Monica Medola Damine",
+                "image" => "diretoria-4.jpeg"
+            ],
+            [
+                "role" => "Diretor de Assuntos Profissionais",
+                "name" => "Felipe de Moura Garrido",
+                "image" => "diretoria-5.jpeg"
+            ],
+            [
+                "role" => "Diretor Tesoureiro",
+                "name" => "Sebastião Clementino da Silva",
+                "image" => "diretoria-6.jpeg"
+            ],
+            [
+                "role" => "Diretor Suplente",
+                "name" => "Luciana Bezerra de Toledo",
+                "image" => "diretoria-7.jpeg"
+            ],
+            [
+                "role" => "Diretor Suplente",
+                "name" => "Washington Luiz Bueno Silva",
+                "image" => "diretoria-7.jpeg"
+            ],
+            [
+                "role" => "Conselho Fiscal - Efetivos",
+                "name" => "Nair Leite Ribeiro Nassarala",
+                "image" => "diretoria-2.jpeg"
+            ],
+            [
+                "role" => "Conselho Fiscal - Efetivos",
+                "name" => "Creusa Vitalino Guimarã",
+                "image" => "diretoria-8.jpeg"
+            ],
+            [
+                "role" => "Delegados Representantes junto à Federação - Efetivos",
+                "name" => "Sebastião Clementino da Silva",
+                "image" => "diretoria-9.jpeg"
+            ],
+            [
+                "role" => "Delegados Representantes junto à Federação - Efetivos",
+                "name" => "Carlos Roberto de Oliveira",
+                "image" => "diretoria-9.jpeg"
+            ],
+            [
+                "role" => "Delegados Representantes junto à Federação - Suplentes",
+                "name" => "Felipe de Moura Garrido",
+                "image" => "diretoria-10.jpeg"
+            ],
+        ];
+
+        return view("syndicate.directors", ["directors" => $directors]);
     }
 
     public function virtualCard() {
