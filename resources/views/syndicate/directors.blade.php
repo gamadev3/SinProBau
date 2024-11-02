@@ -3,191 +3,36 @@
 @section("title", "SINPROBAU - Diretoria")
 
 @section("content")
-    <div class="flex flex-col items-center max-w-[1200px] mx-auto gap-[20px] text-gray-300 opacity-100 pt-8">
-        <h1 class="text-[#454545] text-center font-sans font-bold text-[32px] leading-[40px] self-stretch mb-4">
-            Conheça a nossa Diretoria
-        </h1>
-        <h2 class="text-[#454545] font-sans font-normal text-[24px] leading-[40px] mb-8">
-            do SINPROBAU com mandato vigente 2022-2027
-        </h2>
-        
-        <div class="grid grid-cols-4 gap-20 justify-items-center">
-            <!-- Retângulo para imagem 1 com o texto -->
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-4 ">
-                 <!-- Imagem -->
-                <div class="w-[280px] h-[220px] bg-[#C4C4C4] rounded-t-lg overflow-hidden flex items-center justify-center">
-                    <img src="https://st.depositphotos.com/1011382/2845/i/950/depositphotos_28451603-stock-photo-real-normal-person-portrait.jpg/280x220" alt="Imagem do Presidente" class="object-cover w-full h-full" />
-                </div>
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Presidente
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Sebastiao Clementino da Silva
-                    </div>
-                </div>
-            </div>
+    <div class="max-w-7xl mx-auto flex flex-col items-center gap-10 md:gap-20 text-gray-300 opacity-100 px-10 md:px-20 py-10 md:py-20">
+        <div class="flex flex-col gap-1">
+            <h1 class="text-[#454545] text-center font-sans font-bold text-[32px] leading-[40px] self-stretch">
+                Conheça a nossa Diretoria
+            </h1>
+            <h2 class="text-[#454545] font-sans font-normal text-[24px] leading-[40px]">
+                do SINPROBAU com mandato vigente 2022-2027
+            </h2>
+        </div>
 
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Vice - Presidente
+        <div class="grid grip-cols-1 md:grid-cols-2 md2:grid-cols-4 gap-8 justify-items-center">
+            @foreach ($directors as $director)
+                <div class="w-full h-full bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
+                    <div class="w-[calc(100%-1rem)] h-[320px] overflow-hidden flex items-center justify-center mx-2 mt-2">
+                        <img
+                            src="/images/directors/{{ $director["image"] }}"
+                            alt="Imagem do Presidente"
+                            class="object-cover w-full h-full"
+                        />
                     </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Elvio Gilberto da Silva
+                    <div class="w-[calc(100%-1rem)] flex-1 bg-[#fff] flex flex-col justify-center items-center shadow-md mx-2 mb-2 px-4 py-4">
+                        <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
+                            {{ $director["role"] }}
+                        </div>
+                        <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
+                            {{ $director["name"] }}
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Secretária Geral
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Monica Medola Damine
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[18px] leading-[32px]">
-                        Diretor de Assuntos Profissionais
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Felipe de Moura Garrido
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Diretor Tesoureiro
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Sebastião Clementino da Silva
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Diretor Suplente
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Luciana Bezerra de Toledo
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Diretor Suplente
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Washington Luiz Bueno Silva
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Conselho Fiscal - Efetivos
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Nair Leite Ribeiro Nassarala
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[70px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Conselho Fiscal - Efetivos
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Creusa Vitalino Guimarã
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[100px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Delegados Representantes junto à Federação - Efetivos
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Sebastião Clementino da Silva
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[100px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Delegados Representantes junto à Federação - Efetivos
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Carlos Roberto de Oliveira
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-[300px] h-[320px] bg-[#D9D9D9] flex-shrink-0 flex flex-col justify-end items-center gap-2 mb-40">
-                <!-- Retângulo pequeno para o texto, alinhado para baixo -->
-                <div class="w-[280px] h-[100px] bg-[#E0E0E0] flex flex-col justify-center items-center rounded-lg  mb-2">
-                    <!-- Título -->
-                    <div class="text-center text-[#454545] font-sans font-bold text-[20px] leading-[32px]">
-                        Delegados Representantes junto à Federação - Suplentes
-                    </div>
-                    <!-- Nome '' -->
-                    <div class="text-center text-[#454545] font-sans font-normal text-[20px] leading-[32px]">
-                        Felipe de Moura Garrido
-                    </div>
-                </div>
-            </div>
-
-            
-            <!-- Adicione mais retângulos conforme necessário -->
+            @endforeach
         </div>
     </div>
 @endsection
