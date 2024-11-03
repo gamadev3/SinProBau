@@ -16,6 +16,10 @@
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
+        },
+        {
+            "src": "/storage/(.*)",
+            "dest": "/storage"
         }
     ],
     "env": {
