@@ -19,7 +19,7 @@
         },
         {
             "src": "/storage/(.*)",
-            "dest": "/storage"
+            "dest": "/storage/"
         }
     ],
     "env": {
