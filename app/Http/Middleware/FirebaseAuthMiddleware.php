@@ -13,7 +13,7 @@ class FirebaseAuthMiddleware {
     protected $auth;
 
     public function __construct() {
-        $path = base_path("storage/firebase/firebase-auth.json");
+        $path = config("firebase.service_account");
 
         if(!file_exists($path)) {
             die("The file path ".$path." does not exist");
