@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FirebaseAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Middleware\FirebaseAuthMiddleware;
@@ -23,6 +24,9 @@ Route::get("/credits", [IndexController::class, "credits"]);
 
 Route::get("/login", [IndexController::class, "login"]);
 
-// Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
+Route::post("/authentication", [FirebaseAuthController::class, "authentication"]);
+
+Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/system", [IndexController::class, "system"]);
-// });
+    Route::post("/logout", [FirebaseAuthController::class, "logout"]);
+});
