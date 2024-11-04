@@ -3,8 +3,8 @@
 @section("title", "SINPROBAU")
 
 @section("content")
-    <div class="mx-auto h-screen flex justify-center items-center px-5 md:px-20 py-20">
-        <div class="w-full md2:min-w-36 md2:max-w-[738px] md:p-4 md2:p-8 flex flex-col gap-8 rounded-lg md:shadow-lg md2:shadow-lg">
+    <div class="mx-auto h-[calc(100vh-5rem)] flex justify-center items-center px-5 md:px-20 py-20">
+        <div class="w-full md2:w-96 md:p-8 md2:p-8 flex flex-col gap-8 rounded-lg md:shadow-lg md2:shadow-lg">
             <div class="w-full flex justify-center">
                 <img src="/images/logo-sinprobau.png" alt="Logo do SINPROBAU">
             </div>
