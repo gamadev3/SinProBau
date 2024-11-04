@@ -6,7 +6,7 @@
         <title>@yield("title")</title>
         @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
-    <body class="font-arial h-lvh">
+    <body class="font-arial min-h-screen flex flex-col justify-between">
         <header class="z-50 sticky top-0 w-full bg-white h-20 px-14 flex justify-between items-center shadow">
             <label class="menu md2:hidden w-9 h-10 cursor-pointer flex flex-col items-center justify-center">
                 <input class="menuCheckbox hidden peer" type="checkbox" />
