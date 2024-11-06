@@ -33,6 +33,36 @@ class IndexController extends Controller {
     }
 
     public function basicEducation() {
+            $news = [
+                [
+                    "date" => "19 de Setembro de 2024",
+                    "title" => "Convenção Coletiva de Trabalho 2024"
+                ],
+                [
+                    "date" => "17 de Maio de 2024",
+                    "title" => "Comunicado Conjunto 2024"
+                ],
+                [
+                    "date" => "22 de Maio de 2023",
+                    "title" => "Comunicado Conjunto 2023"
+                ],
+                [
+                    "date" => "19 de Setembro de 2024",
+                    "title" => "Convenção Coletiva de Trabalho 2022-2023"
+                ],
+                [
+                    "date" => "22 de Março de 2022",
+                    "title" => "Comunicado Conjunto 2022"
+                ],
+                [
+                    "date" => "22 de Março de 2022",
+                    "title" => "Convenção Coletiva de Trabalho 2021"
+                ],
+            ];
+
+            return view("home", ["news" => $news]);
+        }
+
         return view("conventions.basic-education");
     }
 
@@ -53,70 +83,7 @@ class IndexController extends Controller {
     }
 
     public function syndicateDirectors() {
-        $directors = [
-            [
-                "role" => "Presidente",
-                "name" => "Sebastiao Clementino da Silva",
-                "image" => "diretoria-2.jpeg"
-            ],
-            [
-                "role" => "Vice - Presidente",
-                "name" => "Elvio Gilberto da Silva",
-                "image" => "diretoria-3.jpeg"
-            ],
-            [
-                "role" => "Secretária Geral",
-                "name" => "Monica Medola Damine",
-                "image" => "diretoria-4.jpeg"
-            ],
-            [
-                "role" => "Diretor de Assuntos Profissionais",
-                "name" => "Felipe de Moura Garrido",
-                "image" => "diretoria-5.jpeg"
-            ],
-            [
-                "role" => "Diretor Tesoureiro",
-                "name" => "Sebastião Clementino da Silva",
-                "image" => "diretoria-6.jpeg"
-            ],
-            [
-                "role" => "Diretor Suplente",
-                "name" => "Luciana Bezerra de Toledo",
-                "image" => "diretoria-7.jpeg"
-            ],
-            [
-                "role" => "Diretor Suplente",
-                "name" => "Washington Luiz Bueno Silva",
-                "image" => "diretoria-7.jpeg"
-            ],
-            [
-                "role" => "Conselho Fiscal - Efetivos",
-                "name" => "Nair Leite Ribeiro Nassarala",
-                "image" => "diretoria-2.jpeg"
-            ],
-            [
-                "role" => "Conselho Fiscal - Efetivos",
-                "name" => "Creusa Vitalino Guimarã",
-                "image" => "diretoria-8.jpeg"
-            ],
-            [
-                "role" => "Delegados Representantes junto à Federação - Efetivos",
-                "name" => "Sebastião Clementino da Silva",
-                "image" => "diretoria-9.jpeg"
-            ],
-            [
-                "role" => "Delegados Representantes junto à Federação - Efetivos",
-                "name" => "Carlos Roberto de Oliveira",
-                "image" => "diretoria-9.jpeg"
-            ],
-            [
-                "role" => "Delegados Representantes junto à Federação - Suplentes",
-                "name" => "Felipe de Moura Garrido",
-                "image" => "diretoria-10.jpeg"
-            ],
-        ];
-
-        return view("syndicate.directors", ["directors" => $directors]);
+        return view("syndicate.directors");
     }
 
     public function virtualCard() {
