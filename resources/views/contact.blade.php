@@ -18,16 +18,28 @@
         <form class="w-full md:w-1/2 md:px-4 py-4">
             <div class="min- grid gap-2 mb-6 md:grid-cols-2">
                 <div>
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nome</label>
-                    <input type="text" id="name" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu nome" required />
+                    <x-input
+                        :name="'name'"
+                        :type="'name'"
+                        :label="'Nome'"
+                        :placeholder="'Digite o seu nome'"
+                    />
                 </div>
                 <div class="mb-6">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
-                    <input type="email" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu e-mail" required />
+                    <x-input
+                        :name="'email'"
+                        :type="'email'"
+                        :label="'E-mail'"
+                        :placeholder="'Digite o seu e-mail'"
+                    />
                 </div>
                 <div>
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Celular</label>
-                        <input type="tel" id="phone" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu telefone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                    <x-input
+                        :name="'phone'"
+                        :type="'tel'"
+                        :label="'Celular'"
+                        :placeholder="'Digite o seu telefone'"
+                    />
                 </div>
             </div>
             <div class="mb-6">
