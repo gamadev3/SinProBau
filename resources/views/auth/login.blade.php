@@ -24,10 +24,12 @@
                 @endif
 
                 <div class="flex flex-col gap-2">
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
-                        <input type="text" id="email" name="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite o seu e-mail" required />
-                    </div>
+                    <x-input
+                        :name="'email'"
+                        :type="'email'"
+                        :label="'E-mail'"
+                        :placeholder="'Digite o seu e-mail'"
+                    />
                     @error("email")
                         <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
                             <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -41,10 +43,12 @@
                     @enderror
                 </div>
                 <div class="flex flex-col gap-2">
-                    <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Senha</label>
-                        <input type="text" id="password" name="password" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none" placeholder="Digite a sua senha" required />
-                    </div>
+                    <x-input
+                        :name="'password'"
+                        :type="'password'"
+                        :label="'Senha'"
+                        :placeholder="'Digite a sua senha'"
+                    />
                     @error("password")
                         <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
                             <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
