@@ -12,7 +12,6 @@ class director extends Component
      * Create a new component instance.
      */
     public function __construct(
-        protected string $image,
         protected string $role,
         protected string $name
     ) {
@@ -23,10 +22,9 @@ class director extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        $image = $this->image;
-        $role = $this->role;
-        $name = $this->name;
-
-        return view("components.director", compact("image", "role", "name"));
+        return view("components.director", [
+            "role" => $this->role,
+            "name" => $this->name
+        ]);
     }
 }

@@ -4,31 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Kreait\Firebase\Factory;
 use Kreait\Firebase\Exception\Auth\InvalidPassword;
 use Kreait\Firebase\Exception\Auth\UserNotFound;
 use Exception;
+use Illuminate\Support\Facades\App;
 
 class FirebaseAuthController extends Controller {
     protected $auth;
 
     public function __construct() {
-        $serviceAccount = [
-            "type" => env("FIREBASE_TYPE"),
-            "project_id" => env("FIREBASE_PROJECT_ID"),
-            "private_key_id" => env("FIREBASE_PRIVATE_KEY_ID"),
-            "private_key" => env("FIREBASE_PRIVATE_KEY"),
-            "client_email" => env("FIREBASE_CLIENT_EMAIL"),
-            "client_id" => env("FIREBASE_CLIENT_ID"),
-            "auth_uri" => env("FIREBASE_AUTH_URI"),
-            "token_uri" => env("FIREBASE_TOKEN_URI"),
-            "auth_provider_x509_cert_url" => env("FIREBASE_AUTH_PROVIDER_CERT_URL"),
-            "client_x509_cert_url" => env("FIREBASE_CLIENT_CERT_URL"),
-        ];
-
-        $this->auth = (new Factory)
-            ->withServiceAccount($serviceAccount)
-            ->createAuth();
+        $this->auth = App::make("firebase")->createAuth();
     }
 
     public function authentication(Request $request) {
@@ -47,7 +32,7 @@ class FirebaseAuthController extends Controller {
 
             if ($user) {
                 session(["firebase_token" => $user->idToken()]);
-                return view("system.dashboard")->with("success", "Usuário logado com sucesso!");
+                return redirect("/system");
             } else {
                 return redirect("/login")->with("error", "Tente realizar o login novamente.");
             }

@@ -5,15 +5,15 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Database\Eloquent\Collection;
 
-class convention extends Component
+class SystemTable extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        protected string $date,
-        protected string $title
+        protected Collection $news
     ) {
 
     }
@@ -22,9 +22,6 @@ class convention extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        return view("components.convention", [
-            "date" => $this->date,
-            "title" => $this->title
-        ]);
+        return view("components.system-table", ["news" => $this->news]);
     }
 }

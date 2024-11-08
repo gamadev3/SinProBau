@@ -15,7 +15,6 @@
         <div class="grid grip-cols-1 md:grid-cols-2 md2:grid-cols-4 w-full gap-8 justify-items-center">
             @foreach ($directors as $director)
                 <x-director
-                    :image="$director['image']"
                     :role="$director['role']"
                     :name="$director['name']"
                 />

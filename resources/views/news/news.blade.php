@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="px-5 md:px-20 py-10 md:py-20 flex flex-col gap-8">
-        <div class="flex flex-col gap-2">
+        {{-- <div class="flex flex-col gap-2">
             <h1 class="text-3xl font-bold">Notícias em alta</h1>
             <div class="flex flex-col md2:flex-row mt-4 shadow-md rounded-2xl overflow-hidden">
                 <div class="md2:w-1/2">
@@ -16,13 +16,15 @@
                     <button class="w-fit text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</button>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="w-full flex flex-col justify-between gap-6">
-            @foreach ($news as $new)
+            @foreach ($news as $notice)
                 <x-news
-                    :image="$new['image']"
-                    :date="$new['date']"
-                    :title="$new['title']"
+                    :image="$notice['image_url']"
+                    :date="$notice['created_at']"
+                    :title="$notice['title']"
+                    :content="$notice['content']"
+                    :id="$notice['id']"
                 />
             @endforeach
         </div>
