@@ -15,7 +15,8 @@ class input extends Component
         protected string $name,
         protected string $type,
         protected string $label,
-        protected string $placeholder
+        protected string $placeholder,
+        protected string $value = ""
     ) {
 
     }
@@ -24,11 +25,12 @@ class input extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        $name = $this->name;
-        $type = $this->type;
-        $label = $this->label;
-        $placeholder = $this->placeholder;
-
-        return view("components.input", compact("name", "type", "label", "placeholder"));
+        return view("components.input", [
+            "name" => $this->name,
+            "type" => $this->type,
+            "label" => $this->label,
+            "placeholder" => $this->placeholder,
+            "value" => $this->value,
+        ]);
     }
 }

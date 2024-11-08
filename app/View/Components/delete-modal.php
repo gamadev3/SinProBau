@@ -6,17 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class news extends Component
+class DeleteModal extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        protected string $image,
-        protected string $date,
-        protected string $title,
-        protected string $content,
-        protected string $id
+        protected string $id,
+        protected string $title
     ) {
 
     }
@@ -25,12 +22,9 @@ class news extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        return view("components.news", [
-            "image" => $this->image,
-            "date" => $this->date,
-            "title" => $this->title,
-            "content" => $this->content,
+        return view("components.delete-modal", [
             "id" => $this->id,
+            "title" => $this->title
         ]);
     }
 }
