@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create("conventions", function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->mediumText("url");
+            $table->mediumText("document_url");
+            $table->mediumText("document_path");
             $table->string("type");
             $table->timestamps();
         });

@@ -13,7 +13,7 @@
                 @method("POST")
 
                 @if (Session::has("error"))
-                    <x-error :message="Session::get("error")" />
+                    <x-error :message="Session::get('error')" />
                 @endif
 
                 <div class="flex flex-col gap-2">
