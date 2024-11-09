@@ -8,8 +8,8 @@
         <div class="w-full flex flex-col rounded-lg">
             @foreach ($conventions as $convention)
                 <x-convention
-                    :date="$convention['date']"
-                    :title="$convention['title']"
+                    :date="$convention->date"
+                    :title="$convention->title"
                 />
             @endforeach
         </div>

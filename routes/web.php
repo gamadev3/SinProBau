@@ -32,7 +32,7 @@ Route::post("/authentication", [FirebaseAuthController::class, "authentication"]
 
 Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/system", [IndexController::class, "system"]);
-    Route::get("/system/news", [IndexController::class, "news"]);
+    Route::get("/system/news", [NewsController::class, "systemNews"]);
 
     Route::get("/system/basic-education-form", [IndexController::class, "basicEducationForm"]);
     Route::get("/system/higher-education-form", [IndexController::class, "higherEducationForm"]);
@@ -41,11 +41,11 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
 
     Route::post("/logout", [FirebaseAuthController::class, "logout"]);
 
-    Route::get("/news-form", [NewsController::class, "newsForm"]);
-    Route::post("/register-news", [NewsController::class, "registerNews"]);
+    Route::get("/notice-form", [NewsController::class, "noticeForm"]);
+    Route::post("/register-notice", [NewsController::class, "registerNotice"]);
 
-    Route::get("/news-update-form/{id}", [NewsController::class, "newsUpdateForm"]);
-    Route::post("/news-update/{id}", [NewsController::class, "newsUpdate"]);
+    Route::get("/notice-update-form/{id}", [NewsController::class, "noticeUpdateForm"]);
+    Route::post("/notice-update/{id}", [NewsController::class, "noticeUpdate"]);
 
-    Route::post("/news-delete/{id}", [NewsController::class, "newsDelete"]);
+    Route::post("/notice-delete/{id}", [NewsController::class, "noticeDelete"]);
 });
