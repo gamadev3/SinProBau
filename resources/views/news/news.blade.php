@@ -20,11 +20,11 @@
         <div class="w-full flex flex-col justify-between gap-6">
             @foreach ($news as $notice)
                 <x-news
-                    :image="$notice['image_url']"
-                    :date="$notice['created_at']"
-                    :title="$notice['title']"
-                    :content="$notice['content']"
-                    :id="$notice['id']"
+                    :image="$notice->image_url"
+                    :date="$notice->created_at"
+                    :title="$notice->title"
+                    :content="$notice->content"
+                    :id="$notice->id"
                 />
             @endforeach
         </div>

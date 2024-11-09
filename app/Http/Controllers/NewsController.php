@@ -15,19 +15,37 @@ class NewsController extends Controller {
         $this->storage = App::make("firebase")->createStorage();
     }
 
+    // Todas as notícias da tela de notícias
     public function news() {
         $news = News::all();
 
         return view("news.news", ["news" => $news]);
     }
 
+    // Todas as notícias da tela de notícias do sistema
+    public function systemNews() {
+        $search = request("search");
+
+        if ($search) {
+            $news = News::where("title", "LIKE", "%{$search}%")
+                ->orWhere("content", "LIKE", "%{$search}%")
+                ->get();
+        } else {
+            $news = News::all();
+        }
+
+        return view("system.news", ["news" => $news]);
+    }
+
+    // Apenas uma notícia da tela de notícias
     public function notice($id) {
         $notice = News::findOrFail($id);
 
         return view("news.notice", ["notice" => $notice]);
     }
 
-    public function newsForm() {
+    // Formulário para cadastrar uma notícia
+    public function noticeForm() {
         return view("system.news-form");
     }
 
@@ -51,7 +69,8 @@ class NewsController extends Controller {
         ];
     }
 
-    public function registerNews(Request $request) {
+    // Cadastra a notícia
+    public function registerNotice(Request $request) {
         $request->validate([
             "title" => "required",
             "content" => "required",
@@ -80,7 +99,8 @@ class NewsController extends Controller {
         return redirect("/system/news")->with("success", "Notícia cadastrada com sucesso!");
     }
 
-    public function newsUpdateForm($id) {
+    // Formulário para atualizar uma notícia
+    public function noticeUpdateForm($id) {
         $notice = News::findOrFail($id);
 
         if (!$notice) {
@@ -90,6 +110,7 @@ class NewsController extends Controller {
         return view("system.news-update-form", ["notice" => $notice]);
     }
 
+    // Deleta uma imagem do Storage
     public function deleteImageFromStorage($filePath) {
         $bucketName = env("FIREBASE_BUCKET");
         $bucket = $this->storage->getBucket($bucketName);
@@ -98,7 +119,7 @@ class NewsController extends Controller {
         return;
     }
 
-    public function newsUpdate(Request $request) {
+    public function noticeUpdate(Request $request) {
         $request->validate([
             "title" => "required",
             "content" => "required",
@@ -118,10 +139,10 @@ class NewsController extends Controller {
 
         $oldNotice->update($request->only(["title", "content"]));
 
-        return redirect("/system/news")->with("success", "Notícia cadastrada com sucesso!");
+        return redirect("/system/news")->with("success", "Notícia atualizada com sucesso!");
     }
 
-    public function newsDelete($id) {
+    public function noticeDelete($id) {
         $notice = News::findOrFail($id);
 
         if (!$notice) {
