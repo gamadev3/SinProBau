@@ -203,6 +203,26 @@ class IndexController extends Controller {
     }
 
     public function system() {
+        return view("system.home");
+    }
+
+    public function basicEducationForm() {
+        return view("system.basic-education-form");
+    }
+
+    public function higherEducationForm() {
+        return view("system.higher-education-form");
+    }
+
+    public function sescSenaiForm() {
+        return view("system.sesc-senai-form");
+    }
+
+    public function senacForm() {
+        return view("system.senac-form");
+    }
+
+    public function news() {
         $news = News::all() ?? [];
 
         return view("system.dashboard", ["news" => $news]);
