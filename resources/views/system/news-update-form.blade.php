@@ -1,4 +1,4 @@
-@extends("layouts.main")
+@extends("layouts.system")
 
 @section("title", "SINPROBAU - Sistema")
 

@@ -9,6 +9,7 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/main.js",
                 "resources/js/preview-image.js",
+                "resources/js/vertical-navigation-bar.js",
             ],
             refresh: true,
         }),

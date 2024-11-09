@@ -32,6 +32,13 @@ Route::post("/authentication", [FirebaseAuthController::class, "authentication"]
 
 Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/system", [IndexController::class, "system"]);
+    Route::get("/system/news", [IndexController::class, "news"]);
+
+    Route::get("/system/basic-education-form", [IndexController::class, "basicEducationForm"]);
+    Route::get("/system/higher-education-form", [IndexController::class, "higherEducationForm"]);
+    Route::get("/system/sesc-senai-form", [IndexController::class, "sescSenaiForm"]);
+    Route::get("/system/senac-form", [IndexController::class, "senacForm"]);
+
     Route::post("/logout", [FirebaseAuthController::class, "logout"]);
 
     Route::get("/news-form", [NewsController::class, "newsForm"]);
