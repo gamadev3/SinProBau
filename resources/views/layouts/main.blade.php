@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield("title")</title>
-        @vite(["resources/css/app.css", "resources/js/app.js", "resources/js/preview-image.js"])
+        @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
     <body class="font-arial min-h-screen flex flex-col justify-between">
         <header class="z-40 sticky top-0 w-full bg-white h-20 px-14 flex justify-between items-center shadow">
@@ -68,25 +68,6 @@
                     <li>
                         <a href="/become-a-member" class="mt-auto text-[#138942] hover:text-white border-2 border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-10 py-2.5 text-center">Seja Sócio</a>
                     </li>
-                    {{-- @if (session()->has("firebase_token"))
-                        <li class="relative group">
-                            <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/li_chevron-down.svg" alt="Arrow">
-                                <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                        <li>
-                                            <a href="/system" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">Sistema</a>
-                                        </li>
-                                        <form method="POST" action="{{ URL("/logout") }}">
-                                            @csrf
-                                            <li>
-                                                <button type="submit" class="w-full text-left inline px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold cursor-pointer">Deslogar</button>
-                                            </li>
-                                        </form>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                    @endif --}}
                 </ul>
             </div>
         </header>
@@ -107,6 +88,6 @@
             </div>
         </footer>
 
-        @vite(["resources/js/main.js"])
+        @vite(["resources/js/navigation-bar.js"])
     </body>
 </html>

@@ -1,4 +1,4 @@
-<table class="w-full text-sm text-left rtl:text-right text-gray-500">
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
         <tr>
             <th scope="col" class="px-6 py-3">
@@ -24,16 +24,16 @@
     <tbody>
         @foreach ($news as $notice)
             <tr class="odd:bg-white even:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {{ $notice->id }}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    {{ $notice->title }}
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+                    {!! nl2br(e(strlen($notice->title) > 20 ? substr($notice->title, 0, 20) . "..." : $notice->title)) !!}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {{ date("d/m/Y", strtotime($notice->created_at)) }}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {{ date("d/m/Y", strtotime($notice->updated_at)) }}
                 </th>
                 <td class="px-6 py-4 flex justify-center">
