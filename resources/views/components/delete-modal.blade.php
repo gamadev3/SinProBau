@@ -1,7 +1,8 @@
 <!-- Modal toggle -->
 <div class="flex justify-center">
-    <button id="deleteButton" data-modal-target="deleteModal" data-modal-toggle="deleteModal" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button">
-    Deletar
+    <button id="deleteButton" data-modal-target="deleteModal" data-modal-toggle="deleteModal" class="focus:outline-none text-white bg-[#E06E6E] hover:bg-[#ad5555] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2" type="button">
+        <img src="/images/mdi_trash.svg" alt="Deletar">
+        Deletar
     </button>
 </div>
 

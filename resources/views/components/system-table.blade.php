@@ -31,7 +31,10 @@
                     {{ date("d/m/Y", strtotime($notice->updated_at)) }}
                 </th>
                 <td class="px-6 py-4">
-                    <a href="/news-update-form/{{ $notice->id }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Editar</a>
+                    <a href="/news-update-form/{{ $notice->id }}" class="text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
+                        <img src="/images/mdi_edit-outline.svg" alt="Editar">
+                        Editar
+                    </a>
                 </td>
                 <td class="px-6 py-4">
                     <x-delete-modal

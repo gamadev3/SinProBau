@@ -225,6 +225,6 @@ class IndexController extends Controller {
     public function news() {
         $news = News::all() ?? [];
 
-        return view("system.dashboard", ["news" => $news]);
+        return view("system.news", ["news" => $news]);
     }
 }
