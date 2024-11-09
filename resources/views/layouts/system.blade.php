@@ -6,18 +6,24 @@
         <title>@yield("title")</title>
         @vite(["resources/css/app.css", "resources/js/app.js", "resources/js/preview-image.js"])
     </head>
-    <body class="font-arial min-h-screen flex flex-col sm:flex-row">
+    <body class="font-arial min-h-screen flex flex-col md2:flex-row">
         @if (session()->has("firebase_token"))
-            <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="w-fit inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+            <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="w-fit inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                 <span class="sr-only">Open sidebar</span>
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>
             </button>
-            <aside id="sidebar-multi-level-sidebar" class="fixed sm:sticky top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 shadow-lg" aria-label="Sidebar">
-                <div class="h-full px-3 py-4 flex flex-col justify-between bg-white">
+            {{-- <label class="menu z-50 md2:hidden w-9 h-10 m-4 cursor-pointer flex flex-col items-center justify-center">
+                <input class="sidebarCheckbox hidden peer" type="checkbox" data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" />
+                <div class="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]"></div>
+                <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
+                <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
+            </label> --}}
+            <aside id="sidebar-multi-level-sidebar" class="fixed md2:sticky top-0 left-0 z-40 md:min-w-64 md2:min-w-72 h-screen transition-transform -translate-x-full md2:translate-x-0 border-2 border-['#ccc']" aria-label="Sidebar">
+                <div class="w-full h-full px-3 py-4 flex flex-col justify-between bg-white">
                     <div class="flex flex-col">
-                        <div class="text-center flex justify-center items-center py-4">
+                        <div class="text-center flex justify-center items-center p-4 mt-8">
                             <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU">
                         </div>
                         <ul class="space-y-2 font-medium">
@@ -27,7 +33,7 @@
                                 </a>
                             </li>
                             <li>
-                                <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 outline-none" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                <button type="button" class="flex items-center gap-2 w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 outline-none" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Convenções</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>

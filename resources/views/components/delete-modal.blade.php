@@ -1,9 +1,7 @@
-<div class="flex justify-center">
-    <button id="deleteButton-{{ $id }}" data-modal-target="deleteModal-{{ $id }}" data-modal-toggle="deleteModal-{{ $id }}" class="text-white bg-[#E06E6E] hover:bg-[#ad5555] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2" type="button">
-        <img src="/images/mdi_trash.svg" alt="Deletar">
-        Deletar
-    </button>
-</div>
+<button id="deleteButton-{{ $id }}" data-modal-target="deleteModal-{{ $id }}" data-modal-toggle="deleteModal-{{ $id }}" class="text-white bg-[#E06E6E] hover:bg-[#ad5555] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2" type="button">
+    <img src="/images/mdi_trash.svg" alt="Deletar">
+    Deletar
+</button>
 
 <div id="deleteModal-{{ $id }}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
