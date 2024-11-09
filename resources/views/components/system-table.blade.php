@@ -28,7 +28,7 @@
                     {{ $notice->id }}
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                    {!! nl2br(e(strlen($notice->title) > 20 ? substr($notice->title, 0, 20) . "..." : $notice->title)) !!}
+                    {{ $notice->title }}
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {{ date("d/m/Y", strtotime($notice->created_at)) }}
