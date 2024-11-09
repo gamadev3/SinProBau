@@ -77,7 +77,7 @@ class NewsController extends Controller {
             return back()->with("error", "Erro ao salvar a notícia.");
         }
 
-        return redirect("/system")->with("success", "Notícia cadastrada com sucesso!");
+        return redirect("/system/news")->with("success", "Notícia cadastrada com sucesso!");
     }
 
     public function newsUpdateForm($id) {

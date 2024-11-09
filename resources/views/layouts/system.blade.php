@@ -64,8 +64,14 @@
                     </form>
                 </div>
             </aside>
-         @endif
+        @endif
         <main class="w-full">
+            @if (session("success"))
+                <div class="py-4 px-4">
+                    <x-success :message="Session::get('success')" />
+                </div>
+            @endif
+
             @yield("content")
         </main>
     </body>
