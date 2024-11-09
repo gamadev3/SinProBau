@@ -22,6 +22,7 @@ Route::get("/news", [NewsController::class, "news"]);
 Route::get("/notice/{id}", [NewsController::class, "notice"]);
 
 Route::get("/contact", [IndexController::class, "contact"]);
+
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
 
 Route::get("/credits", [IndexController::class, "credits"]);
