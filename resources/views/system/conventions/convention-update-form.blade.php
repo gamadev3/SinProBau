@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Sistema")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-8 p-10 md:px-20 md:py-20">
+    <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-8 p-5 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Atualizar Convenção</h1>
         <form method="POST" action="/system/convention-update/{{ $convention->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf
@@ -22,9 +22,9 @@
                     @enderror
                 </div>
                 <div class="flex flex-col gap-2">
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
                         <p class="text-sm font-medium text-gray-900">Arquivo atual:</p>
-                        <a href="{{ $convention->document_url }}" target="_blank" class="text-sm text-blue-500 hover:underline">
+                        <a href="{{ $convention->document_url }}" target="_blank" class="text-sm text-blue-500 hover:underline break-all">
                             {{ $convention->document_path }}
                         </a>
                     </div>
