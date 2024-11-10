@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class SyndicateController extends Controller {
     public function syndicateAbout() {
         return view("syndicate.about");

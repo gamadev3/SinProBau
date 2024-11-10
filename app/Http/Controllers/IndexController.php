@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\News;
-use Exception;
-use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller {
     public function index() {
+        $notice = News::first();
+
         $news = [
             [
                 "date" => "07 de Fevereiro de 2024",
@@ -32,7 +31,10 @@ class IndexController extends Controller {
             ],
         ];
 
-        return view("home", ["news" => $news]);
+        return view("home", [
+            "news" => $news,
+            "notice" => $notice
+        ]);
     }
 
     public function virtualCard() {
@@ -49,11 +51,5 @@ class IndexController extends Controller {
 
     public function credits() {
         return view("credits");
-    }
-
-    public function news() {
-        $news = News::all() ?? [];
-
-        return view("system.news", ["news" => $news]);
     }
 }
