@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Illuminate\Support\Facades\App;
 use Kreait\Firebase\Exception\Auth\AuthError;
+use Kreait\Firebase\Exception\Auth\FailedToVerifyToken;
 
 class FirebaseAuthMiddleware {
     protected $auth;
@@ -29,7 +30,7 @@ class FirebaseAuthMiddleware {
 
         try {
             $this->auth->verifyIdToken($firebaseToken);
-        } catch (AuthError $error) {
+        } catch (AuthError | FailedToVerifyToken $error) {
             session()->forget("firebase_token");
             return redirect("/login")->with("error", "Token inválido!");
         }
