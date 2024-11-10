@@ -5,7 +5,7 @@
 @section("content")
     <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-10 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Cadastrar Notícia</h1>
-        <form method="POST" action="/register-notice" enctype="multipart/form-data" class="w-full md:px-4 py-4">
+        <form method="POST" action="/system/register-notice" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf
             @method("POST")
             <div class="flex flex-col gap-2 mb-6">

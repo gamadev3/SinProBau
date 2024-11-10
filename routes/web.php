@@ -46,9 +46,9 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
 
     Route::get("/system/news", [NewsController::class, "systemNews"]);
 
-    Route::get("/notice-form", [NewsController::class, "noticeForm"]);
-    Route::post("/register-notice", [NewsController::class, "registerNotice"]);
-    Route::get("/notice-update-form/{id}", [NewsController::class, "noticeUpdateForm"]);
-    Route::post("/notice-update/{id}", [NewsController::class, "noticeUpdate"]);
-    Route::post("/notice-delete/{id}", [NewsController::class, "noticeDelete"]);
+    Route::get("/system/notice-form", [NewsController::class, "noticeForm"]);
+    Route::post("/system/register-notice", [NewsController::class, "registerNotice"]);
+    Route::get("/system/notice-update-form/{id}", [NewsController::class, "noticeUpdateForm"]);
+    Route::post("/system/notice-update/{id}", [NewsController::class, "noticeUpdate"]);
+    Route::post("/system/notice-delete/{id}", [NewsController::class, "noticeDelete"]);
 });
