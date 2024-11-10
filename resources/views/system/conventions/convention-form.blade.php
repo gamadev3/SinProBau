@@ -32,9 +32,6 @@
                         <x-error :message="$message" />
                     @enderror
                 </div>
-                <p>
-                    {{$type}}
-                </p>
                 <input
                     type="hidden"
                     name="type"
