@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Sistema")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-8 p-10 md:px-20 md:py-20">
+    <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-8 p-5 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Cadastrar Convenção</h1>
         <form method="POST" action="/system/register-convention" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf

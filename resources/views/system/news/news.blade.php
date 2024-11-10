@@ -5,7 +5,7 @@
 @section("content")
     <div class="w-full flex flex-col gap-8 p-5 md:p-10">
         <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <h1 class="font-bold text-3xl">Cadastrar Notícias</h1>
+            <h1 class="font-bold text-3xl text-center">Cadastrar Notícias</h1>
 
             <div class="w-full sm:w-fit flex justify-between items-center flex-col sm:flex-row gap-2">
                 <form action="/system/news" class="w-full h-fit mx-auto">

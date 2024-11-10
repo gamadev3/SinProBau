@@ -45,7 +45,7 @@
                 <td class="px-6 py-4">
                     <x-delete-modal
                         :id="$dataItem->id"
-                        :title="'Você tem certeza de que deseja deletar esta notícia?'"
+                        :title="'Você tem certeza de que deseja deletar este registro?'"
                         :type="$type"
                     />
                 </td>
