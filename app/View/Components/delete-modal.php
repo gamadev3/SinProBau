@@ -13,7 +13,8 @@ class DeleteModal extends Component
      */
     public function __construct(
         protected string $id,
-        protected string $title
+        protected string $title,
+        protected string $type
     ) {
 
     }
@@ -24,7 +25,8 @@ class DeleteModal extends Component
     public function render(): View|Closure|string {
         return view("components.delete-modal", [
             "id" => $this->id,
-            "title" => $this->title
+            "title" => $this->title,
+            "type" => $this->type
         ]);
     }
 }
