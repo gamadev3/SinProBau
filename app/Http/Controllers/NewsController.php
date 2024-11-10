@@ -40,6 +40,11 @@ class NewsController extends Controller {
     // Apenas uma notícia da tela de notícias
     public function notice($id) {
         $notice = News::findOrFail($id);
+        $notice->content = preg_replace(
+            "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/",
+            "<a href='$0' target='_blank' class='text-blue-500 hover:underline'>$0</a>",
+            $notice->content
+        );
 
         return view("news.notice", ["notice" => $notice]);
     }
