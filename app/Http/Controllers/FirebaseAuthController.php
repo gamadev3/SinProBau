@@ -16,6 +16,14 @@ class FirebaseAuthController extends Controller {
         $this->auth = App::make("firebase")->createAuth();
     }
 
+    public function login() {
+        return view("auth.login");
+    }
+
+    public function system() {
+        return view("system.home");
+    }
+
     public function authentication(Request $request) {
         $request->validate([
             "email" => "required|email",

@@ -34,7 +34,7 @@ class NewsController extends Controller {
             $news = News::all();
         }
 
-        return view("system.news", ["news" => $news]);
+        return view("system.news.news", ["news" => $news]);
     }
 
     // Apenas uma notícia da tela de notícias
@@ -46,7 +46,7 @@ class NewsController extends Controller {
 
     // Formulário para cadastrar uma notícia
     public function noticeForm() {
-        return view("system.news-form");
+        return view("system.news.news-form");
     }
 
     public function uploadImageToStorage(Request $request) {
@@ -107,7 +107,7 @@ class NewsController extends Controller {
             return redirect("/system/news")->with("error", "Notícia não encontrada.");
         }
 
-        return view("system.news-update-form", ["notice" => $notice]);
+        return view("system.news.news-update-form", ["notice" => $notice]);
     }
 
     // Deleta uma imagem do Storage

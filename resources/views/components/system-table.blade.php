@@ -22,33 +22,40 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($news as $notice)
+        @forelse ($data as $dataItem)
             <tr class="odd:bg-white even:bg-gray-50">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                    {{ $notice->id }}
+                    {{ $dataItem->id }}
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                    {{ $notice->title }}
+                    {!! nl2br(e(strlen($dataItem->title) > 20 ? substr($dataItem->title, 0, 20) . "..." : $dataItem->title)) !!}
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                    {{ date("d/m/Y", strtotime($notice->created_at)) }}
+                    {{ date("d/m/Y", strtotime($dataItem->created_at)) }}
                 </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                    {{ date("d/m/Y", strtotime($notice->updated_at)) }}
+                    {{ date("d/m/Y", strtotime($dataItem->updated_at)) }}
                 </th>
-                <td class="px-6 py-4 flex justify-center">
-                    <a href="/notice-update-form/{{ $notice->id }}" class="text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
+                <td class="px-6 py-4">
+                    <a href="/system/{{ $type }}-update-form/{{ $dataItem->id }}" class="text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
                         <img src="/images/mdi_edit-outline.svg" alt="Editar">
                         Editar
                     </a>
                 </td>
                 <td class="px-6 py-4">
                     <x-delete-modal
-                        :id="$notice->id"
+                        :id="$dataItem->id"
                         :title="'Você tem certeza de que deseja deletar esta notícia?'"
+                        :type="$type"
                     />
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="6" class="px-6 py-4 text-center text-gray-900">
+                    Ainda não há registros.
+                </td>
+            </tr>
+        @endforelse
     </tbody>
 </table>

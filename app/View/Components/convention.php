@@ -6,14 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class convention extends Component
+class Convention extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
         protected string $date,
-        protected string $title
+        protected string $title,
+        protected string $url
     ) {
 
     }
@@ -24,7 +25,8 @@ class convention extends Component
     public function render(): View|Closure|string {
         return view("components.convention", [
             "date" => $this->date,
-            "title" => $this->title
+            "title" => $this->title,
+            "url" => $this->url
         ]);
     }
 }

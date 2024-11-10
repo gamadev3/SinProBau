@@ -13,7 +13,8 @@ class SystemTable extends Component
      * Create a new component instance.
      */
     public function __construct(
-        protected Collection $news
+        protected Collection $data,
+        protected string $type
     ) {
 
     }
@@ -22,6 +23,9 @@ class SystemTable extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        return view("components.system-table", ["news" => $this->news]);
+        return view("components.system-table", [
+            "data" => $this->data,
+            "type" => $this->type
+        ]);
     }
 }
