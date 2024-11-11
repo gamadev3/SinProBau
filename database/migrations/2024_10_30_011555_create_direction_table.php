@@ -11,11 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('directors', function (Blueprint $table) {
+        Schema::create("directions", function (Blueprint $table) {
+            $table->id();
+            $table->date("start_date");
+            $table->date("end_date");
+            $table->timestamps();
+        });
+
+        Schema::create("directors", function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->string("role");
             $table->timestamps();
+            $table->foreignId("direction_id")->constrained("directions")->onDelete("cascade");
         });
     }
 
@@ -24,6 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('directors');
+        Schema::dropIfExists("directions");
+        Schema::dropIfExists("directors");
     }
 };

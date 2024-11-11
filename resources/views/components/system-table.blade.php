@@ -7,6 +7,16 @@
             <th scope="col" class="px-6 py-3">
                 Título
             </th>
+            @if ($type == "notice")
+                <th scope="col" class="px-6 py-3">
+                    Campanha Salarial
+                </th>
+            @endif
+            @if ($type == "notice")
+                <th scope="col" class="px-6 py-3">
+                    Em Alta
+                </th>
+            @endif
             <th scope="col" class="px-6 py-3">
                 Data
             </th>
@@ -30,6 +40,16 @@
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {!! nl2br(e(strlen($dataItem->title) > 20 ? substr($dataItem->title, 0, 20) . "..." : $dataItem->title)) !!}
                 </th>
+                @if ($type == "notice")
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+                        {{ $dataItem->salary_campaign ? "Faz parte" : "Não faz parte" }}
+                    </th>
+                @endif
+                @if ($type == "notice")
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+                        {{ $dataItem->is_trending ? "Sim" : "Não" }}
+                    </th>
+                @endif
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                     {{ date("d/m/Y", strtotime($dataItem->created_at)) }}
                 </th>

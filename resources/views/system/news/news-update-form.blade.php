@@ -21,6 +21,38 @@
                         <x-error :message="$message" />
                     @enderror
                 </div>
+                <div class="flex flex-col">
+                    <p class="block mb-2 text-sm font-medium text-gray-900">A notícia faz parte da Campanha Salarial?</p>
+                    <div class="flex">
+                        <div class="flex items-center h-5">
+                        <input
+                            id="remember"
+                            name="salary_campaign"
+                            type="checkbox"
+                            value="1"
+                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7]"
+                            {{ $notice->salary_campaign ? "checked" : "" }}
+                        />
+                        </div>
+                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Sim, faz parte.</label>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <p class="block mb-2 text-sm font-medium text-gray-900">Adicionar a notícia ao "Em alta".</p>
+                    <div class="flex">
+                        <div class="flex items-center h-5">
+                        <input
+                            id="is_trending"
+                            name="is_trending"
+                            type="checkbox"
+                            value="1"
+                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7]"
+                            {{ $notice->is_trending ? "checked" : "" }}
+                        />
+                        </div>
+                        <label for="is_trending" class="ms-2 text-sm font-medium text-gray-900">Sim, adicionar.</label>
+                    </div>
+                </div>
                 <div class="flex flex-col gap-2">
                     <div>
                         <label
