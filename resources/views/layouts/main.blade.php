@@ -23,7 +23,7 @@
                         <a href="/" class="hover:text-[#138942] font-bold outline-none">Home</a>
                     </li>
                     <li class="relative group">
-                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Convenções <img src="/images/li_chevron-down.svg" alt="Arrow">
+                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Convenções <img src="/images/icons/arrow-down.svg" alt="Arrow">
                             <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="relative group">
-                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/li_chevron-down.svg" alt="Arrow">
+                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/icons/arrow-down.svg" alt="Arrow">
                             <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                     <li>

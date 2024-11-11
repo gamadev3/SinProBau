@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Direction;
 use App\Models\Director;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -16,6 +17,17 @@ class SyndicateController extends Controller {
     public function syndicateDirectors() {
         $direction = Direction::first();
 
+        $directors = Director::all();
+
+        return view("syndicate.directors", [
+            "direction" => $direction,
+            "directors" => $directors
+        ]);
+    }
+
+    public function systemSyndicateDirectors() {
+        $direction = Direction::first();
+
         $search = request("search");
 
         if ($search) {
@@ -26,18 +38,6 @@ class SyndicateController extends Controller {
             $directors = Director::all();
         }
 
-
-        return view("syndicate.directors", [
-            "direction" => $direction,
-            "directors" => $directors
-        ]);
-    }
-
-    public function syndicate() {
-        $direction = Direction::first();
-
-        $directors = Director::all();
-
         return view("system.syndicate.syndicate", [
             "direction" => $direction,
             "directors" => $directors
@@ -46,13 +46,13 @@ class SyndicateController extends Controller {
 
     public function syndicateDurationUpdate(Request $request) {
         $request->validate([
-            "start" => "required|date",
-            "end" => "required|date|after_or_equal:start",
+            "start" => "required|date_format:d/m/Y",
+            "end" => "required|date_format:d/m/Y|after_or_equal:start",
         ]);
 
         Direction::first()->update([
-            "start_date" => $request->start,
-            "end_date" => $request->end
+            "start_date" => Carbon::createFromFormat("d/m/Y", $request->start)->format("Y-m-d"),
+            "end_date" => Carbon::createFromFormat("d/m/Y", $request->end)->format("Y-m-d"),
         ]);
 
         return redirect("/system/syndicate")->with("success", "Período de vigência atualizado com sucesso!");

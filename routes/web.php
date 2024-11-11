@@ -43,7 +43,7 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::post("/system/convention-update/{id}", [ConventionsController::class, "conventionUpdate"]);
     Route::post("/system/convention-delete/{id}", [ConventionsController::class, "conventionDelete"]);
 
-    Route::get("/system/syndicate", [SyndicateController::class, "syndicate"]);
+    Route::get("/system/syndicate", [SyndicateController::class, "systemSyndicateDirectors"]);
     Route::post("/system/syndicate-update-duration", [SyndicateController::class, "syndicateDurationUpdate"]);
     Route::get("/system/syndicate-form", [SyndicateController::class, "syndicateForm"]);
     Route::post("/system/director-register", [SyndicateController::class, "directorRegister"]);

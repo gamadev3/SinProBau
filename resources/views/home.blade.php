@@ -10,7 +10,7 @@
                 <h1 class="text-3xl font-bold">Notícias em alta</h1>
                 <div class="flex items-center gap-2 self-end">
                     <a href="/news" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
-                    <img src="/images/Vector.svg" alt="Seta" width="8">
+                    <img src="/images/icons/-arrow-green.svg" alt="Seta" width="8">
                 </div>
             </div>
             @if ($trendingNotice)

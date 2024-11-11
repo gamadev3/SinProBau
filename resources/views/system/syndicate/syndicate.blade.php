@@ -11,7 +11,7 @@
                 <x-search :url="'syndicate'" />
 
                 <a href="/system/syndicate-form" class="w-full h-12 text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none flex items-center gap-2 self-end">
-                    <img src="/images/mdi_plus.svg" alt="Cadastrar notícia">
+                    <img src="/images/icons/plus.svg" alt="Cadastrar notícia">
                     Cadastrar diretor
                 </a>
             </div>
@@ -21,42 +21,48 @@
                 <x-success :message="Session::get('success')" />
             </div>
         @endif
-        <div class="flex flex-col gap-4">
-            <form action="/system/syndicate-update-duration" method="POST" id="date-range-picker" class="flex justify-center items-center gap-2">
+        <div class="flex flex-col gap-8">
+            <form action="/system/syndicate-update-duration" method="POST" id="date-range-picker" class="flex flex-col md2:flex-row md2:items-center gap-2">
                 @csrf
                 @method("POST")
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                        </svg>
-                    </div>
-                    <input
-                        id="datepicker-range-start"
-                        name="start"
-                        type="date"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                        placeholder="Selecione a data de início"
-                        value="{{ date("Y-m-d", strtotime($direction->start_date)) }}"
-                    >
-                        </div>
-                            <span class="mx-4 text-gray-500">até</span>
-                        <div class="relative">
+                <div class="flex gap-2 items-center">
+                    <div class="relative w-full sm:max-w-sm">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                             </svg>
                         </div>
-                    <input
-                        id="datepicker-range-end"
-                        name="end"
-                        type="date"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                        placeholder="Selecione a data de término"
-                        value="{{ date("Y-m-d", strtotime($direction->end_date)) }}"
-                    >
+                        <input
+                            id="datepicker-orientation-start"
+                            name="start"
+                            datepicker datepicker-orientation="bottom"
+                            datepicker-format="dd/mm/yyyy"
+                            type="text"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                            placeholder="Selecione a data"
+                            value="{{ date("d/m/Y", strtotime($direction->start_date)) }}"
+                        >
+                    </div>
+                    <p class="text-gray-500">até</p>
+                    <div class="relative w-full sm:max-w-sm">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                        </div>
+                        <input
+                            id="datepicker-orientation-end"
+                            name="end"
+                            datepicker datepicker-orientation="bottom"
+                            datepicker-format="dd/mm/yyyy"
+                            type="text"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                            placeholder="Selecione a data"
+                            value="{{ date("d/m/Y", strtotime($direction->end_date)) }}"
+                        >
+                    </div>
                 </div>
-                <button type="submit" class="w-fit h-12 text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none flex items-center gap-2 self-end">
+                <button type="submit" class="w-full sm:w-fit h-12 text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
                     Atualizar período de vigência
                 </button>
             </form>
@@ -64,10 +70,7 @@
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="pl-6 pr-4 py-3">
                                 Nome
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -76,7 +79,7 @@
                             <th scope="col" class="px-6 py-3">
                                 Editar
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="pl-4 pr-6 py-3">
                                 Deletar
                             </th>
                         </tr>
@@ -84,10 +87,7 @@
                     <tbody>
                         @forelse ($directors as $director)
                             <tr class="odd:bg-white even:bg-gray-50">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                                    {{ $director->id }}
-                                </th>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+                                <th scope="row" class="pl-6 pr-4 py-4 font-medium text-gray-900">
                                     {{ $director->name }}
                                 </th>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900">
@@ -95,11 +95,11 @@
                                 </th>
                                 <td class="px-6 py-4">
                                     <a href="/system/director-update-form/{{ $director->id }}" class="text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
-                                        <img src="/images/mdi_edit-outline.svg" alt="Editar">
+                                        <img src="/images/icons/edit.svg" alt="Editar">
                                         Editar
                                     </a>
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="pl-4 pr-6 py-4">
                                     <x-delete-modal
                                         :id="$director->id"
                                         :title="'Você tem certeza de que deseja deletar este registro?'"
