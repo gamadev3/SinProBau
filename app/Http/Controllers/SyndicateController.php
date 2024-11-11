@@ -16,7 +16,16 @@ class SyndicateController extends Controller {
     public function syndicateDirectors() {
         $direction = Direction::first();
 
-        $directors = Director::all();
+        $search = request("search");
+
+        if ($search) {
+            $directors = Director::where("name", "LIKE", "%{$search}%")
+                                        ->orWhere("role", "LIKE", "%{$search}%")
+                                        ->get();
+        } else {
+            $directors = Director::all();
+        }
+
 
         return view("syndicate.directors", [
             "direction" => $direction,

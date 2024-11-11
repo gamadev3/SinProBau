@@ -41,25 +41,57 @@ class ConventionsController extends Controller {
     }
 
     public function basicEducationSystem() {
-        $conventions = Convention::where("type", "LIKE", "%basic-education%")->get();
+        $search = request("search");
+
+        if ($search) {
+            $conventions = Convention::where("type", "LIKE", "%basic-education%")
+                                        ->where("title", "LIKE", "%{$search}%")
+                                        ->get();
+        } else {
+            $conventions = Convention::where("type", "LIKE", "%basic-education%")->get();
+        }
 
         return view("system.conventions.basic-education", ["conventions" => $conventions]);
     }
 
     public function higherEducationSystem() {
-        $conventions = Convention::where("type", "LIKE", "%higher-education%")->get();
+        $search = request("search");
+
+        if ($search) {
+            $conventions = Convention::where("type", "LIKE", "%higher-education%")
+                                        ->where("title", "LIKE", "%{$search}%")
+                                        ->get();
+        } else {
+            $conventions = Convention::where("type", "LIKE", "%higher-education%")->get();
+        }
 
         return view("system.conventions.higher-education", ["conventions" => $conventions]);
     }
 
     public function sesiSenaiSystem() {
-        $conventions = Convention::where("type", "LIKE", "%sesi-senai%")->get();
+        $search = request("search");
+
+        if ($search) {
+            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")
+                                        ->where("title", "LIKE", "%{$search}%")
+                                        ->get();
+        } else {
+            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")->get();
+        }
 
         return view("system.conventions.sesi-senai", ["conventions" => $conventions]);
     }
 
     public function senacSystem() {
-        $conventions = Convention::where("type", "LIKE", "%senac%")->get();
+        $search = request("search");
+
+        if ($search) {
+            $conventions = Convention::where("type", "LIKE", "%senac%")
+                                        ->where("title", "LIKE", "%{$search}%")
+                                        ->get();
+        } else {
+            $conventions = Convention::where("type", "LIKE", "%senac%")->get();
+        }
 
         return view("system.conventions.senac", ["conventions" => $conventions]);
     }
