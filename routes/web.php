@@ -12,14 +12,15 @@ Route::get("/", [IndexController::class, "index"]);
 Route::get("/virtual-card", [IndexController::class, "virtualCard"]);
 Route::get("/contact", [IndexController::class, "contact"]);
 Route::get("/credits", [IndexController::class, "credits"]);
-Route::get("/syndicate/about", [IndexController::class, "syndicateAbout"]);
-Route::get("/syndicate/directors", [IndexController::class, "syndicateDirectors"]);
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
 
 Route::get("/conventions/basic-education", [ConventionsController::class, "basicEducation"]);
 Route::get("/conventions/higher-education", [ConventionsController::class, "higherEducation"]);
 Route::get("/conventions/sesi-senai", [ConventionsController::class, "sesiSenai"]);
 Route::get("/conventions/senac", [ConventionsController::class, "senac"]);
+
+Route::get("/syndicate/about", [SyndicateController::class, "syndicateAbout"]);
+Route::get("/syndicate/directors", [SyndicateController::class, "syndicateDirectors"]);
 
 Route::get("/news", [NewsController::class, "news"]);
 Route::get("/notice/{id}", [NewsController::class, "notice"]);
@@ -37,17 +38,23 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/system/senac", [ConventionsController::class, "senacSystem"]);
 
     Route::get("/system/convention-form/{type}", [ConventionsController::class, "conventionForm"]);
-    Route::post("/system/register-convention", [ConventionsController::class, "registerConvention"]);
+    Route::post("/system/convention-register", [ConventionsController::class, "conventionRegister"]);
     Route::get("/system/convention-update-form/{id}", [ConventionsController::class, "conventionUpdateForm"]);
     Route::post("/system/convention-update/{id}", [ConventionsController::class, "conventionUpdate"]);
     Route::post("/system/convention-delete/{id}", [ConventionsController::class, "conventionDelete"]);
 
     Route::get("/system/syndicate", [SyndicateController::class, "syndicate"]);
+    Route::post("/system/syndicate-update-duration", [SyndicateController::class, "syndicateDurationUpdate"]);
+    Route::get("/system/syndicate-form", [SyndicateController::class, "syndicateForm"]);
+    Route::post("/system/director-register", [SyndicateController::class, "directorRegister"]);
+    Route::get("/system/director-update-form/{id}", [SyndicateController::class, "directorUpdateForm"]);
+    Route::post("/system/director-update/{id}", [SyndicateController::class, "directorUpdate"]);
+    Route::post("/system/director-delete/{id}", [SyndicateController::class, "directorDelete"]);
 
     Route::get("/system/news", [NewsController::class, "systemNews"]);
 
     Route::get("/system/notice-form", [NewsController::class, "noticeForm"]);
-    Route::post("/system/register-notice", [NewsController::class, "registerNotice"]);
+    Route::post("/system/notice-register", [NewsController::class, "noticeRegister"]);
     Route::get("/system/notice-update-form/{id}", [NewsController::class, "noticeUpdateForm"]);
     Route::post("/system/notice-update/{id}", [NewsController::class, "noticeUpdate"]);
     Route::post("/system/notice-delete/{id}", [NewsController::class, "noticeDelete"]);

@@ -9,7 +9,7 @@
                 Conheça a nossa Diretoria
             </h1>
             <h2 class="text-[#454545] font-sans font-normal text-[24px] leading-[40px]">
-                do SINPROBAU com mandato vigente 2022-2027
+                do SINPROBAU com mandato vigente {{ date("Y", strtotime($direction->start_date)) }}-{{ date("Y", strtotime($direction->end_date)) }}
             </h2>
         </div>
         <div class="grid grip-cols-1 md:grid-cols-2 md2:grid-cols-4 w-full gap-8 justify-items-center">

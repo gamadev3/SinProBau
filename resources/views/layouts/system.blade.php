@@ -14,12 +14,6 @@
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>
             </button>
-            {{-- <label class="menu z-50 md2:hidden w-9 h-10 m-4 cursor-pointer flex flex-col items-center justify-center">
-                <input class="sidebarCheckbox hidden peer" type="checkbox" data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" />
-                <div class="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]"></div>
-                <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
-                <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
-            </label> --}}
             <aside id="sidebar-multi-level-sidebar" class="fixed md2:sticky top-0 left-0 z-40 md:min-w-64 md2:min-w-72 h-screen transition-transform -translate-x-full md2:translate-x-0 border-2 border-['#ccc']" aria-label="Sidebar">
                 <div class="w-full h-full px-3 py-4 flex flex-col justify-between bg-white">
                     <div class="flex flex-col">

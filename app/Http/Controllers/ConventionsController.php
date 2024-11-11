@@ -90,7 +90,7 @@ class ConventionsController extends Controller {
         ];
     }
 
-    public function registerConvention(Request $request) {
+    public function conventionRegister(Request $request) {
         $request->validate([
             "title" => "required",
             "type" => "required",

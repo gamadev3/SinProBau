@@ -17,9 +17,14 @@ class NewsController extends Controller {
 
     // Todas as notícias da tela de notícias
     public function news() {
-        $news = News::all();
+        $trendingNotice = News::where("is_trending", "=", "1")->first();
 
-        return view("news.news", ["news" => $news]);
+        $news = News::where("is_trending", "=", "0")->get();;
+
+        return view("news.news", [
+            "trendingNotice" => $trendingNotice,
+            "news" => $news
+        ]);
     }
 
     // Todas as notícias da tela de notícias do sistema
@@ -75,7 +80,7 @@ class NewsController extends Controller {
     }
 
     // Cadastra a notícia
-    public function registerNotice(Request $request) {
+    public function noticeRegister(Request $request) {
         $request->validate([
             "title" => "required",
             "content" => "required",
@@ -88,14 +93,16 @@ class NewsController extends Controller {
 
         [$imageUrl, $firebaseStoragePath] = $this->uploadImageToStorage($request);
 
-        $news = new News;
+        $notice = new News;
 
-        $news->fill($request->only(["title", "content"]));
-        $news->image_url = $imageUrl;
-        $news->image_path = $firebaseStoragePath;
+        $notice->fill($request->only(["title", "content"]));
+        $notice->salary_campaign = $request->has("salary_campaign") ? true : false;
+        $notice->is_trending = $request->has("is_trending") ? true : false;
+        $notice->image_url = $imageUrl;
+        $notice->image_path = $firebaseStoragePath;
 
         try {
-            $news->save();
+            $notice->save();
         } catch (Exception $error) {
             Log::error("Erro ao salvar notícia: " . $error->getMessage());
             return back()->with("error", "Erro ao salvar a notícia.");
@@ -142,6 +149,8 @@ class NewsController extends Controller {
             $oldNotice->image_path = $firebaseStoragePath;
         }
 
+        $oldNotice->salary_campaign = $request->has("salary_campaign") ? true : false;
+        $oldNotice->is_trending = $request->has("is_trending") ? true : false;
         $oldNotice->update($request->only(["title", "content"]));
 
         return redirect("/system/news")->with("success", "Notícia atualizada com sucesso!");
