@@ -10,7 +10,7 @@
             <div class="mt-5 flex flex-col gap-4">
                 <p>Ou, entre em contato através do telefone:</p>
                 <div class="flex items-center gap-2">
-                    <img src="/images/ic_round-phone.svg" alt="Telefone" width="30" class="h-10 flex items-center">
+                    <img src="/images/icons/phone.svg" alt="Telefone" width="30" class="h-10 flex items-center">
                     <p class="h-10 flex items-center font-bold text-xl">(14) 3879-5313</p>
                 </div>
             </div>
