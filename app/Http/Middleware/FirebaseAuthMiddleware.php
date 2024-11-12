@@ -30,8 +30,7 @@ class FirebaseAuthMiddleware {
 
         try {
             $this->auth->verifyIdToken($firebaseToken);
-            //  | FailedToVerifyToken
-        } catch (AuthError $error) {
+        } catch (AuthError | FailedToVerifyToken $error) {
             session()->forget("firebase_token");
             return redirect("/login")->with("error", "Token inválido!");
         }
