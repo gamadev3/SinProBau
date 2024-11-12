@@ -6,10 +6,10 @@
     <div class="px-5 md:px-20 py-10 md:py-20 flex flex-col gap-8">
         @if ($trendingNotice)
             <div class="flex flex-col gap-2">
-                <h1 class="text-3xl font-bold">Notícias em alta</h1>
+                <h1 class="text-3xl font-bold">Notícia em alta</h1>
                 <div class="flex flex-col md2:flex-row mt-4 shadow-md rounded-2xl overflow-hidden">
                     <div class="md2:w-1/2">
-                        <img src="{{ $trendingNotice->image_url }}" class="w-full h-full object-cover" alt="">
+                        <img src="{{ $trendingNotice->image_url }}" class="w-full h-full object-cover" alt="{{ $trendingNotice->title }}">
                     </div>
                     <div class="md2:w-1/2 flex flex-col gap-4 px-6 md:px-14 md2:px-20 py-10">
                         <p>{{ date("d/m/Y", strtotime($trendingNotice->created_at)) }}</p>

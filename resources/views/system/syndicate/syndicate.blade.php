@@ -11,8 +11,8 @@
                 <x-search :url="'syndicate'" />
 
                 <a href="/system/syndicate-form" class="w-full h-12 text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none flex items-center gap-2 self-end">
-                    <img src="/images/icons/plus.svg" alt="Cadastrar notícia">
-                    Cadastrar diretor
+                    <img src="/images/icons/plus.svg" alt="Cadastrar diretor(a)">
+                    Cadastrar diretor(a)
                 </a>
             </div>
         </div>

@@ -10,13 +10,13 @@
                 <h1 class="text-3xl font-bold">Notícias em alta</h1>
                 <div class="flex items-center gap-2 self-end">
                     <a href="/news" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
-                    <img src="/images/icons/-arrow-green.svg" alt="Seta" width="8">
+                    <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
                 </div>
             </div>
             @if ($trendingNotice)
                 <div class="flex flex-col md2:flex-row mt-4 shadow-md rounded-2xl overflow-hidden">
                     <div class="md2:w-1/3 overflow-hidden">
-                        <img src="{{ $trendingNotice->image_url }}" class="w-full h-full object-cover" alt="">
+                        <img src="{{ $trendingNotice->image_url }}" class="w-full h-full object-cover" alt="{{ $trendingNotice->title }}">
                     </div>
                     <div class="md2:w-2/3 flex flex-col gap-4 px-6 md:px-14 md2:px-20 py-10">
                         <p>{{ date("d/m/Y", strtotime($trendingNotice->created_at)) }}</p>
