@@ -12,7 +12,7 @@
                 <x-search :url="'senac'" />
 
                 <a href="/system/convention-form/senac" class="w-full sm:w-2/3 md:w-full h-12 text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none flex items-center gap-2 self-end">
-                    <img src="/images/icons/plus.svg" alt="Cadastrar notícia">
+                    <img src="/images/icons/plus.svg" alt="Cadastrar convenção">
                     Cadastrar convenção
                 </a>
             </div>
