@@ -8,7 +8,7 @@
         <form method="POST" action="/system/convention-update/{{ $convention->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf
             @method("POST")
-            <div class="flex flex-col gap-4 mb-6">
+            <div class="flex flex-col gap-10 mb-6">
                 <div class="flex flex-col gap-2">
                     <x-input
                         :name="'title'"
