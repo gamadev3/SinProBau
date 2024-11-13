@@ -73,10 +73,10 @@
                             <th scope="col" class="pl-6 pr-4 py-3">
                                 Nome
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-4 py-3">
                                 Cargo
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-4 py-3">
                                 Editar
                             </th>
                             <th scope="col" class="pl-4 pr-6 py-3">
@@ -90,11 +90,11 @@
                                 <th scope="row" class="pl-6 pr-4 py-4 font-medium text-gray-900">
                                     {{ $director->name }}
                                 </th>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+                                <th scope="row" class="px-4 py-4 font-medium text-gray-900">
                                     {{ $director->role }}
                                 </th>
-                                <td class="px-6 py-4">
-                                    <a href="/system/director-update-form/{{ $director->id }}" class="text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
+                                <td class="px-4 py-4">
+                                    <a href="/system/director-update-form/{{ $director->id }}" class="w-fit text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center gap-2">
                                         <img src="/images/icons/edit.svg" alt="Editar">
                                         Editar
                                     </a>
