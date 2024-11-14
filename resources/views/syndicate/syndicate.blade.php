@@ -4,6 +4,9 @@
 
 @section("content")
     <div class="w-full md2:max-w-7xl mx-auto flex flex-col items-center gap-10 text-gray-300 opacity-100 px-5 md:p20 py-10">
+        <h1 class="text-[#138942] font-sans font-bold text-[32px] leading-[40px] self-stretch">
+            Diretoria
+        </h1>
         <div class="flex flex-col gap-1">
             <h1 class="text-[#454545] text-center font-sans font-bold text-[32px] leading-[40px] self-stretch">
                 Conheça a nossa Diretoria

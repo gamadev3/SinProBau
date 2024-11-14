@@ -11,7 +11,6 @@ use App\Http\Middleware\FirebaseAuthMiddleware;
 Route::get("/", [IndexController::class, "index"]);
 Route::get("/virtual-card", [IndexController::class, "virtualCard"]);
 Route::get("/contact", [IndexController::class, "contact"]);
-Route::get("/credits", [IndexController::class, "credits"]);
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
 
 Route::get("/conventions/basic-education", [ConventionsController::class, "basicEducation"]);
@@ -19,8 +18,7 @@ Route::get("/conventions/higher-education", [ConventionsController::class, "high
 Route::get("/conventions/sesi-senai", [ConventionsController::class, "sesiSenai"]);
 Route::get("/conventions/senac", [ConventionsController::class, "senac"]);
 
-Route::get("/syndicate/about", [SyndicateController::class, "syndicateAbout"]);
-Route::get("/syndicate/directors", [SyndicateController::class, "syndicateDirectors"]);
+Route::get("/syndicate", [SyndicateController::class, "syndicate"]);
 
 Route::get("/news", [NewsController::class, "news"]);
 Route::get("/notice/{id}", [NewsController::class, "notice"]);

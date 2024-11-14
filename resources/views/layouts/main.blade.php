@@ -42,19 +42,8 @@
                             </div>
                         </a>
                     </li>
-                    <li class="relative group">
-                        <a class="hover:text-[#138942] font-bold flex items-center gap-1 outline-none cursor-pointer">Sindicato <img src="/images/icons/arrow-down.svg" alt="Abrir subseções">
-                            <div class="absolute z-50 font-normal bg-white rounded-lg shadow w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                    <li>
-                                        <a href="/syndicate/about" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">Sobre</a>
-                                    </li>
-                                    <li>
-                                        <a href="/syndicate/directors" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">Diretoria</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </a>
+                    <li>
+                        <a href="/syndicate" class="hover:text-[#138942] font-bold outline-none">Sindicato</a>
                     </li>
                     <li>
                         <a href="/virtual-card" class="hover:text-[#138942] font-bold outline-none">Carteirinha Virtual</a>
