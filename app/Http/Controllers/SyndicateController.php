@@ -10,16 +10,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class SyndicateController extends Controller {
-    public function syndicateAbout() {
-        return view("syndicate.about");
-    }
-
-    public function syndicateDirectors() {
+    public function syndicate() {
         $direction = Direction::first();
 
         $directors = Director::all();
 
-        return view("syndicate.directors", [
+        return view("syndicate.syndicate", [
             "direction" => $direction,
             "directors" => $directors
         ]);
