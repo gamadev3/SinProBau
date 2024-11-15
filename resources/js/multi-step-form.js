@@ -51,15 +51,17 @@ function fixStepIndicator(currentTab) {
 
         const verifiedImage = stepIndicators[i].querySelector("img");
         if (verifiedImage) {
-            stepIndicators[i].removeChild(verifiedImage);
+            verifiedImage.classList.add("hidden");
+            verifiedImage.classList.remove("flex");
         }
     }
 
     stepIndicators[currentTab].classList.add("text-[#138942]");
 
-    const verifiedImage = document.createElement("img");
-    verifiedImage.src = "/images/icons/verified.svg";
-    verifiedImage.alt = "Verificado";
+    const verifiedImage = stepIndicators[currentTab].querySelector("img");
+
+    verifiedImage.classList.remove("hidden");
+    verifiedImage.classList.add("flex");
 
     stepIndicators[currentTab].insertBefore(
         verifiedImage,

@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Carteirinha Virtual")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full flex flex-col md2:flex-row gap-8 px-10 md:px-20 py-10 md:py-20">
+    <div class="max-w-7xl mx-auto w-full flex flex-col md2:flex-row gap-8 p-5 md:p-20">
         <div class="w-full md2:w-1/2 h-full flex flex-col gap-8">
             <h1 class="text-3xl font-bold">Carteirinha virtual</h1>
             <p>A sua CARTEIRINHA VIRTUAL chegou!</p>

@@ -3,28 +3,32 @@
 @section("title", "SINPROBAU - Seja Sócio")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-10 md:px-20 md:py-20">
+    <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-5 md:px-20 md:py-20">
         <h1 class="text-4xl font-bold">CONTATO</h1>
         <h1 class="text-3xl font-bold">Autorização de sindicalização</h1>
         <p>Se você, professor, gostou de nossas propostas preencha o formulário abaixo e torne-se um associado.</p>
         <form action="">
-            <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
+            <ol class="flex flex-col sm:flex-row items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
                 <li class="stepIndicator flex gap-2 md:w-full items-center text-[#138942] sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
-                    <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
+                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
                         Informações pessoais
                     </span>
                 </li>
                 <li class="stepIndicator flex gap-2 md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
-                    <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
+                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
                         Endereço
                     </span>
                 </li>
                 <li class="stepIndicator flex gap-2 md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
-                    <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
+                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
                         Trabalho
                     </span>
                 </li>
-                <li class="stepIndicator flex gap-2 items-center">
+                <li class="stepIndicator flex text-base gap-2 items-center">
+                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
                     Folha da instituição
                 </li>
             </ol>
