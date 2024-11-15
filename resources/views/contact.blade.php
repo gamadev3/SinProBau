@@ -16,7 +16,7 @@
             </div>
         </div>
         <form class="w-full md:w-1/2 md:px-4 py-4">
-            <div class="min- grid gap-2 mb-6 md:grid-cols-2">
+            <div class="grid gap-2 mb-6 md:grid-cols-2">
                 <div>
                     <x-input
                         :name="'name'"
