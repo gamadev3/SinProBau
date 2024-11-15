@@ -4,7 +4,7 @@
 
 @section("content")
     <x-carousel />
-    <div class="px-5 md:px-20 py-10 md:py-20 flex flex-col gap-8">
+    <div class="px-5 py-10 md:p-20 flex flex-col gap-8">
         <div class="flex flex-col gap-2">
             <div class="flex flex-col md:flex-row justify-between gap-2">
                 <h1 class="text-3xl font-bold">Notícias em alta</h1>
