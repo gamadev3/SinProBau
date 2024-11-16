@@ -50,6 +50,7 @@ class IndexController extends Controller {
             "city" => "required",
             "state" => "required",
             "workplace" => "required",
+            "file" => "required|file|mimes:pdf,doc,docx,jpg,png|max:2048",
             "institution" => "required",
             "institucionCity" => "required"
         ];
@@ -71,18 +72,24 @@ class IndexController extends Controller {
             "city.required" => "O campo Cidade é obrigatório.",
             "state.required" => "O campo Estado é obrigatório.",
             "workplace.required" => "O campo Local de Trabalho é obrigatório.",
+            "file.required" => "O campo Arquivo é obrigatório.",
+            "file.file" => "O arquivo deve ser válido.",
+            "file.mimes" => "O arquivo deve ser do tipo PDF, DOC, DOCX, JPG ou PNG.",
+            "file.max" => "O arquivo deve ter no máximo 2 MB.",
             "institution.required" => "O campo Instituição é obrigatório.",
             "institucionCity.required" => "O campo Cidade da Instituição é obrigatório."
         ];
 
         $request->validate($rules, $messages);
-        
+
         try {
 
             $data = $request->all();
 
+            $file = $request->file("file");
+
             Mail::to(env("MAIL_DESTINY"))
-                ->send(new Email($data));
+                ->send(new Email($data, $file));
 
             return redirect()->back()->with("success", "Enviado com sucesso!");
         } catch (Exception $error) {
