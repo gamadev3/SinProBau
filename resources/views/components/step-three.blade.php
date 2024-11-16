@@ -5,6 +5,9 @@
         :label="'Locais de trabalho'"
         :placeholder="'Digite os locais de trabalho'"
     />
+    @error("workplace")
+        <x-error :message="$message" />
+    @enderror
 </div>
 <div class="grid gap-8 mb-8 md:grid-cols-2">
     <div>
@@ -15,6 +18,7 @@
         <select
             id="degree"
             name="degree"
+            value="{{ old('degree') }}"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         >
             <option selected>Outro</option>
@@ -26,6 +30,7 @@
     <div>
         <x-input
             :name="'ifothers'"
+            value="{{ old('ifothers') }}"
             :type="'text'"
             :label="'Se outros, defina'"
             :placeholder="'Digite'"
@@ -64,7 +69,8 @@
                 datepicker
                 id="dependent-one-date"
                 name="dependentOneDate"
-                name="dependent-one"
+                datepicker-format="dd/mm/yyyy"
+                value="{{ old('dependentOneDate') }}"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="Selecione a data">
@@ -103,6 +109,8 @@
                 datepicker
                 id="dependent-two"
                 name="dependentTwoDate"
+                datepicker-format="dd/mm/yyyy"
+                value="{{ old('dependentTwoDate') }}"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="Selecione a data">
@@ -141,6 +149,8 @@
                 datepicker
                 id="dependent-three"
                 name="dependentThreeDate"
+                datepicker-format="dd/mm/yyyy"
+                value="{{ old('dependentThreeDate') }}"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="Selecione a data"

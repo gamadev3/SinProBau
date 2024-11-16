@@ -33,7 +33,52 @@ class IndexController extends Controller {
     }
 
     public function sendEmail(Request $request) {
+        $rules = [
+            "name" => "required",
+            "maritalStatus" => "required",
+            "birthdate" => "required",
+            "naturality" => "required",
+            "rg" => "required",
+            "cpf" => "required",
+            "phone" => "required",
+            "email" => "required|email",
+            "address" => "required",
+            "name" => "required",
+            "number" => "required",
+            "complement" => "required",
+            "neighborhood" => "required",
+            "city" => "required",
+            "state" => "required",
+            "workplace" => "required",
+            "institution" => "required",
+            "institucionCity" => "required"
+        ];
+
+        $messages = [
+            "name.required" => "O campo Nome é obrigatório.",
+            "maritalStatus.required" => "O campo Estado Civil é obrigatório.",
+            "birthdate.required" => "O campo Data de Nascimento é obrigatório.",
+            "naturality.required" => "O campo Naturalidade é obrigatório.",
+            "rg.required" => "O campo RG é obrigatório.",
+            "cpf.required" => "O campo CPF é obrigatório.",
+            "phone.required" => "O campo Telefone é obrigatório.",
+            "email.required" => "O campo E-mail é obrigatório.",
+            "email.email" => "Por favor, insira um endereço de e-mail válido.",
+            "address.required" => "O campo Endereço é obrigatório.",
+            "number.required" => "O campo Número é obrigatório.",
+            "complement.required" => "O campo Complemento é obrigatório.",
+            "neighborhood.required" => "O campo Bairro é obrigatório.",
+            "city.required" => "O campo Cidade é obrigatório.",
+            "state.required" => "O campo Estado é obrigatório.",
+            "workplace.required" => "O campo Local de Trabalho é obrigatório.",
+            "institution.required" => "O campo Instituição é obrigatório.",
+            "institucionCity.required" => "O campo Cidade da Instituição é obrigatório."
+        ];
+
+        $request->validate($rules, $messages);
+        
         try {
+
             $data = $request->all();
 
             Mail::to(env("MAIL_DESTINY"))
