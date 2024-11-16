@@ -6,6 +6,6 @@
         <p>{{ date("d/m/Y", strtotime($date)) }}</p>
         <h1 class="text-xl font-bold">{{ $title }}</h1>
         <p>{!! nl2br(e(strlen($content) > 150 ? substr($content, 0, 150) . "..." : $content)) !!}</p>
-        <a href="/notice/{{ $id }}" target="_blank" class="w-fit mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Saiba mais</a>
+        <a href="/notice/{{ $id }}" class="w-fit mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Saiba mais</a>
     </div>
 </div>

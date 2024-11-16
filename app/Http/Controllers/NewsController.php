@@ -47,11 +47,19 @@ class NewsController extends Controller {
         $notice = News::findOrFail($id);
         $notice->content = preg_replace(
             "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/",
-            "<a href='$0' target='_blank' class='text-blue-500 hover:underline'>$0</a>",
+            "<a href='$0' class='text-blue-500 hover:underline'>$0</a>",
             $notice->content
         );
 
-        return view("news.notice", ["notice" => $notice]);
+        $recentNews = News::where("id", "!=", $id)
+                                ->orderBy("created_at", "desc")
+                                ->take(3)
+                                ->get();
+
+        return view("news.notice", [
+            "notice" => $notice,
+            "news" => $recentNews
+        ]);
     }
 
     // Formulário para cadastrar uma notícia
