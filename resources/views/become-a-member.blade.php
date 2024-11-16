@@ -20,42 +20,30 @@
 
         <form id="send-email-form" method="POST" action="send-email" enctype="multipart/form-data">
             @csrf
-            <ol class="flex justify-between items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
-                <li class="stepIndicator flex gap-0.5 sm:gap-2 w-full items-center text-[#138942] after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
-                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
-                        1
-                    </span>
-                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
-                        Informações pessoais
-                    </span>
+            <ol class="flex justify-between items-center w-full text-xs text-gray-900 font-medium sm:text-base">
+                <li class="stepIndicator flex w-full relative text-[#138942]  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute after:top-3 after:left-4">
+                   <div class="block whitespace-nowrap z-10">
+                       <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mr-auto mb-3 text-s-10">1</span>
+                       <p class="hidden sm:block">Informações pessoais</p>
+                   </div>
                 </li>
-                <li class="stepIndicator flex gap-2 w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
-                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
-                        2
-                    </span>
-                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
-                        Endereço
-                    </span>
+                <li class="stepIndicator flex w-full justify-center relative  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute after:top-3 after:left-4">
+                   <div class="block whitespace-nowrap z-10">
+                       <span class="w-6 h-6 -translate-x-2/3 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-s-10">2</span>
+                       <p class="hidden sm:block -translate-x-1/4">Endereço</p>
+                   </div>
                 </li>
-                <li class="stepIndicator flex gap-2 w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
-                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
-                        3
-                    </span>
-                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
-                        Trabalho
-                    </span>
+                <li class="stepIndicator flex w-full justify-center relative  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute  after:top-3 after:left-4">
+                   <div class="block whitespace-nowrap z-10">
+                       <span class="w-6 h-6 translate-x-2/3 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center mx-auto mb-3 text-sm">3</span>
+                       <p class="hidden sm:block translate-x-1/4">Trabalho</p>
+                   </div>
                 </li>
-                <li class="stepIndicator flex text-base whitespace-nowrap gap-2 items-center">
-                    <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex">
-                        4
-                    </span>
-                    <span class="hidden md:flex">
-                        Folha da instituição
-                    </span>
+                <li class="stepIndicator flex w-full relative  before:content-['']  before:w-full before:-translate-x-10 before:h-0.5  before:bg-gray-200 before:inline-block before:absolute  before:top-3 before:left-4">
+                   <div class="w-full block whitespace-nowrap z-10">
+                       <span class="w-6 h-6 bg-gray-50 border-2 border-gray-200 rounded-full flex justify-center items-center ml-auto mb-3 text-sm">4</span>
+                       <p class="text-end hidden sm:block">Folha da instituição</p>
+                   </div>
                 </li>
             </ol>
 

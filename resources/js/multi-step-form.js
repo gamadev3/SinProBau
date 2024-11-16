@@ -3,29 +3,20 @@ let currentTab = 0;
 const previousTabButton = document.getElementById("prevBtn");
 const nextTabButton = document.getElementById("nextBtn");
 const steps = document.querySelectorAll(".step");
+const stepIndicators = document.querySelectorAll(".stepIndicator");
 
-previousTabButton.addEventListener("click", () => {
-    nextPrev(-1);
-});
+previousTabButton.addEventListener("click", () => updateTab(-1));
 
-nextTabButton.addEventListener("click", () => {
-    nextPrev(1);
-});
+nextTabButton.addEventListener("click", () => updateTab(1));
 
 showTab(currentTab);
 
 function showTab(currentTab) {
-    for (let i = 0; i < steps.length; i++) {
-        steps[i].style.display = "none";
-    }
+    steps.forEach((step, index) => {
+        step.style.display = currentTab === index ? "block" : "none";
+    });
 
-    steps[currentTab].style.display = "block";
-
-    if (currentTab == 0) {
-        previousTabButton.style.display = "none";
-    } else {
-        previousTabButton.style.display = "block";
-    }
+    previousTabButton.style.display = currentTab === 0 ? "none" : "block";
 
     if (currentTab == steps.length - 1) {
         nextTabButton.type = "submit";
@@ -38,7 +29,7 @@ function showTab(currentTab) {
     fixStepIndicator(currentTab);
 }
 
-function nextPrev(step) {
+function updateTab(step) {
     const newTab = currentTab + step;
 
     if (newTab < 0 || newTab >= steps.length) {
@@ -51,27 +42,22 @@ function nextPrev(step) {
 }
 
 function fixStepIndicator(currentTab) {
-    const stepIndicators = document.querySelectorAll(".stepIndicator");
+    stepIndicators.forEach((indicator, index) => {
+        stepIndicators[index].classList.remove("text-[#138942]");
 
-    for (let i = 0; i < stepIndicators.length; i++) {
-        stepIndicators[i].classList.remove("text-[#138942]");
+        const disabledIndicator = indicator.querySelector("span");
+        disabledIndicator.classList.add("bg-gray-50");
+        disabledIndicator.classList.add("border-2");
+        disabledIndicator.classList.remove("text-white");
 
-        const verifiedImage = stepIndicators[i].querySelector("img");
-        if (verifiedImage) {
-            verifiedImage.classList.add("hidden");
-            verifiedImage.classList.remove("flex");
+        if (index === currentTab) {
+            stepIndicators[index].classList.add("text-[#138942]");
         }
-    }
 
-    stepIndicators[currentTab].classList.add("text-[#138942]");
-
-    const verifiedImage = stepIndicators[currentTab].querySelector("img");
-
-    verifiedImage.classList.remove("hidden");
-    verifiedImage.classList.add("flex");
-
-    stepIndicators[currentTab].insertBefore(
-        verifiedImage,
-        stepIndicators[currentTab].firstChild
-    );
+        const stepIndicator = stepIndicators[currentTab].querySelector("span");
+        stepIndicator.classList.remove("bg-gray-50");
+        stepIndicator.classList.remove("border-2");
+        stepIndicator.classList.add("bg-[#138942]");
+        stepIndicator.classList.add("text-white");
+    });
 }
