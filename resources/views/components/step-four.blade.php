@@ -8,10 +8,13 @@
         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
         aria-describedby="file_input_help"
         id="file_input"
-        value="{{ old('file_input') }}"
         name="file"
+        value="{{ old('file') }}"
         type="file"
     >
+    @error("file")
+        <x-error :message="$message" />
+    @enderror
 </div>
 <div class="grid gap-8 mb-8 md:grid-cols-3">
     <div>

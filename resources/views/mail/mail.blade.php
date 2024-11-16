@@ -21,7 +21,6 @@
     <li><strong>Dependente 3:</strong> {{ $data['dependentThree'] }} - {{ $data['degreeOfKinshipThree'] }} ({{ $data['dependentThreeDate'] }})</li>
 </ul>
 <h3>Outras Informações:</h3>
-<p><strong>Arquivo:</strong> {{ $data['file'] }}</p>
 <p><strong>Instituição:</strong> {{ $data['institution'] }}</p>
 <p><strong>Cidade da Instituição:</strong> {{ $data['institucionCity'] }}</p>
 <p><strong>Data:</strong> {{ $data['date'] }}</p>
