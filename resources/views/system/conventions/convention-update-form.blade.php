@@ -24,7 +24,7 @@
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-2">
                         <p class="text-sm font-medium text-gray-900">Arquivo atual:</p>
-                        <a href="{{ $convention->document_url }}" target="_blank" class="text-sm text-blue-500 hover:underline break-all">
+                        <a href="{{ $convention->document_url }}" class="text-sm text-blue-500 hover:underline break-all">
                             {{ $convention->document_path }}
                         </a>
                     </div>
