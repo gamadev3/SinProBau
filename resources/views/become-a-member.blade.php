@@ -7,7 +7,19 @@
         <h1 class="text-4xl font-bold">CONTATO</h1>
         <h1 class="text-3xl font-bold">Autorização de sindicalização</h1>
         <p>Se você, professor, gostou de nossas propostas preencha o formulário abaixo e torne-se um associado.</p>
-        <form action="">
+
+        @if (session("error"))
+            <x-error :message="Session::get('error')" />
+        @endif
+
+        @if (session("success"))
+            <div class="py-2">
+                <x-success :message="Session::get('success')" />
+            </div>
+        @endif
+
+        <form id="send-email-form" method="POST" action="send-email">
+            @csrf
             <ol class="flex flex-col sm:flex-row items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
                 <li class="stepIndicator flex gap-2 md:w-full items-center text-[#138942] sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
                     <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
