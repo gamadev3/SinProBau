@@ -16,11 +16,11 @@
         </div>
         <p class="text-xl text-justify">{!! nl2br($notice->content) !!}</p>
         <h1 class="text-4xl font-bold mt-8">Veja mais</h1>
-        <div class="w-full flex flex-col md2:flex-row justify-between gap-6">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($news as $notice)
-                <div class="w-full md2:w-1/3 flex flex-col mt-4 shadow-md rounded-lg">
+                <div class="w-full flex flex-col mt-4 shadow-md rounded-lg">
                     <div class="rounded-t-2xl overflow-hidden">
-                        <img src="{{ $notice->image_url }}" class="w-full h-full object-cover" alt="{{ $notice->title }}">
+                        <img src="{{ $notice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $notice->title }}">
                     </div>
                     <div class="flex flex-col gap-4 px-6 py-10 flex-1">
                         <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>

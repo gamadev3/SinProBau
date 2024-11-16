@@ -12,7 +12,7 @@ class IndexController extends Controller {
     public function index() {
         $trendingNotice = News::where("is_trending", "=", "1")->first();
 
-        $salaryCampaign = News::where("salary_campaign", "=", "1")->get();
+        $salaryCampaign = News::where("salary_campaign", "=", "1")->limit(8)->get();
 
         return view("home", [
             "salaryCampaign" => $salaryCampaign,
