@@ -50,7 +50,7 @@ class IndexController extends Controller {
             "city" => "required",
             "state" => "required",
             "workplace" => "required",
-            "file" => "required|file|mimes:pdf,doc,docx,jpg,png|max:2048",
+            "file" => "required|file|mimes:pdf,doc,docx,jpg,png|max:25600",
             "institution" => "required",
             "institucionCity" => "required"
         ];
@@ -75,7 +75,7 @@ class IndexController extends Controller {
             "file.required" => "O campo Arquivo é obrigatório.",
             "file.file" => "O arquivo deve ser válido.",
             "file.mimes" => "O arquivo deve ser do tipo PDF, DOC, DOCX, JPG ou PNG.",
-            "file.max" => "O arquivo deve ter no máximo 2 MB.",
+            "file.max" => "O arquivo deve ter no máximo 25 MB.",
             "institution.required" => "O campo Instituição é obrigatório.",
             "institucionCity.required" => "O campo Cidade da Instituição é obrigatório."
         ];
