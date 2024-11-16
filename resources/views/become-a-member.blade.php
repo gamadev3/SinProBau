@@ -20,28 +20,42 @@
 
         <form id="send-email-form" method="POST" action="send-email">
             @csrf
-            <ol class="flex flex-col sm:flex-row items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
-                <li class="stepIndicator flex gap-2 md:w-full items-center text-[#138942] sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
+            <ol class="flex justify-between items-center w-full text-sm font-medium text-center text-gray-500 sm:text-base">
+                <li class="stepIndicator flex gap-0.5 sm:gap-2 w-full items-center text-[#138942] after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
                     <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
+                        1
+                    </span>
+                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
                         Informações pessoais
                     </span>
                 </li>
-                <li class="stepIndicator flex gap-2 md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
+                <li class="stepIndicator flex gap-2 w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
                     <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
+                        2
+                    </span>
+                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
                         Endereço
                     </span>
                 </li>
-                <li class="stepIndicator flex gap-2 md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10">
+                <li class="stepIndicator flex gap-2 w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:inline-block after:mx-6">
                     <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    <span class="flex items-center text-base after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200">
+                    <span class="flex items-center text-base whitespace-nowrap sm:after:hidden after:text-gray-200">
+                        3
+                    </span>
+                    <span class="hidden md:flex items-center text-base whitespace-nowrap sm:after:hidden after:mx-2 after:text-gray-200">
                         Trabalho
                     </span>
                 </li>
-                <li class="stepIndicator flex text-base gap-2 items-center">
+                <li class="stepIndicator flex text-base whitespace-nowrap gap-2 items-center">
                     <img src="/images/icons/verified.svg" alt="Verificado" class="hidden w-3.5 sm:w-5">
-                    Folha da instituição
+                    <span class="flex">
+                        4
+                    </span>
+                    <span class="hidden md:flex">
+                        Folha da instituição
+                    </span>
                 </li>
             </ol>
 

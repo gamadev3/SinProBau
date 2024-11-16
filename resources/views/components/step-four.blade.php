@@ -8,6 +8,7 @@
         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
         aria-describedby="file_input_help"
         id="file_input"
+        value="{{ old('file_input') }}"
         name="file"
         type="file"
     >
@@ -20,6 +21,9 @@
             :label="'Instituição'"
             :placeholder="'Digite o nome da instituição'"
         />
+        @error("institution")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -28,6 +32,9 @@
             :label="'Cidade'"
             :placeholder="'Digite o nome da cidade'"
         />
+        @error("institucionCity")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <label
@@ -44,6 +51,8 @@
                 datepicker
                 id="date"
                 name="date"
+                datepicker-format="dd/mm/yyyy"
+                value="{{ old('date') }}"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="Selecione a data"
@@ -60,6 +69,7 @@
         type="text"
         id="large-input"
         name="observation"
+        value="{{ old('observation') }}"
         class="block w-full h-40 p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] outline-none"
         placeholder="Digite alguma observação"></textarea>
 </div>

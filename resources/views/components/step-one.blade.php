@@ -6,6 +6,9 @@
             :label="'Nome'"
             :placeholder="'Digite o seu nome'"
         />
+        @error("name")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <label
@@ -17,12 +20,16 @@
             name="maritalStatus"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         >
-            <option value="Solteiro(A)" selected>Solteiro(a)</option>
-            <option value="União estável">União estável</option>
-            <option value="Casado(a)">Casado(a)</option>
-            <option value="Divorciado(a)">Divorciado(a)</option>
-            <option value="Viúvo(a)">Viúvo(a)</option>
+            <option value="" {{ old('maritalStatus') == '' ? 'selected' : '' }} disabled>Selecione um</option>
+            <option value="Solteiro(A)" {{ old('maritalStatus') == 'Solteiro(A)' ? 'selected' : '' }}>Solteiro(a)</option>
+            <option value="União estável" {{ old('maritalStatus') == 'União estável' ? 'selected' : '' }}>União estável</option>
+            <option value="Casado(a)" {{ old('maritalStatus') == 'Casado(a)' ? 'selected' : '' }}>Casado(a)</option>
+            <option value="Divorciado(a)" {{ old('maritalStatus') == 'Divorciado(a)' ? 'selected' : '' }}>Divorciado(a)</option>
+            <option value="Viúvo(a)" {{ old('maritalStatus') == 'Viúvo(a)' ? 'selected' : '' }}>Viúvo(a)</option>
         </select>
+        @error("maritalStatus")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <label
@@ -39,11 +46,16 @@
                 datepicker
                 id="birthdate"
                 name="birthdate"
+                datepicker-format="dd/mm/yyyy"
+                value="{{ old('birthdate') }}"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="Selecione a data"
             >
         </div>
+        @error("birthdate")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -52,6 +64,9 @@
             :label="'Natural de:'"
             :placeholder="'Digite de onde você é'"
         />
+        @error("naturality")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -60,6 +75,9 @@
             :label="'RG'"
             :placeholder="'RG'"
         />
+        @error("rg")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -68,6 +86,9 @@
             :label="'CPF'"
             :placeholder="'CPF'"
         />
+        @error("cpf")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -76,6 +97,9 @@
             :label="'Telefone'"
             :placeholder="'Telefone'"
         />
+        @error("phone")
+            <x-error :message="$message" />
+        @enderror
     </div>
     <div>
         <x-input
@@ -84,5 +108,8 @@
             :label="'E-mail'"
             :placeholder="'Digite o seu e-mail'"
         />
+        @error("email")
+            <x-error :message="$message" />
+        @enderror
     </div>
 </div>
