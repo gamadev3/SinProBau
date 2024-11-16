@@ -27,15 +27,22 @@ function showTab(currentTab) {
         previousTabButton.style.display = "block";
     }
 
+    if (currentTab == steps.length - 1) {
+        nextTabButton.type = "submit";
+        nextTabButton.innerHTML = "Enviar";
+    } else {
+        nextTabButton.type = "button";
+        nextTabButton.innerHTML = "Próximo";
+    }
+
     fixStepIndicator(currentTab);
 }
 
 function nextPrev(step) {
-    steps[currentTab].style.display = "none";
-
     const newTab = currentTab + step;
 
     if (newTab < 0 || newTab >= steps.length) {
+        document.getElementById("send-email-form").submit();
         return;
     }
 
