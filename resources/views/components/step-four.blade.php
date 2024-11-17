@@ -72,7 +72,6 @@
         type="text"
         id="large-input"
         name="observation"
-        value="{{ old('observation') }}"
         class="block w-full h-40 p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] outline-none"
-        placeholder="Digite alguma observação"></textarea>
+        placeholder="Digite alguma observação">{{ old('observation') }}</textarea>
 </div>
