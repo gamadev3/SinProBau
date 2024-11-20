@@ -63,19 +63,62 @@
         <main>
             @yield("content")
         </main>
-        <footer class="w-full flex flex-col">
-            <div class="w-full bg-[#1B5E1F] flex flex-col px-24 py-16">
-                <div class="self-end">
-                    <p class="text-white">SINDICATO DOS PROFESSORES DE BAURU</p>
-                    <p class="text-white">Rua Capitão Gomes Duarte,</p>
-                    <p class="text-white">6-74 - Bauru - SP</p>
-                    <p class="text-white">Fone-Fax: (14) 3879-5313</p>
-                </div>
+        <footer class="w-full bg-[#1B5E1F]">
+    <div class="container mx-auto py-10 px-6 flex flex-wrap justify-between">
+        <!-- Logo e Redes Sociais -->
+        <div class="flex flex-col items-start">
+            <img src="/images/icons/image_47_1.svg" alt="" class="w-40 mb-4">
+            <div class="flex space-x-4 mb-4">
+                <a href="https://www.instagram.com/sinprobau?igsh=dDV3eTN3Y2htbXd0" target="_blank">
+                    <img src="/images/icons/mdi_instagram.svg" alt="Instagram" class="w-6 h-6">
+                </a>
+                <a href="https://www.facebook.com/sinprobauru?mibextid=ZbWKwL" target="_blank">
+                    <img src="/images/icons/ic_baseline-facebook.svg" alt="Facebook" class="w-6 h-6">
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="/images/icons/mdi_youtube.svg" alt="YouTube" class="w-6 h-6">
+                </a>
+                <a href="https://web.whatsapp.com" target="_blank">
+                    <img src="/images/icons/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+                </a>
             </div>
-            <div class="bg-[#1A2C17] py-2 px-2">
-                <p class="text-white text-center text-xs">Sindicato dos Professores de Bauru 2024 - Todos os direitos reservados</p>
-            </div>
-        </footer>
+            <button class="px-4 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-[#1B5E1F] transition">
+                Logar como admin
+            </button>
+        </div>
+
+        <!-- Informações do Sindicato -->
+        <div class="text-white space-y-2">
+            <p class="font-semibold">SINDICATO DOS PROFESSORES DE BAURU</p>
+            <p>Rua Capitão Gomes Duarte,</p>
+            <p>6-74 - Bauru - SP</p>
+            <p>Fone-Fax: (14) 3879-5313</p>
+        </div>
+
+        <!-- Convenções -->
+        <div class="text-white space-y-2">
+            <p class="font-semibold">Convenções</p>
+            <p>Convenção Sesi/Senai</p>
+            <p>Convenção Ensino Superior</p>
+            <p>Convenção Educação Básica</p>
+            <p>Convenção Senac</p>
+        </div>
+
+        <!-- Logos -->
+        <div class="flex space-x-4">
+            <img src="/images/icons/contee.png" alt="Logo CONTEE" class="h-12 w-auto object-contain">
+            <img src="/images/icons/ctb.png" alt="Logo CTB" class="h-12 w-auto object-contain">
+            <img src="/images/icons/fepesp.png" alt="Logo FEPESP" class="h-12 w-auto object-contain">
+        </div>
+    </div>
+    <div class="bg-[#1A2C17] py-2 text-center">
+        <p class="text-white text-sm">
+            Sindicato dos Professores de Bauru 2024 - Todos os direitos reservados
+        </p>
+    </div>
+</footer>
+
+
 
         @vite(["resources/js/navigation-bar.js"])
     </body>
