@@ -7,7 +7,7 @@
     <div class="px-5 py-10 md:p-20 flex flex-col gap-8">
         <div class="flex flex-col gap-2">
             <div class="flex flex-col md:flex-row justify-between gap-2">
-                <h1 class="text-3xl font-bold">Notícias em alta</h1>
+                <h1 class="text-3xl font-bold">Notícia em alta</h1>
                 <div class="flex items-center gap-2 self-end">
                     <a href="/news" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
                     <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
