@@ -13,7 +13,7 @@
                     <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
                 </div>
             </div>
-            @if ($trendingNotice)
+            @if ($trendingNotice)\
                 <div class="flex flex-col md2:flex-row mt-4 shadow-md rounded-2xl overflow-hidden">
                     <div class="md2:w-1/3 overflow-hidden">
                         <img src="{{ $trendingNotice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $trendingNotice->title }}">
@@ -30,22 +30,24 @@
         </div>
         <div class="flex flex-col gap-2">
             <h1 class="text-3xl font-bold">Campanhas salarial</h1>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                @forelse ($salaryCampaign as $notice)
-                    <div class="w-full flex flex-col mt-4 shadow-md rounded-lg">
-                        <div class="rounded-t-2xl overflow-hidden">
-                            <img src="{{ $notice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $notice->title }}">
+            @if (count($salaryCampaign) > 0)
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    @foreach ($salaryCampaign as $notice)
+                        <div class="w-full flex flex-col mt-4 shadow-md rounded-lg">
+                            <div class="rounded-t-2xl overflow-hidden">
+                                <img src="{{ $notice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $notice->title }}">
+                            </div>
+                            <div class="flex flex-col gap-4 px-6 py-10 flex-1">
+                                <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
+                                <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
+                                <a href="/notice/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
+                            </div>
                         </div>
-                        <div class="flex flex-col gap-4 px-6 py-10 flex-1">
-                            <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
-                            <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
-                            <a href="/notice/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
-                        </div>
-                    </div>
-                @empty
-                    <p class="py-4 text-center text-gray-900">Ainda não há nenhuma notícia relacionada à Campanha Salarial</p>
-                @endforelse
-            </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="py-4 text-gray-900">Ainda não há nenhuma notícia relacionada à Campanha Salarial</p>
+            @endif
         </div>
     </div>
 @endsection
