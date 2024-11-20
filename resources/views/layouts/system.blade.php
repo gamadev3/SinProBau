@@ -20,11 +20,6 @@
                         </div>
                         <ul class="space-y-2 font-medium">
                             <li>
-                                <a href="/system" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
-                                    <span class="ms-3">Home</span>
-                                </a>
-                            </li>
-                            <li>
                                 <button type="button" class="flex items-center gap-2 w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 outline-none" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                                     <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Convenções</span>
                                         <img src="/images/icons/arrow-down.svg" alt="Abrir">

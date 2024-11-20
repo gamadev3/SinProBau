@@ -21,7 +21,7 @@ class FirebaseAuthController extends Controller {
     }
 
     public function system() {
-        return view("system.home");
+        return redirect("/system/news");
     }
 
     public function authentication(Request $request) {
