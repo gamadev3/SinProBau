@@ -12,6 +12,7 @@ Route::get("/", [IndexController::class, "index"]);
 Route::get("/virtual-card", [IndexController::class, "virtualCard"]);
 Route::get("/contact", [IndexController::class, "contact"]);
 Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
+Route::post("/send-email", [IndexController::class, "sendEmail"]);
 
 Route::get("/conventions/basic-education", [ConventionsController::class, "basicEducation"]);
 Route::get("/conventions/higher-education", [ConventionsController::class, "higherEducation"]);

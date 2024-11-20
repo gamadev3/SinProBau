@@ -120,6 +120,6 @@
 
 
 
-        @vite(["resources/js/navigation-bar.js"])
+        @vite(["resources/js/navigation-bar.js", "resources/js/multi-step-form.js"])
     </body>
 </html>
