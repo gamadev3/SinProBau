@@ -64,62 +64,62 @@
             @yield("content")
         </main>
         <footer class="w-full bg-[#1B5E1F]">
-    <div class="container mx-auto py-10 px-6 flex flex-wrap justify-between">
-        <!-- Logo e Redes Sociais -->
-        <div class="flex flex-col items-start">
-            <img src="/images/icons/image_47_1.svg" alt="" class="w-40 mb-4">
-            <div class="flex space-x-4 mb-4">
-                <a href="https://www.instagram.com/sinprobau?igsh=dDV3eTN3Y2htbXd0" target="_blank">
-                    <img src="/images/icons/mdi_instagram.svg" alt="Instagram" class="w-6 h-6">
-                </a>
-                <a href="https://www.facebook.com/sinprobauru?mibextid=ZbWKwL" target="_blank">
-                    <img src="/images/icons/ic_baseline-facebook.svg" alt="Facebook" class="w-6 h-6">
-                </a>
-                <a href="https://www.youtube.com" target="_blank">
-                    <img src="/images/icons/mdi_youtube.svg" alt="YouTube" class="w-6 h-6">
-                </a>
-                <a href="https://web.whatsapp.com" target="_blank">
-                    <img src="/images/icons/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
-                </a>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-2 md2:grid-cols-4 p-10 sm:px-32 sm:py-16">
+                <div class="flex flex-col items-start gap-3">
+                    <img src="/images/icons/image_47_1.svg" alt="Logo SINPROBAU" class="w-40">
+                    <div class="flex gap-5">
+                        <a href="https://www.instagram.com/sinprobau?igsh=dDV3eTN3Y2htbXd0" target="_blank">
+                            <img src="/images/icons/mdi_instagram.svg" alt="Instagram" class="w-6 h-6">
+                        </a>
+                        <a href="https://www.facebook.com/sinprobauru?mibextid=ZbWKwL" target="_blank">
+                            <img src="/images/icons/ic_baseline-facebook.svg" alt="Facebook" class="w-6 h-6">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCrH5GgS-k0VkvI2xiUqppbA" target="_blank">
+                            <img src="/images/icons/mdi_youtube.svg" alt="YouTube" class="w-6 h-6">
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=551438795313" target="_blank">
+                            <img src="/images/icons/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
+                        </a>
+                    </div>
+                    <a href="/system" class="text-white hover:text-black border border-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Logar como admin
+                    </a>
+                </div>
+
+                <div class="text-white flex flex-col gap-3">
+                    <a href="/" class="w-fit hover:underline">Home</a>
+                    <a href="/become-a-member" class="w-fit hover:underline">Seja sócio</a>
+                    <a href="/contact" class="w-fit hover:underline">Contato</a>
+                    <a href="/news" class="w-fit hover:underline">Notícia</a>
+                    <a href="/virtual-card" class="w-fit hover:underline">Carteirinha Virtual</a>
+                </div>
+
+                <div class="text-white flex flex-col gap-3">
+                    <a href="/conventions/sesi-senai" class="w-fit hover:underline">Convenção Sesi/Senai</a>
+                    <a href="/conventions/higher-education" class="w-fit hover:underline">Convenção Ensino Superior</a>
+                    <a href="/conventions/basic-education" class="w-fit hover:underline">Convenção Educação Básica</a>
+                    <a href="/conventions/senac" class="w-fit hover:underline">Convenção Senac</a>
+                </div>
+
+                <div class="text-white flex flex-col gap-3">
+                    <p>SINDICATO DOS PROFESSORES DE BAURU</p>
+                    <p>Rua Capitão Gomes Duarte,</p>
+                    <p>6-74 - Bauru - SP</p>
+                    <p>Fone-Fax: (14) 3879-5313</p>
+                    <div class="flex gap-2">
+                        <img src="/images/icons/contee.png" alt="Logo CONTEE" class="h-12 w-1/3 object-contain">
+                        <img src="/images/icons/ctb.png" alt="Logo CTB" class="h-12 w-1/3 object-contain">
+                        <img src="/images/icons/fepesp.png" alt="Logo FEPESP" class="h-12 w-1/3 object-contain">
+                    </div>
+                </div>
+
             </div>
-            <button class="px-4 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-[#1B5E1F] transition">
-                Logar como admin
-            </button>
-        </div>
-
-        <!-- Informações do Sindicato -->
-        <div class="text-white space-y-2">
-            <p class="font-semibold">SINDICATO DOS PROFESSORES DE BAURU</p>
-            <p>Rua Capitão Gomes Duarte,</p>
-            <p>6-74 - Bauru - SP</p>
-            <p>Fone-Fax: (14) 3879-5313</p>
-        </div>
-
-        <!-- Convenções -->
-        <div class="text-white space-y-2">
-            <p class="font-semibold">Convenções</p>
-            <p>Convenção Sesi/Senai</p>
-            <p>Convenção Ensino Superior</p>
-            <p>Convenção Educação Básica</p>
-            <p>Convenção Senac</p>
-        </div>
-
-        <!-- Logos -->
-        <div class="flex space-x-4">
-            <img src="/images/icons/contee.png" alt="Logo CONTEE" class="h-12 w-auto object-contain">
-            <img src="/images/icons/ctb.png" alt="Logo CTB" class="h-12 w-auto object-contain">
-            <img src="/images/icons/fepesp.png" alt="Logo FEPESP" class="h-12 w-auto object-contain">
-        </div>
-    </div>
-    <div class="bg-[#1A2C17] py-2 text-center">
-        <p class="text-white text-sm">
-            Sindicato dos Professores de Bauru 2024 - Todos os direitos reservados
-        </p>
-    </div>
-</footer>
-
-
-
+            <div class="bg-[#1A2C17] p-2 text-center">
+                <p class="text-white text-sm">
+                    Sindicato dos Professores de Bauru 2024 - Todos os direitos reservados
+                </p>
+            </div>
+        </footer>
         @vite(["resources/js/navigation-bar.js", "resources/js/multi-step-form.js"])
     </body>
 </html>
