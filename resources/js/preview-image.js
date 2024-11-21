@@ -1,6 +1,6 @@
 const dropzoneFile = document.getElementById("dropzone-file");
 
-dropzoneFile.addEventListener("change", (event) => {
+dropzoneFile?.addEventListener("change", (event) => {
     const imagePreview = document.getElementById("image-preview");
     const uploadPlaceholder = document.getElementById("upload-placeholder");
     const file = event.target.files[0];

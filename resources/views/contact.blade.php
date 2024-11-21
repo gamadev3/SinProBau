@@ -38,7 +38,7 @@
                         :name="'phone'"
                         :type="'tel'"
                         :label="'Celular'"
-                        :placeholder="'Digite o seu telefone'"
+                        :placeholder="'Digite o seu celular'"
                     />
                 </div>
             </div>

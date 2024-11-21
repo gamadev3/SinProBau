@@ -5,11 +5,14 @@ const nextTabButton = document.getElementById("nextBtn");
 const steps = document.querySelectorAll(".step");
 const stepIndicators = document.querySelectorAll(".stepIndicator");
 
-previousTabButton.addEventListener("click", () => updateTab(-1));
+previousTabButton?.addEventListener("click", () => updateTab(-1));
 
-nextTabButton.addEventListener("click", () => updateTab(1));
+nextTabButton?.addEventListener("click", () => updateTab(1));
 
-showTab(currentTab);
+// Este arquivo está sendo acessado por todas as telas do layout main, então algumas delas apresentam erro ao tentar ler algumas variáveis que acabam sendo nulas, e como showTab é uma função executada logo após a página ser renderizada, é necessário verificar se as variáveis envolvidas nela existem.
+if (previousTabButton && nextTabButton) {
+    showTab(currentTab);
+}
 
 function showTab(currentTab) {
     steps.forEach((step, index) => {
