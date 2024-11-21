@@ -94,8 +94,8 @@
         <x-input
             :name="'phone'"
             :type="'tel'"
-            :label="'Telefone'"
-            :placeholder="'Telefone'"
+            :label="'Celular'"
+            :placeholder="'Digite o seu celular'"
         />
         @error("phone")
             <x-error :message="$message" />

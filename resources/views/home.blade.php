@@ -13,7 +13,7 @@
                     <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
                 </div>
             </div>
-            @if ($trendingNotice)\
+            @if ($trendingNotice)
                 <div class="flex flex-col md2:flex-row mt-4 shadow-md rounded-2xl overflow-hidden">
                     <div class="md2:w-1/3 overflow-hidden">
                         <img src="{{ $trendingNotice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $trendingNotice->title }}">

@@ -81,7 +81,7 @@
                             <img src="/images/icons/ic_baseline-whatsapp.svg" alt="WhatsApp" class="w-6 h-6">
                         </a>
                     </div>
-                    <a href="/system" class="text-white hover:text-black border border-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                    <a href="/system" class="text-white hover:text-black border border-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                         Logar como admin
                     </a>
                 </div>
@@ -120,6 +120,6 @@
                 </p>
             </div>
         </footer>
-        @vite(["resources/js/navigation-bar.js", "resources/js/multi-step-form.js"])
+        @vite(["resources/js/navigation-bar.js", "resources/js/multi-step-form.js", "resources/js/become-a-member.js"])
     </body>
 </html>
