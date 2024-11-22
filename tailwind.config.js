@@ -14,6 +14,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                arialBlack: ["Arial Black", ...defaultTheme.fontFamily.sans],
                 arial: ["Arial", ...defaultTheme.fontFamily.sans],
             },
             screens: {

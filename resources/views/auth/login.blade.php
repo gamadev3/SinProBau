@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU")
 
 @section("content")
-    <a href="/" class="flex items-center gap-2 font-bold fixed top-5 left-5">
+    <a href="/" class="flex items-center gap-2 font-bold fixed top-7 left-5">
         <img src="/images/icons/back.svg" alt="Voltar" class="w-2">
         Voltar
     </a>

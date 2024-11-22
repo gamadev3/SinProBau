@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Sistema")
 
 @section("content")
-    <div class="w-full flex flex-col gap-8 p-5 md:p-10">
+    <div class="w-full flex flex-col gap-8 p-7 md:p-10">
         <h1 class="font-bold text-3xl border-b-2 border-['#ccc'] pb-4">Educação Básica</h1>
         <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
             <h1 class="font-bold text-3xl text-center">Cadastrar convenções</h1>
