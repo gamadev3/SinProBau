@@ -17,7 +17,7 @@
             </p>
         </div>
         <div class="w-full md2:w-1/2 h-full flex flex-col items-center gap-4">
-            <img src="/images/0261849e-1d30-4fd6-9baa-7235b1145367 1.png" alt="Ilustração de pessoa com celular" class="w-2/3">
+            <img src="/images/0261849e-1d30-4fd6-9baa-7235b1145367 1.webp" alt="Ilustração de pessoa com celular" class="w-2/3">
             <p class="text-center">Para baixar sua carteirinha virtual clique em uma das lojas abaixo:</p>
             <div class="flex flex-col md:flex-row w-full justify-center gap-2 md:gap-8">
                 <button type="button" class="flex items-center justify-center md:w-48 mt-3 text-white bg-black h-14 rounded-xl">

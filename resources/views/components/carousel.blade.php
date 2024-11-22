@@ -2,35 +2,35 @@
     <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
         <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item data-twe-carousel-active>
             <img
-                src="/images/banners/banner_educacao.jpg"
+                src="/images/banners/banner_educacao.webp"
                 class="block w-full"
                 alt="Educação"
             />
         </div>
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
             <img
-                src="/images/banners/banner_carteirinha.jpeg"
+                src="/images/banners/banner_carteirinha.webp"
                 class="block w-full"
                 alt="Carteirinha"
             />
         </div>
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
             <img
-                src="/images/banners/atendimento-presencial2.jpg"
+                src="/images/banners/atendimento-presencial2.webp"
                 class="block w-full"
                 alt="Atendimento presencial"
             />
         </div>
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
             <img
-                src="/images/banners/banner.jpg"
+                src="/images/banners/banner.webp"
                 class="block w-full"
                 alt="SINPROBAU"
             />
         </div>
         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
             <img
-                src="/images/banners/2.png"
+                src="/images/banners/2.webp"
                 class="block w-full"
                 alt="Fale conosco"
             />
