@@ -5,12 +5,11 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Email extends Mailable
+class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,11 +17,9 @@ class Email extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-        public $data,
-        public $file = null
+        public $data
     ) {
         $this->data = $data;
-        $this->file = $file;
     }
 
     /**
@@ -31,17 +28,18 @@ class Email extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "E-mail de Sindicalização",
+            subject: "E-mail de Contato",
         );
     }
 
     /**
      * Get the message content definition.
      */
-    public function content(): Content {
+    public function content(): Content
+    {
         return new Content(
-            view: "mail.mail",
-            with: ["data", $this->data]
+            view: "mail.contact-mail",
+            with: ["data" => $this->data]
         );
     }
 
@@ -50,15 +48,8 @@ class Email extends Mailable
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
-    public function attachments(): array {
-        $attachments = [];
-
-        if ($this->file) {
-            $attachments[] = Attachment::fromPath($this->file->getRealPath())
-            ->as($this->file->getClientOriginalName())
-            ->withMime($this->file->getMimeType());
-        }
-
-        return $attachments;
+    public function attachments(): array
+    {
+        return [];
     }
 }

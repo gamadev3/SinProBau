@@ -10,7 +10,7 @@
     <div class="w-full h-full mx-auto min-h-[calc(100vh-5rem)] flex justify-center items-center px-5 md:px-20 py-20">
         <div class="w-full md2:w-96 md:p-8 md2:p-8 flex flex-col gap-8 rounded-lg md:shadow-lg md2:shadow-lg">
             <div class="w-full flex justify-center">
-                <img src="/images/logo-sinprobau.png" alt="Logo do SINPROBAU">
+                <img src="/images/logo-sinprobau.webp" alt="Logo do SINPROBAU">
             </div>
             <form method="POST" action="/authentication" class="flex flex-col justify-between gap-8">
                 @csrf
