@@ -5,7 +5,7 @@
 <p><strong>Naturalidade:</strong> {{ $data['naturality'] }}</p>
 <p><strong>RG:</strong> {{ $data['rg'] }}</p>
 <p><strong>CPF:</strong> {{ $data['cpf'] }}</p>
-<p><strong>Telefone:</strong> {{ $data['phone'] }}</p>
+<p><strong>Celular:</strong> {{ $data['phone'] }}</p>
 <p><strong>E-mail:</strong> {{ $data['email'] }}</p>
 <p><strong>Endereço:</strong> {{ $data['address'] }}, {{ $data['number'] }}</p>
 <p><strong>Complemento:</strong> {{ $data['complement'] }}</p>
