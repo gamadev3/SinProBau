@@ -15,7 +15,7 @@
                 <div class="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
             </label>
             <a href="/" class="overflow-hidden flex items-center">
-                <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU" class="h-10 md:h-20 md2:h-20 md:p-4">
+                <img src="/images/logo-sinprobau.webp" alt="Logo SINPROBAU" class="h-10 md:h-20 md2:h-20 md:p-4">
             </a>
             <div class="navigation-bar duration-200 bg-white absolute md2:static min-h-[calc(100vh-80px)] md2:min-h-fit top-20 left-[-100vw] flex items-center px-4 shadow-md md2:shadow-none">
                 <ul class="flex flex-col md2:flex-row items-center gap-8 md2:gap-4">
@@ -66,7 +66,7 @@
         <footer class="w-full bg-[#1B5E1F]">
             <div class="grid gap-8 grid-cols-1 md:grid-cols-2 md2:grid-cols-4 p-10 sm:px-32 sm:py-16">
                 <div class="flex flex-col items-start gap-3">
-                    <img src="/images/icons/image_47_1.svg" alt="Logo SINPROBAU" class="w-40">
+                    <img src="/images/logo-sinprobau-footer.webp" alt="Logo SINPROBAU" class="w-40">
                     <div class="flex gap-5">
                         <a href="https://www.instagram.com/sinprobau?igsh=dDV3eTN3Y2htbXd0" target="_blank">
                             <img src="/images/icons/mdi_instagram.svg" alt="Instagram" class="w-6 h-6">
@@ -107,9 +107,9 @@
                     <p>6-74 - Bauru - SP</p>
                     <p>Fone-Fax: (14) 3879-5313</p>
                     <div class="flex gap-2">
-                        <img src="/images/icons/contee.png" alt="Logo CONTEE" class="h-12 w-1/3 object-contain">
-                        <img src="/images/icons/ctb.png" alt="Logo CTB" class="h-12 w-1/3 object-contain">
-                        <img src="/images/icons/fepesp.png" alt="Logo FEPESP" class="h-12 w-1/3 object-contain">
+                        <img src="/images/icons/contee.webp" alt="Logo CONTEE" class="h-12 w-1/3 object-contain">
+                        <img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 w-1/3 object-contain">
+                        <img src="/images/icons/fepesp.webp" alt="Logo FEPESP" class="h-12 w-1/3 object-contain">
                     </div>
                 </div>
 
