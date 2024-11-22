@@ -16,7 +16,7 @@
                 <div class="w-full h-full px-3 py-4 flex flex-col justify-between bg-white">
                     <div class="flex flex-col">
                         <div class="text-center flex justify-center items-center p-4 mt-8">
-                            <img src="/images/logo-sinprobau.png" alt="Logo SINPROBAU">
+                            <img src="/images/logo-sinprobau.webp" alt="Logo SINPROBAU">
                         </div>
                         <ul class="space-y-2 font-medium">
                             <li>

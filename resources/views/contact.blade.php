@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Contato")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-8 p-5 md:px-20 md:py-20">
+    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-8 p-7 md:p-20">
         <div class="w-full md:w-1/2 flex flex-col gap-4 md:gap-2">
             <h1 class="text-3xl font-bold">Contato</h1>
             <p>Preencha o formulário abaixo com os seus dados que o mais breve possível entraremos em contato</p>

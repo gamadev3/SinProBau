@@ -3,7 +3,7 @@
 @section("title", "SINPROBAU - Seja Sócio")
 
 @section("content")
-    <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-5 md:px-20 md:py-20">
+    <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-7 md:p-20">
         <h1 class="text-4xl font-bold">CONTATO</h1>
         <h1 class="text-3xl font-bold">Autorização de sindicalização</h1>
         <p>Se você, professor, gostou de nossas propostas preencha o formulário abaixo e torne-se um associado.</p>
