@@ -67,7 +67,7 @@
             <div class="grid gap-8 grid-cols-1 md:grid-cols-2 md2:grid-cols-4 p-10 sm:px-32 sm:py-16">
                 <div class="flex flex-col items-start gap-3">
                     <img src="/images/logo-sinprobau-footer.webp" alt="Logo SINPROBAU" class="w-40">
-                    <div class="flex gap-7">
+                    <div class="flex gap-5">
                         <a href="https://www.instagram.com/sinprobau?igsh=dDV3eTN3Y2htbXd0" target="_blank">
                             <img src="/images/icons/mdi_instagram.svg" alt="Instagram" class="w-6 h-6">
                         </a>
