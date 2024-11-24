@@ -19,7 +19,9 @@ class NewsController extends Controller {
     public function news() {
         $trendingNotice = News::where("is_trending", "=", "1")->first();
 
-        $news = News::where("is_trending", "=", "0")->paginate(4);
+        $news = News::where("is_trending", "=", "0")
+                        ->orderBy("created_at", "desc")
+                        ->paginate(4);
 
         return view("news.news", [
             "trendingNotice" => $trendingNotice,

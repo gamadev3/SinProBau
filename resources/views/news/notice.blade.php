@@ -9,10 +9,16 @@
         <div class="flex justify-between">
             <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
             <input id="share" type="text" class="hidden" value="{{ url()->current() }}" disabled readonly>
-            <button data-copy-to-clipboard-target="share" class="flex items-center gap-2 font-bold">
+            <button data-copy-to-clipboard-target="share" class="flex items-center gap-2 font-bold" data-tooltip-target="copy">
                 Compartilhe
-                <img src="/images/icons/share-nodes.svg" alt="Compartilhe">
+                <span id="default-icon">
+                    <img src="/images/icons/share-nodes.svg" alt="Compartilhe">
+                </span>
             </button>
+            <div id="copy" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                <span id="default-tooltip-message">Clique para copiar</span>
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
         </div>
         <p class="text-xl text-justify">{!! nl2br($notice->content) !!}</p>
         <h1 class="text-4xl font-bold mt-8">Veja mais</h1>
