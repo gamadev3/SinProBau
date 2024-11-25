@@ -78,7 +78,7 @@
             </p>
         </div>
 
-        <h1 class="text-[#138942] font-bold text-2xl">
+        <h1 class="text-[#138942] font-bold text-3xl">
             Diretoria
         </h1>
 
