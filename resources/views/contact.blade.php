@@ -19,12 +19,12 @@
             @csrf
 
             @if (session("error"))
-                <x-error :message="Session::get('error')" />
+                <x-error :message="session('error')" />
             @endif
 
             @if (session("success"))
                 <div class="py-2">
-                    <x-success :message="Session::get('success')" />
+                    <x-success :message="session('success')" />
                 </div>
             @endif
 
@@ -52,15 +52,18 @@
                     @enderror
                 </div>
                 <div>
-                    <x-input
-                        :name="'phone'"
-                        :type="'tel'"
-                        :label="'Celular'"
-                        :placeholder="'Digite o seu celular'"
+                    <label
+                        for="phone"
+                        class="block mb-2 text-sm font-medium text-gray-900"
+                    >Celular</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] block w-full p-2.5 outline-none"
+                        placeholder="Digitar o seu celular"
                     />
-                    @error("phone")
-                        <x-error :message="$message" />
-                    @enderror
+
                 </div>
             </div>
             <div class="mb-6">

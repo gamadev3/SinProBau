@@ -9,12 +9,12 @@
         <p>Se você, professor, gostou de nossas propostas preencha o formulário abaixo e torne-se um associado.</p>
 
         @if (session("error"))
-            <x-error :message="Session::get('error')" />
+            <x-error :message="session('error')" />
         @endif
 
         @if (session("success"))
             <div class="py-2">
-                <x-success :message="Session::get('success')" />
+                <x-success :message="session('success')" />
             </div>
         @endif
 
