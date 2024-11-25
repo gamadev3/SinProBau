@@ -108,13 +108,11 @@ class IndexController extends Controller {
     public function sendContactEmail(Request $request) {
         $rules = [
             "name" => "required",
-            "phone" => "required",
             "email" => "required|email",
         ];
 
         $messages = [
             "name.required" => "O campo Nome é obrigatório.",
-            "phone.required" => "O campo Telefone é obrigatório.",
             "email.required" => "O campo E-mail é obrigatório.",
             "email.email" => "Por favor, insira um endereço de e-mail válido.",
         ];

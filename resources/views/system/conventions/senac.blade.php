@@ -20,7 +20,7 @@
         <div class="flex flex-col gap-4">
             @if (session("success"))
                 <div class="py-2">
-                    <x-success :message="Session::get('success')" />
+                    <x-success :message="session('success')" />
                 </div>
             @endif
             <div class="w-full relative overflow-x-auto shadow-md sm:rounded-lg">
