@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-10 md:px-20 md:py-20">
-        <h1 class="text-4xl font-bold text-center">{{ $notice->title }}</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold text-center">{{ $notice->title }}</h1>
         <img src="{{ $notice->image_url }}" alt="{{ $notice->title }}" class="w-full sm:w-1/2 mx-auto">
         <div class="flex justify-between">
             <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
