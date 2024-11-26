@@ -4,12 +4,12 @@
             <th scope="col" class="pl-6 pr-4 py-3">
                 Título
             </th>
-            @if ($type == "notice")
+            @if ($type == "noticia")
                 <th scope="col" class="px-2 py-3 text-center">
                     Campanha Salarial
                 </th>
             @endif
-            @if ($type == "notice")
+            @if ($type == "noticia")
                 <th scope="col" class="px-2 py-3 text-center">
                     Em Alta
                 </th>
@@ -34,7 +34,7 @@
                 <th scope="row" class="pl-6 pr-4 font-medium text-gray-900">
                     {!! nl2br(e(strlen($dataItem->title) > 20 ? substr($dataItem->title, 0, 20) . "..." : $dataItem->title)) !!}
                 </th>
-                @if ($type == "notice")
+                @if ($type == "noticia")
                     <th scope="row" class="px-2 py-4 font-medium text-gray-900">
                         <div class="flex justify-center items-center">
                             {!!
@@ -45,7 +45,7 @@
                         </div>
                     </th>
                 @endif
-                @if ($type == "notice")
+                @if ($type == "noticia")
                     <th scope="row" class="px-2 py-4 font-medium text-gray-900">
                         <div class="flex justify-center items-center">
                             {!!
