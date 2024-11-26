@@ -12,7 +12,7 @@
             <div class="w-full flex justify-center">
                 <img src="/images/logo-sinprobau.webp" alt="Logo do SINPROBAU">
             </div>
-            <form method="POST" action="/authentication" class="flex flex-col justify-between gap-8">
+            <form method="POST" action="/autenticar" class="flex flex-col justify-between gap-8">
                 @csrf
                 @method("POST")
 

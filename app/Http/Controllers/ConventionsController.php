@@ -16,13 +16,13 @@ class ConventionsController extends Controller {
     }
 
     public function basicEducation() {
-        $conventions = Convention::where("type", "LIKE", "%basic-education%")->get();
+        $conventions = Convention::where("type", "LIKE", "%educacao-basica%")->get();
 
         return view("conventions.basic-education", ["conventions" => $conventions]);
     }
 
     public function higherEducation() {
-        $conventions = Convention::where("type", "LIKE", "%higher-education%")->get();
+        $conventions = Convention::where("type", "LIKE", "%ensino-superior%")->get();
 
         return view("conventions.higher-education", ["conventions" => $conventions]);
     }
@@ -44,11 +44,11 @@ class ConventionsController extends Controller {
         $search = request("search");
 
         if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%basic-education%")
+            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%basic-education%")->get();
+            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")->get();
         }
 
         return view("system.conventions.basic-education", ["conventions" => $conventions]);
@@ -58,11 +58,11 @@ class ConventionsController extends Controller {
         $search = request("search");
 
         if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%higher-education%")
+            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%higher-education%")->get();
+            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")->get();
         }
 
         return view("system.conventions.higher-education", ["conventions" => $conventions]);
@@ -148,14 +148,14 @@ class ConventionsController extends Controller {
             return back()->with("error", "Erro ao salvar a convenção.");
         }
 
-        return redirect("/system/" . $request->type)->with("success", "Convenção cadastrada com sucesso!");
+        return redirect("/sistema/" . $request->type)->with("success", "Convenção cadastrada com sucesso!");
     }
 
     public function conventionUpdateForm($id) {
         $convention = Convention::findOrFail($id);
 
         if (!$convention) {
-            return redirect("/system/conventions/" . $convention->type)->with("error", "Convenção não encontrada.");
+            return redirect("/sistema/conventions/" . $convention->type)->with("error", "Convenção não encontrada.");
         }
 
         return view("system.conventions.convention-update-form", ["convention" => $convention]);
@@ -190,7 +190,7 @@ class ConventionsController extends Controller {
 
         $oldConvention->update($request->only(["title", "type"]));
 
-        return redirect("/system/" . $type)->with("success", "Convenção atualizada com sucesso!");
+        return redirect("/sistema/" . $type)->with("success", "Convenção atualizada com sucesso!");
     }
 
     public function conventionDelete($id) {
@@ -198,12 +198,12 @@ class ConventionsController extends Controller {
         $type = $convention->type;
 
         if (!$convention) {
-            return redirect("/system/" . $type)->with("error", "Convenção não encontrada.");
+            return redirect("/sistema/" . $type)->with("error", "Convenção não encontrada.");
         }
 
         $this->deleteDocumentFromStorage($convention->document_path);
         $convention->delete();
 
-        return redirect("/system/" . $type)->with("success", "Convenção excluída com sucesso!");
+        return redirect("/sistema/" . $type)->with("success", "Convenção excluída com sucesso!");
     }
 }

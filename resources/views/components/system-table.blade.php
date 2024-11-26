@@ -63,7 +63,7 @@
                     {{ date("d/m/Y", strtotime($dataItem->updated_at)) }}
                 </th>
                 <td class="px-2 py-4">
-                    <a href="/system/{{ $type }}-update-form/{{ $dataItem->id }}" class="w-fit text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 flex items-center justify-center gap-2">
+                    <a href="/sistema/{{ $type }}-formulario-atualizacao/{{ $dataItem->id }}" class="w-fit text-white bg-[#5974C4] hover:bg-[#485d9e] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 flex items-center justify-center gap-2">
                         <img src="/images/icons/edit.svg" alt="Editar">
                         Editar
                     </a>

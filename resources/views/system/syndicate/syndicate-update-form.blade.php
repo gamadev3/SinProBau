@@ -5,7 +5,7 @@
 @section("content")
     <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center gap-8 p-7 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Atualizar Diretor(a)</h1>
-        <form method="POST" action="/system/director-update/{{ $director->id }}" enctype="multipart/form-data" class="w-full flex flex-col gap-10 md:px-4 py-4">
+        <form method="POST" action="/sistema/atualizar-diretor/{{ $director->id }}" enctype="multipart/form-data" class="w-full flex flex-col gap-10 md:px-4 py-4">
             @csrf
             @method("POST")
             <div class="flex flex-col gap-10 mb-6">

@@ -32,7 +32,7 @@
                 <button data-modal-toggle="deleteModal-{{ $id }}" type="button" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10">
                     Não, cancele
                 </button>
-                <form method="POST" action="/system/{{ $type }}-delete/{{ $id }}">
+                <form method="POST" action="/sistema/deletar-{{ $type }}/{{ $id }}">
                     @csrf
                     @method("POST")
                     <button type="submit" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300">

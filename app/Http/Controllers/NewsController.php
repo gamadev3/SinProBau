@@ -118,7 +118,7 @@ class NewsController extends Controller {
             return back()->with("error", "Erro ao salvar a notícia.");
         }
 
-        return redirect("/system/news")->with("success", "Notícia cadastrada com sucesso!");
+        return redirect("/sistema/noticias")->with("success", "Notícia cadastrada com sucesso!");
     }
 
     // Formulário para atualizar uma notícia
@@ -126,7 +126,7 @@ class NewsController extends Controller {
         $notice = News::findOrFail($id);
 
         if (!$notice) {
-            return redirect("/system/news")->with("error", "Notícia não encontrada.");
+            return redirect("/sistema/noticias")->with("error", "Notícia não encontrada.");
         }
 
         return view("system.news.news-update-form", ["notice" => $notice]);
@@ -163,19 +163,19 @@ class NewsController extends Controller {
         $oldNotice->is_trending = $request->has("is_trending") ? true : false;
         $oldNotice->update($request->only(["title", "content"]));
 
-        return redirect("/system/news")->with("success", "Notícia atualizada com sucesso!");
+        return redirect("/sistema/noticias")->with("success", "Notícia atualizada com sucesso!");
     }
 
     public function noticeDelete($id) {
         $notice = News::findOrFail($id);
 
         if (!$notice) {
-            return redirect("/system/news")->with("error", "Notícia não encontrada.");
+            return redirect("/sistema/noticias")->with("error", "Notícia não encontrada.");
         }
 
         $this->deleteImageFromStorage($notice->image_path);
         $notice->delete();
 
-        return redirect("/system/news")->with("success", "Notícia excluída com sucesso!");
+        return redirect("/sistema/noticias")->with("success", "Notícia excluída com sucesso!");
     }
 }

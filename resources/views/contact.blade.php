@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <form method="POST" action="/send-contact-email" class="w-full md:w-1/2 md:px-4 py-4">
+        <form method="POST" action="/enviar-email-contato" class="w-full md:w-1/2 md:px-4 py-4">
             @csrf
 
             @if (session("error"))

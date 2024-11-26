@@ -9,7 +9,7 @@
             <div class="flex flex-col md:flex-row justify-between gap-2">
                 <h1 class="text-3xl font-bold">Notícias</h1>
                 <div class="flex items-center gap-2 self-end">
-                    <a href="/news" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
+                    <a href="/noticias" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
                     <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
                 </div>
             </div>
@@ -23,7 +23,7 @@
                             <div class="flex flex-col gap-4 px-6 py-10 flex-1">
                                 <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
                                 <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
-                                <a href="/notice/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
+                                <a href="/noticia/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
                             </div>
                         </div>
                     @endforeach
@@ -44,7 +44,7 @@
                             <div class="flex flex-col gap-4 px-6 py-10 flex-1">
                                 <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
                                 <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
-                                <a href="/notice/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
+                                <a href="/noticia/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
                             </div>
                         </div>
                     @endforeach

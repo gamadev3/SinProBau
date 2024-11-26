@@ -31,7 +31,7 @@
                     <div class="flex flex-col gap-4 px-6 py-10 flex-1">
                         <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
                         <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
-                        <a href="/notice/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
+                        <a href="/noticia/{{ $notice->id }}" class="mt-auto text-[#138942] hover:text-white border border-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base px-5 py-2.5 text-center">Ler notícia</a>
                     </div>
                 </div>
             @endforeach

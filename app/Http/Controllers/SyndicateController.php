@@ -51,7 +51,7 @@ class SyndicateController extends Controller {
             "end_date" => Carbon::createFromFormat("d/m/Y", $request->end)->format("Y-m-d"),
         ]);
 
-        return redirect("/system/syndicate")->with("success", "Período de vigência atualizado com sucesso!");
+        return redirect("/sistema/sindicato")->with("success", "Período de vigência atualizado com sucesso!");
     }
 
     public function syndicateForm() {
@@ -71,14 +71,14 @@ class SyndicateController extends Controller {
             return back()->with("error", "Erro ao salvar diretor.");
         }
 
-        return redirect("/system/syndicate")->with("success", "Diretor cadastrado com sucesso!");
+        return redirect("/sistema/sindicato")->with("success", "Diretor cadastrado com sucesso!");
     }
 
     public function directorUpdateForm($id) {
         $director = Director::findOrFail($id);
 
         if (!$director) {
-            return redirect("/system/syndicate")->with("error", "Diretor não encontrado.");
+            return redirect("/sistema/sindicato")->with("error", "Diretor não encontrado.");
         }
 
         return view("system.syndicate.syndicate-update-form", ["director" => $director]);
@@ -89,7 +89,7 @@ class SyndicateController extends Controller {
 
         $director->update($request->only(["name", "role"]));
 
-        return redirect("/system/syndicate")->with("success", "Diretor atualizado com sucesso!");
+        return redirect("/sistema/sindicato")->with("success", "Diretor atualizado com sucesso!");
     }
 
     public function directorDelete($id) {
@@ -97,6 +97,6 @@ class SyndicateController extends Controller {
 
         $director->delete();
 
-        return redirect("/system/syndicate")->with("success", "Diretor excluído com sucesso!");
+        return redirect("/sistema/sindicato")->with("success", "Diretor excluído com sucesso!");
     }
 }

@@ -87,7 +87,7 @@
                 Conheça a nossa Diretoria
             </h1>
             <h2 class="text-[#454545] text-center text-2xl mb-4">
-                do SINPROBAU com mandato vigente {{ date("Y", strtotime($direction->start_date)) }}-{{ date("Y", strtotime($direction->end_date)) }}
+                do SINPROBAU com mandato vigente de {{ date("Y", strtotime($direction->start_date)) }} a {{ date("Y", strtotime($direction->end_date)) }}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 md2:grid-cols-4 w-full gap-8 justify-items-center">
                 @foreach ($directors as $director)
