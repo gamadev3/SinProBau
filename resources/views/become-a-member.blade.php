@@ -18,7 +18,7 @@
             </div>
         @endif
 
-        <form id="send-email-form" method="POST" action="send-email" enctype="multipart/form-data">
+        <form id="send-email-form" method="POST" action="/enviar-email-seja-socio" enctype="multipart/form-data">
             @csrf
             <ol class="flex justify-between items-center w-full text-xs text-gray-900 font-medium sm:text-base">
                 <li class="stepIndicator flex w-full relative text-[#138942]  after:content-['']  after:w-full after:h-0.5  after:bg-gray-200 after:inline-block after:absolute after:top-3 after:left-4">

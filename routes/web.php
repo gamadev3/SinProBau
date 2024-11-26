@@ -9,53 +9,53 @@ use App\Http\Controllers\NewsController;
 use App\Http\Middleware\FirebaseAuthMiddleware;
 
 Route::get("/", [IndexController::class, "index"]);
-Route::get("/virtual-card", [IndexController::class, "virtualCard"]);
-Route::get("/contact", [IndexController::class, "contact"]);
-Route::post("/send-contact-email", [IndexController::class, "sendContactEmail"]);
-Route::get("/become-a-member", [IndexController::class, "becomeAMember"]);
-Route::post("/send-email", [IndexController::class, "sendEmail"]);
+Route::get("/carteirinha-virtual", [IndexController::class, "virtualCard"]);
+Route::get("/contato", [IndexController::class, "contact"]);
+Route::post("/enviar-email-contato", [IndexController::class, "sendContactEmail"]);
+Route::get("/seja-socio", [IndexController::class, "becomeAMember"]);
+Route::post("/enviar-email-seja-socio", [IndexController::class, "sendEmail"]);
 
-Route::get("/conventions/basic-education", [ConventionsController::class, "basicEducation"]);
-Route::get("/conventions/higher-education", [ConventionsController::class, "higherEducation"]);
-Route::get("/conventions/sesi-senai", [ConventionsController::class, "sesiSenai"]);
-Route::get("/conventions/senac", [ConventionsController::class, "senac"]);
+Route::get("/convencoes/educacao-basica", [ConventionsController::class, "basicEducation"]);
+Route::get("/convencoes/ensino-superior", [ConventionsController::class, "higherEducation"]);
+Route::get("/convencoes/sesi-senai", [ConventionsController::class, "sesiSenai"]);
+Route::get("/convencoes/senac", [ConventionsController::class, "senac"]);
 
-Route::get("/syndicate", [SyndicateController::class, "syndicate"]);
+Route::get("/sindicato", [SyndicateController::class, "syndicate"]);
 
-Route::get("/news", [NewsController::class, "news"]);
-Route::get("/notice/{id}", [NewsController::class, "notice"]);
+Route::get("/noticias", [NewsController::class, "news"]);
+Route::get("/noticia/{id}", [NewsController::class, "notice"]);
 
 Route::get("/login", [FirebaseAuthController::class, "login"]);
-Route::post("/authentication", [FirebaseAuthController::class, "authentication"]);
+Route::post("/autenticar", [FirebaseAuthController::class, "authentication"]);
 
 Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
-    Route::get("/system", [FirebaseAuthController::class, "system"]);
-    Route::post("/logout", [FirebaseAuthController::class, "logout"]);
+    Route::get("/sistema", [FirebaseAuthController::class, "system"]);
+    Route::post("/deslogar", [FirebaseAuthController::class, "logout"]);
 
-    Route::get("/system/basic-education", [ConventionsController::class, "basicEducationSystem"]);
-    Route::get("/system/higher-education", [ConventionsController::class, "higherEducationSystem"]);
-    Route::get("/system/sesi-senai", [ConventionsController::class, "sesiSenaiSystem"]);
-    Route::get("/system/senac", [ConventionsController::class, "senacSystem"]);
+    Route::get("/sistema/educacao-basica", [ConventionsController::class, "basicEducationSystem"]);
+    Route::get("/sistema/ensino-superior", [ConventionsController::class, "higherEducationSystem"]);
+    Route::get("/sistema/sesi-senai", [ConventionsController::class, "sesiSenaiSystem"]);
+    Route::get("/sistema/senac", [ConventionsController::class, "senacSystem"]);
 
-    Route::get("/system/convention-form/{type}", [ConventionsController::class, "conventionForm"]);
-    Route::post("/system/convention-register", [ConventionsController::class, "conventionRegister"]);
-    Route::get("/system/convention-update-form/{id}", [ConventionsController::class, "conventionUpdateForm"]);
-    Route::post("/system/convention-update/{id}", [ConventionsController::class, "conventionUpdate"]);
-    Route::post("/system/convention-delete/{id}", [ConventionsController::class, "conventionDelete"]);
+    Route::get("/sistema/convencao-formulario/{type}", [ConventionsController::class, "conventionForm"]);
+    Route::post("/sistema/registrar-convencao", [ConventionsController::class, "conventionRegister"]);
+    Route::get("/sistema/convencao-formulario-atualizacao/{id}", [ConventionsController::class, "conventionUpdateForm"]);
+    Route::post("/sistema/atualizar-convencao/{id}", [ConventionsController::class, "conventionUpdate"]);
+    Route::post("/sistema/deletar-convencao/{id}", [ConventionsController::class, "conventionDelete"]);
 
-    Route::get("/system/syndicate", [SyndicateController::class, "systemSyndicateDirectors"]);
-    Route::post("/system/syndicate-update-duration", [SyndicateController::class, "syndicateDurationUpdate"]);
-    Route::get("/system/syndicate-form", [SyndicateController::class, "syndicateForm"]);
-    Route::post("/system/director-register", [SyndicateController::class, "directorRegister"]);
-    Route::get("/system/director-update-form/{id}", [SyndicateController::class, "directorUpdateForm"]);
-    Route::post("/system/director-update/{id}", [SyndicateController::class, "directorUpdate"]);
-    Route::post("/system/director-delete/{id}", [SyndicateController::class, "directorDelete"]);
+    Route::get("/sistema/sindicato", [SyndicateController::class, "systemSyndicateDirectors"]);
+    Route::post("/sistema/sindicato-atualizar-vigencia", [SyndicateController::class, "syndicateDurationUpdate"]);
+    Route::get("/sistema/sindicato-formulario", [SyndicateController::class, "syndicateForm"]);
+    Route::post("/sistema/registrar-diretor", [SyndicateController::class, "directorRegister"]);
+    Route::get("/sistema/diretor-formulario-atualizacao/{id}", [SyndicateController::class, "directorUpdateForm"]);
+    Route::post("/sistema/atualizar-diretor/{id}", [SyndicateController::class, "directorUpdate"]);
+    Route::post("/sistema/deletar-diretor/{id}", [SyndicateController::class, "directorDelete"]);
 
-    Route::get("/system/news", [NewsController::class, "systemNews"]);
+    Route::get("/sistema/noticias", [NewsController::class, "systemNews"]);
 
-    Route::get("/system/notice-form", [NewsController::class, "noticeForm"]);
-    Route::post("/system/notice-register", [NewsController::class, "noticeRegister"]);
-    Route::get("/system/notice-update-form/{id}", [NewsController::class, "noticeUpdateForm"]);
-    Route::post("/system/notice-update/{id}", [NewsController::class, "noticeUpdate"]);
-    Route::post("/system/notice-delete/{id}", [NewsController::class, "noticeDelete"]);
+    Route::get("/sistema/noticia-formulario", [NewsController::class, "noticeForm"]);
+    Route::post("/sistema/noticia-registrar", [NewsController::class, "noticeRegister"]);
+    Route::get("/sistema/noticia-formulario-atualizacao/{id}", [NewsController::class, "noticeUpdateForm"]);
+    Route::post("/sistema/atualizar-noticia/{id}", [NewsController::class, "noticeUpdate"]);
+    Route::post("/sistema/deletar-noticia/{id}", [NewsController::class, "noticeDelete"]);
 });

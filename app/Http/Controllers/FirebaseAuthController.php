@@ -21,7 +21,7 @@ class FirebaseAuthController extends Controller {
     }
 
     public function system() {
-        return redirect("/system/news");
+        return redirect("/sistema/noticias");
     }
 
     public function authentication(Request $request) {
@@ -40,7 +40,7 @@ class FirebaseAuthController extends Controller {
 
             if ($user) {
                 session(["firebase_token" => $user->idToken()]);
-                return redirect("/system");
+                return redirect("/sistema");
             } else {
                 return redirect("/login")->with("error", "Tente realizar o login novamente.");
             }

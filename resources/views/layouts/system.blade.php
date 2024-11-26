@@ -27,32 +27,32 @@
                                 </button>
                                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                                     <li>
-                                        <a href="/system/basic-education" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Educação Básica</a>
+                                        <a href="/sistema/educacao-basica" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Educação Básica</a>
                                     </li>
                                     <li>
-                                        <a href="/system/higher-education" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Ensino Superior</a>
+                                        <a href="/sistema/ensino-superior" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Ensino Superior</a>
                                     </li>
                                     <li>
-                                        <a href="/system/sesi-senai" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Sesi/Senai</a>
+                                        <a href="/sistema/sesi-senai" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Sesi/Senai</a>
                                     </li>
                                     <li>
-                                        <a href="/system/senac" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Senac</a>
+                                        <a href="/sistema/senac" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 outline-none">Senac</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="/system/syndicate" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
+                                <a href="/sistema/sindicato" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
                                     <span class="flex-1 ms-3 whitespace-nowrap">Sindicato</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="/system/news" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
+                                <a href="/sistema/noticias" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
                                     <span class="flex-1 ms-3 whitespace-nowrap">Notícias</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <form method="POST" action="{{ URL("/logout") }}" class="flex justify-end">
+                    <form method="POST" action="{{ URL("/deslogar") }}" class="flex justify-end">
                         @csrf
                         <button type="submit" class="focus:outline-none text-black font-bold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 flex gap-2 items-center">
                             <img src="/images/icons/log-out.svg" alt="Deslogar">
