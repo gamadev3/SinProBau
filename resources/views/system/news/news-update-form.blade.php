@@ -5,7 +5,7 @@
 @section("content")
     <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-7 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Atualizar Notícia</h1>
-        <form method="POST" action="/sistema/noticia-atualizar/{{ $notice->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
+        <form method="POST" action="/sistema/atualizar-noticia/{{ $notice->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf
             @method("POST")
             <div class="flex flex-col gap-10 mb-6">
@@ -30,11 +30,14 @@
                             name="salary_campaign"
                             type="checkbox"
                             value="1"
-                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7]"
+                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7] cursor-pointer"
                             {{ $notice->salary_campaign ? "checked" : "" }}
                         />
                         </div>
-                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Sim, faz parte.</label>
+                        <label
+                            for="remember"
+                            class="ms-2 text-sm font-medium text-gray-900 cursor-pointer"
+                        >Sim, faz parte.</label>
                     </div>
                 </div>
                 <div class="flex flex-col">
@@ -46,11 +49,14 @@
                             name="is_trending"
                             type="checkbox"
                             value="1"
-                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7]"
+                            class="w-4 h-4 text-[#138942] border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#A5D6A7] cursor-pointer"
                             {{ $notice->is_trending ? "checked" : "" }}
                         />
                         </div>
-                        <label for="is_trending" class="ms-2 text-sm font-medium text-gray-900">Sim, adicionar.</label>
+                        <label
+                            for="is_trending"
+                            class="ms-2 text-sm font-medium text-gray-900 cursor-pointer"
+                        >Sim, adicionar.</label>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">

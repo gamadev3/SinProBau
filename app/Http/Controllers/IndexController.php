@@ -11,16 +11,26 @@ use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller {
     public function index() {
-        $news = News::where("is_trending", "=", "1")
-                            ->union(
-                                News::where("is_trending", "=", "0")
-                                ->orderBy("created_at", "desc")
-                                ->limit(3)
-                            )->get();
+        $trendingNotice = News::where("is_trending", "=", "1")->get();
+
+        if ($trendingNotice->isEmpty()) {
+            $news = News::where("is_trending", "=", "0")
+                            ->orderBy("created_at", "desc")
+                            ->limit(4)
+                            ->get();
+        } else {
+            $otherNews = News::where("is_trending", "=", "0")
+                            ->orderBy("created_at", "desc")
+                            ->limit(3)
+                            ->get();
+
+            $news = $trendingNotice->concat($otherNews);
+        }
 
         $salaryCampaign = News::where("salary_campaign", "=", "1")
-                        ->limit(8)
-                        ->get();
+                            ->orderBy("created_at", "desc")
+                            ->limit(8)
+                            ->get();
 
         return view("home", [
             "salaryCampaign" => $salaryCampaign,
