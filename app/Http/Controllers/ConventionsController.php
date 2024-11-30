@@ -48,7 +48,9 @@ class ConventionsController extends Controller {
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")->get();
+            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")
+                                        ->orderBy("updated_at", "desc")
+                                        ->get();
         }
 
         return view("system.conventions.basic-education", ["conventions" => $conventions]);
@@ -62,7 +64,9 @@ class ConventionsController extends Controller {
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")->get();
+            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")
+                                        ->orderBy("updated_at", "desc")
+                                        ->get();
         }
 
         return view("system.conventions.higher-education", ["conventions" => $conventions]);
@@ -76,7 +80,9 @@ class ConventionsController extends Controller {
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")->get();
+            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")
+                                        ->orderBy("updated_at", "desc")
+                                        ->get();
         }
 
         return view("system.conventions.sesi-senai", ["conventions" => $conventions]);
@@ -90,7 +96,9 @@ class ConventionsController extends Controller {
                                         ->where("title", "LIKE", "%{$search}%")
                                         ->get();
         } else {
-            $conventions = Convention::where("type", "LIKE", "%senac%")->get();
+            $conventions = Convention::where("type", "LIKE", "%senac%")
+                                        ->orderBy("updated_at", "desc")
+                                        ->get();
         }
 
         return view("system.conventions.senac", ["conventions" => $conventions]);

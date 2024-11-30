@@ -20,7 +20,7 @@ class NewsController extends Controller {
         $trendingNotice = News::where("is_trending", "=", "1")->first();
 
         $news = News::where("is_trending", "=", "0")
-                        ->orderBy("created_at", "desc")
+                        ->orderBy("updated_at", "desc")
                         ->paginate(4);
 
         return view("news.news", [
@@ -35,10 +35,10 @@ class NewsController extends Controller {
 
         if ($search) {
             $news = News::where("title", "LIKE", "%{$search}%")
-                ->orWhere("content", "LIKE", "%{$search}%")
-                ->get();
+                        ->orWhere("content", "LIKE", "%{$search}%")
+                        ->get();
         } else {
-            $news = News::all();
+            $news = News::orderBy("updated_at", "desc")->get();
         }
 
         return view("system.news.news", ["news" => $news]);
@@ -54,9 +54,9 @@ class NewsController extends Controller {
         );
 
         $recentNews = News::where("id", "!=", $id)
-                                ->orderBy("created_at", "desc")
-                                ->take(3)
-                                ->get();
+                            ->orderBy("updated_at", "desc")
+                            ->take(3)
+                            ->get();
 
         return view("news.notice", [
             "notice" => $notice,
