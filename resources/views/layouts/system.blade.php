@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield("title")</title>
-        @vite(["resources/css/app.css", "resources/js/app.js", "resources/js/preview-image.js"])
+        @vite(["resources/css/app.css", "resources/js/app.js", "resources/js/preview-image.js", "resources/js/submit-form.js"])
     </head>
     <body class="font-arial min-h-screen flex flex-col md2:flex-row">
         @if (session()->has("firebase_token"))
