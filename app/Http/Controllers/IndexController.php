@@ -15,12 +15,12 @@ class IndexController extends Controller {
 
         if ($trendingNotice->isEmpty()) {
             $news = News::where("is_trending", "=", "0")
-                            ->orderBy("created_at", "desc")
+                            ->orderBy("updated_at", "desc")
                             ->limit(4)
                             ->get();
         } else {
             $otherNews = News::where("is_trending", "=", "0")
-                            ->orderBy("created_at", "desc")
+                            ->orderBy("updated_at", "desc")
                             ->limit(3)
                             ->get();
 
@@ -28,7 +28,7 @@ class IndexController extends Controller {
         }
 
         $salaryCampaign = News::where("salary_campaign", "=", "1")
-                            ->orderBy("created_at", "desc")
+                            ->orderBy("updated_at", "desc")
                             ->limit(8)
                             ->get();
 
