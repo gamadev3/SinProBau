@@ -63,7 +63,6 @@ class IndexController extends Controller {
             "address" => "required",
             "name" => "required",
             "number" => "required",
-            "complement" => "required",
             "neighborhood" => "required",
             "city" => "required",
             "state" => "required",

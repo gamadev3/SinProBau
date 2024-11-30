@@ -28,9 +28,6 @@
             :label="'Complemento'"
             :placeholder="'Digite o complemento'"
         />
-        @error("complement")
-            <x-error :message="$message" />
-        @enderror
     </div>
     <div>
         <x-input
