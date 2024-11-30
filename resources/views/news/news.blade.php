@@ -33,7 +33,7 @@
             @endforelse
         </div>
         @if (count($news) > 0)
-            {!! $news->onEachSide(1)->links("pagination::custom") !!}
+            {!! $news->onEachSide(2)->links("pagination::custom") !!}
         @endif
     </div>
 @endsection

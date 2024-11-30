@@ -18,14 +18,16 @@
             @foreach ($elements as $element)
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
-                        @if ($page == $paginator->currentPage())
-                            <li aria-current="page">
-                                <a class="cursor-pointer text-green-700 font-medium text-sm px-3 py-2.5 text-center mx-2 mb-2">{{ $page }}</a>
-                            </li>
-                        @else
-                            <li>
-                                <a href="{{ $url }}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-sm text-sm px-3 py-2.5 text-center mx-2 mb-2">{{ $page }}</a>
-                            </li>
+                        @if ($page >= $paginator->currentPage() - 4 && $page <= $paginator->currentPage() + 4)
+                            @if ($page == $paginator->currentPage())
+                                <li aria-current="page">
+                                    <a class="cursor-pointer text-green-700 font-medium text-sm px-3 py-2.5 text-center mx-2 mb-2">{{ $page }}</a>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="{{ $url }}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-sm text-sm px-3 py-2.5 text-center mx-2 mb-2">{{ $page }}</a>
+                                </li>
+                            @endif
                         @endif
                     @endforeach
                 @endif

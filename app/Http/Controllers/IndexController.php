@@ -119,7 +119,6 @@ class IndexController extends Controller {
         $rules = [
             "name" => "required",
             "email" => "required|email",
-            "g-recaptcha-response" => "recaptcha"
         ];
 
         $messages = [
