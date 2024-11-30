@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <form method="POST" action="/enviar-email-contato" class="w-full md:w-1/2 md:px-4 py-4">
+        <form id="form" method="POST" action="/enviar-email-contato" class="w-full md:w-1/2 md:px-4 py-4">
             @csrf
 
             @if (session("error"))
@@ -79,7 +79,10 @@
                     placeholder="Digite alguma observação"
                 ></textarea>
             </div>
-            <button type="submit" class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center">Enviar</button>
+            <button
+                type="submit"
+                class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center"
+            >Enviar</button>
         </form>
     </div>
 @endsection

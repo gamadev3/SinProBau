@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield("title")</title>
-        @vite(["resources/css/app.css", "resources/js/app.js"])
+        @vite(["resources/css/app.css", "resources/js/app.js", "resources/js/submit-form.js"])
     </head>
     <body class="font-arial min-h-screen flex flex-col justify-between">
         <header class="z-40 sticky top-0 w-full bg-white h-20 px-7 sm:px-14 flex justify-between items-center shadow">

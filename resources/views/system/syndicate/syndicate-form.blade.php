@@ -36,8 +36,7 @@
             </div>
             <button
                 type="submit"
-                id="submit-button"
-                class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center"
+                class="text-white bg-[#13942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center"
             >Cadastrar diretor(a)</button>
         </form>
     </div>
