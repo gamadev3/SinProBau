@@ -79,6 +79,13 @@
                     placeholder="Digite alguma observação"
                 ></textarea>
             </div>
+            <div class="mb-6">
+                {!!htmlFormSnippet()!!}
+
+                @if ($errors->has("g-recaptcha-response"))
+                    <x-error :message="$errors->first('g-recaptcha-response')" />
+                @endif
+            </div>
             <button type="submit" class="text-white bg-[#138942] hover:bg-[#1B5E1F] focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded text-base w-full px-5 py-2.5 text-center">Enviar</button>
         </form>
     </div>
