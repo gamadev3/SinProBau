@@ -4,16 +4,6 @@
             <th scope="col" class="pl-6 pr-4 py-3">
                 Título
             </th>
-            @if ($type == "noticia")
-                <th scope="col" class="px-2 py-3 text-center">
-                    Campanha Salarial
-                </th>
-            @endif
-            @if ($type == "noticia")
-                <th scope="col" class="px-2 py-3 text-center">
-                    Em Alta
-                </th>
-            @endif
             <th scope="col" class="px-2 py-3">
                 Data
             </th>
@@ -34,28 +24,6 @@
                 <th scope="row" class="pl-6 pr-4 font-medium text-gray-900">
                     {!! nl2br(e(strlen($dataItem->title) > 20 ? substr($dataItem->title, 0, 20) . "..." : $dataItem->title)) !!}
                 </th>
-                @if ($type == "noticia")
-                    <th scope="row" class="px-2 py-4 font-medium text-gray-900">
-                        <div class="flex justify-center items-center">
-                            {!!
-                                $dataItem->salary_campaign
-                                    ? "<img src='/images/icons/checked.svg' class='w-5' alt='Sim'>"
-                                    : "<img src='/images/icons/not.svg' class='w-5' alt='Sim'>"
-                            !!}
-                        </div>
-                    </th>
-                @endif
-                @if ($type == "noticia")
-                    <th scope="row" class="px-2 py-4 font-medium text-gray-900">
-                        <div class="flex justify-center items-center">
-                            {!!
-                                $dataItem->is_trending
-                                    ? "<img src='/images/icons/checked.svg' class='w-5' alt='Sim'>"
-                                    : "<img src='/images/icons/not.svg' class='w-5' alt='Sim'>"
-                            !!}
-                        </div>
-                    </th>
-                @endif
                 <th scope="row" class="px-2 py-4 font-medium text-gray-900">
                     {{ date("d/m/Y", strtotime($dataItem->created_at)) }}
                 </th>

@@ -33,19 +33,23 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/sistema", [FirebaseAuthController::class, "system"]);
     Route::post("/deslogar", [FirebaseAuthController::class, "logout"]);
 
+    // Tela de exibição das convenções
     Route::get("/sistema/educacao-basica", [ConventionsController::class, "basicEducationSystem"]);
     Route::get("/sistema/ensino-superior", [ConventionsController::class, "higherEducationSystem"]);
     Route::get("/sistema/sesi-senai", [ConventionsController::class, "sesiSenaiSystem"]);
-
     Route::get("/sistema/senac", [ConventionsController::class, "senacSystem"]);
 
+    // CRUD das convenções
     Route::get("/sistema/convencao-formulario/{type}", [ConventionsController::class, "conventionForm"]);
     Route::post("/sistema/registrar-convencao", [ConventionsController::class, "conventionRegister"]);
     Route::get("/sistema/convencao-formulario-atualizacao/{id}", [ConventionsController::class, "conventionUpdateForm"]);
     Route::post("/sistema/atualizar-convencao/{id}", [ConventionsController::class, "conventionUpdate"]);
     Route::post("/sistema/deletar-convencao/{id}", [ConventionsController::class, "conventionDelete"]);
 
+    // Tela de exibição do sindicato
     Route::get("/sistema/sindicato", [SyndicateController::class, "systemSyndicateDirectors"]);
+
+    // CRUD do sindicato
     Route::post("/sistema/sindicato-atualizar-vigencia", [SyndicateController::class, "syndicateDurationUpdate"]);
     Route::get("/sistema/sindicato-formulario", [SyndicateController::class, "syndicateForm"]);
     Route::post("/sistema/registrar-diretor", [SyndicateController::class, "directorRegister"]);
@@ -53,15 +57,20 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::post("/sistema/atualizar-diretor/{id}", [SyndicateController::class, "directorUpdate"]);
     Route::post("/sistema/deletar-diretor/{id}", [SyndicateController::class, "directorDelete"]);
 
+    // Tela de exibição das notícias
     Route::get("/sistema/noticias", [NewsController::class, "systemNews"]);
 
+    // CRUD das notícias
     Route::get("/sistema/noticia-formulario", [NewsController::class, "noticeForm"]);
     Route::post("/sistema/registrar-noticia", [NewsController::class, "noticeRegister"]);
     Route::get("/sistema/noticia-formulario-atualizacao/{id}", [NewsController::class, "noticeUpdateForm"]);
     Route::post("/sistema/atualizar-noticia/{id}", [NewsController::class, "noticeUpdate"]);
     Route::post("/sistema/deletar-noticia/{id}", [NewsController::class, "noticeDelete"]);
 
+    // Tela de exibição do carrossel
     Route::get("/sistema/carrossel", [CarouselController::class, "systemCarousel"]);
+
+    // CRUD do carrossel
     Route::get("/sistema/imagem-carrossel-formulario", [CarouselController::class, "carouselImageForm"]);
     Route::post("/sistema/registrar-imagem-carrossel", [CarouselController::class, "carouselImageRegister"]);
     Route::get("/sistema/imagem-carrossel-formulario-atualizacao/{id}", [CarouselController::class, "carouselUpdateForm"]);

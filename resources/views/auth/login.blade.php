@@ -3,8 +3,8 @@
 @section("title", "SINPROBAU")
 
 @section("content")
-    <a href="/" class="flex items-center gap-2 font-bold fixed top-7 left-5">
-        <img src="/images/icons/back.svg" alt="Voltar" class="w-2">
+    <a href="/" class="flex items-center gap-2 font-bold fixed top-7 left-5 hover:underline">
+        <img src="/images/icons/back.svg" alt="Voltar" class="w-2 h-2.5">
         Voltar
     </a>
     <div class="w-full h-full mx-auto min-h-[calc(100vh-5rem)] flex justify-center items-center px-5 md:px-20 py-20">

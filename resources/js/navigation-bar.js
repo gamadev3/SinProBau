@@ -26,3 +26,9 @@ document.addEventListener("click", ({ target }) => {
         menuCheckbox.checked = false;
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (menuCheckbox) {
+        menuCheckbox.checked = false;
+    }
+});
