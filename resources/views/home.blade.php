@@ -8,10 +8,10 @@
         <div class="flex flex-col gap-2">
             <div class="flex flex-col md:flex-row justify-between gap-2">
                 <h1 class="text-3xl font-bold">Notícias</h1>
-                <div class="flex items-center gap-2 self-end">
-                    <a href="/noticias" class="text-[#138942] font-bold hover:underline">Ver todas as notícias</a>
+                <a href="/noticias" class="flex items-center gap-2 self-end text-[#138942] font-bold hover:underline">
+                    Ver todas as notícias
                     <img src="/images/icons/right-arrow-green.svg" alt="Ler notícias" width="8">
-                </div>
+                </a>
             </div>
             @if (count($news) > 0)
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
