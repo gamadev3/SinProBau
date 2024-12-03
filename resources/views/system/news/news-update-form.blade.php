@@ -5,7 +5,7 @@
 @section("content")
     <div class="max-w-7xl mx-auto w-full flex flex-col gap-8 p-7 md:px-20 md:py-20">
         <h1 class="text-3xl font-bold text-center">Atualizar Notícia</h1>
-        <form id="form" method="POST" action="/sistema/atualizar-imagem-carrossel/{{ $notice->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
+        <form id="form" method="POST" action="/sistema/atualizar-noticia/{{ $notice->id }}" enctype="multipart/form-data" class="w-full md:px-4 py-4">
             @csrf
             @method("POST")
             <div class="flex flex-col gap-10 mb-6">
