@@ -33,7 +33,7 @@
             @endif
         </div>
         <div class="flex flex-col gap-2">
-            <h1 class="text-3xl font-bold">Campanhas salarial</h1>
+            <h1 class="text-3xl font-bold">Campanha salarial</h1>
             @if (count($salaryCampaign) > 0)
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     @foreach ($salaryCampaign as $notice)

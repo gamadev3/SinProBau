@@ -28,8 +28,8 @@ class SyndicateController extends Controller {
 
         if ($search) {
             $directors = Director::where("name", "LIKE", "%{$search}%")
-                                        ->orWhere("role", "LIKE", "%{$search}%")
-                                        ->get();
+                                    ->orWhere("role", "LIKE", "%{$search}%")
+                                    ->get();
         } else {
             $directors = Director::all();
         }

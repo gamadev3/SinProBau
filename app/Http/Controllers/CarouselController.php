@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\CarouselImage;
+use App\Services\FirebaseStorageService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 
 class CarouselController extends Controller {
-    protected $storage;
+    protected $storageService;
 
-    public function __construct() {
-        $this->storage = App::make("firebase")->createStorage();
+    public function __construct(FirebaseStorageService $storageService) {
+        $this->storageService = $storageService;
     }
 
     public function systemCarousel() {
@@ -27,26 +27,6 @@ class CarouselController extends Controller {
         return view("system.carousel.carousel-form");
     }
 
-    public function uploadImageToStorage(Request $request) {
-        $file = $request->file("image");
-        $fileName = md5($file->getClientOriginalName() . strtotime("now")) . "." . $file->extension();
-        $firebaseStoragePath = "carousel/" . $fileName;
-
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->upload(
-            fopen($file->getRealPath(), "r"),
-            ["name" => $firebaseStoragePath]
-        );
-
-        $imageUrl = "https://firebasestorage.googleapis.com/v0/b/" . $bucketName . "/o/" . urlencode($firebaseStoragePath) . "?alt=media";
-        return [
-            $imageUrl,
-            $firebaseStoragePath
-        ];
-    }
-
     public function carouselImageRegister(Request $request) {
         $request->validate([
             "alt" => "required",
@@ -56,7 +36,10 @@ class CarouselController extends Controller {
             "image.required" => "Adicione uma imagem.",
         ]);
 
-        [$imageUrl, $firebaseStoragePath] = $this->uploadImageToStorage($request);
+        [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile(
+            $request,
+            "carousel/"
+        );
 
         $carouselImage = new CarouselImage;
 
@@ -86,14 +69,6 @@ class CarouselController extends Controller {
         ]);
     }
 
-    public function deleteImageFromStorage($filePath) {
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->object($filePath)->delete();
-        return;
-    }
-
     public function carouselImageUpdate(Request $request) {
         $request->validate([
             "alt" => "required",
@@ -103,12 +78,7 @@ class CarouselController extends Controller {
 
         $oldCarouselImage = CarouselImage::findOrFail($request->id);
 
-        if ($request->hasFile("image") && $request->file("image")->isValid()) {
-            $this->deleteImageFromStorage($oldCarouselImage->image_path);
-            [$imageUrl, $firebaseStoragePath] = $this->uploadImageToStorage($request);
-            $oldCarouselImage->image_url = $imageUrl;
-            $oldCarouselImage->image_path = $firebaseStoragePath;
-        }
+        $this->storageService->updateFile($request, $oldCarouselImage);
 
         $oldCarouselImage->update($request->only(["alt"]));
 
@@ -122,7 +92,7 @@ class CarouselController extends Controller {
             return redirect("/sistema/carrossel")->with("error", "Imagem não encontrada.");
         }
 
-        $this->deleteImageFromStorage($carouselImage->image_path);
+        $this->storageService->deleteFile($carouselImage->image_path);
         $carouselImage->delete();
 
         return redirect("/sistema/carrossel")->with("success", "Imagem excluída com sucesso!");
