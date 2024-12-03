@@ -78,7 +78,6 @@
                             <div id="upload-placeholder" class="flex flex-col items-center justify-center pt-5 pb-6 px-5">
                                 <img src="/images/icons/upload.svg" alt="Upload" class="w-8 h-8 mb-4 text-gray-500">
                                 <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Clique para enviar</span> ou arraste e solte</p>
-                                <p class="text-xs text-gray-500">SVG, PNG, JPG ou GIF (MAX. 800x400px)</p>
                             </div>
                             <input
                                 id="dropzone-file"

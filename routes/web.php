@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ConventionsController;
 use App\Http\Controllers\SyndicateController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CarouselController;
 use App\Http\Middleware\FirebaseAuthMiddleware;
 
 Route::get("/", [IndexController::class, "index"]);
@@ -35,6 +36,7 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/sistema/educacao-basica", [ConventionsController::class, "basicEducationSystem"]);
     Route::get("/sistema/ensino-superior", [ConventionsController::class, "higherEducationSystem"]);
     Route::get("/sistema/sesi-senai", [ConventionsController::class, "sesiSenaiSystem"]);
+
     Route::get("/sistema/senac", [ConventionsController::class, "senacSystem"]);
 
     Route::get("/sistema/convencao-formulario/{type}", [ConventionsController::class, "conventionForm"]);
@@ -58,4 +60,11 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/sistema/noticia-formulario-atualizacao/{id}", [NewsController::class, "noticeUpdateForm"]);
     Route::post("/sistema/atualizar-noticia/{id}", [NewsController::class, "noticeUpdate"]);
     Route::post("/sistema/deletar-noticia/{id}", [NewsController::class, "noticeDelete"]);
+
+    Route::get("/sistema/carrossel", [CarouselController::class, "systemCarousel"]);
+    Route::get("/sistema/imagem-carrossel-formulario", [CarouselController::class, "carouselImageForm"]);
+    Route::post("/sistema/registrar-imagem-carrossel", [CarouselController::class, "carouselImageRegister"]);
+    Route::get("/sistema/imagem-carrossel-formulario-atualizacao/{id}", [CarouselController::class, "carouselUpdateForm"]);
+    Route::post("/sistema/atualizar-imagem-carrossel/{id}", [CarouselController::class, "carouselImageUpdate"]);
+    Route::post("/sistema/deletar-imagem-carrossel/{id}", [CarouselController::class, "carouselImageDelete"]);
 });

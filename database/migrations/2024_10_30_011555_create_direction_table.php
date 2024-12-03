@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string("name");
             $table->string("role");
             $table->timestamps();
-            $table->foreignId("direction_id")->constrained("directions")->onDelete("cascade");
         });
     }
 

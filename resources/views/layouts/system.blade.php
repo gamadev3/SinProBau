@@ -50,6 +50,11 @@
                                     <span class="flex-1 ms-3 whitespace-nowrap">Notícias</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/sistema/carrossel" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group outline-none">
+                                    <span class="flex-1 ms-3 whitespace-nowrap">Carrossel</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <form method="POST" action="{{ URL("/deslogar") }}" class="flex justify-end">
