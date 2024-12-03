@@ -4,130 +4,75 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\Convention;
+use App\Services\FirebaseStorageService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 
 class ConventionsController extends Controller {
-    protected $storage;
+    protected $storageService;
 
-    public function __construct() {
-        $this->storage = App::make("firebase")->createStorage();
+    public function __construct(FirebaseStorageService $storageService) {
+        $this->storageService = $storageService;
     }
 
-    public function basicEducation() {
+    public function education($type, $view) {
         $conventions = Convention::where("type", "LIKE", "%educacao-basica%")->get();
 
         return view("conventions.basic-education", ["conventions" => $conventions]);
     }
 
-    public function higherEducation() {
-        $conventions = Convention::where("type", "LIKE", "%ensino-superior%")->get();
+    public function basicEducation() {
+        return $this->education("educacao-basica", "conventions.basic-education");
+    }
 
-        return view("conventions.higher-education", ["conventions" => $conventions]);
+    public function higherEducation() {
+        return $this->education("ensino-superior", "conventions.higher-education");
     }
 
     public function sesiSenai() {
-        $conventions = Convention::where("type", "LIKE", "%sesi-senai%")->get();
-
-        return view("conventions.sesi-senai", ["conventions" => $conventions]);
+        return $this->education("sesi-senai", "conventions.sesi-senai");
     }
 
     public function senac() {
-        $conventions = Convention::where("type", "LIKE", "%senac%")->get();
+        return $this->education("senac", "conventions.senac");
+    }
 
+    public function educationSystem($type, $view) {
+        $search = request("search");
 
-        return view("conventions.senac", ["conventions" => $conventions]);
+        $query = Convention::where("type", "LIKE", "%{$type}%");
+
+        if ($search) {
+            $conventions = $query->where("title", "LIKE", "%{$search}%")
+                                    ->get();
+        } else {
+            $conventions = $query->orderBy("updated_at", "desc")
+                                    ->get();
+        }
+
+        return view($view, ["conventions" => $conventions]);
     }
 
     public function basicEducationSystem() {
-        $search = request("search");
-
-        if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")
-                                        ->where("title", "LIKE", "%{$search}%")
-                                        ->get();
-        } else {
-            $conventions = Convention::where("type", "LIKE", "%educacao-basica%")
-                                        ->orderBy("updated_at", "desc")
-                                        ->get();
-        }
-
-        return view("system.conventions.basic-education", ["conventions" => $conventions]);
+        return $this->educationSystem("educacao-basica", "system.conventions.basic-education");
     }
 
     public function higherEducationSystem() {
-        $search = request("search");
-
-        if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")
-                                        ->where("title", "LIKE", "%{$search}%")
-                                        ->get();
-        } else {
-            $conventions = Convention::where("type", "LIKE", "%ensino-superior%")
-                                        ->orderBy("updated_at", "desc")
-                                        ->get();
-        }
-
-        return view("system.conventions.higher-education", ["conventions" => $conventions]);
+        return $this->educationSystem("ensino-superior", "system.conventions.higher-education");
     }
 
     public function sesiSenaiSystem() {
-        $search = request("search");
-
-        if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")
-                                        ->where("title", "LIKE", "%{$search}%")
-                                        ->get();
-        } else {
-            $conventions = Convention::where("type", "LIKE", "%sesi-senai%")
-                                        ->orderBy("updated_at", "desc")
-                                        ->get();
-        }
-
-        return view("system.conventions.sesi-senai", ["conventions" => $conventions]);
+        return $this->educationSystem("sesi-senai", "system.conventions.sesi-senai");
     }
 
     public function senacSystem() {
-        $search = request("search");
-
-        if ($search) {
-            $conventions = Convention::where("type", "LIKE", "%senac%")
-                                        ->where("title", "LIKE", "%{$search}%")
-                                        ->get();
-        } else {
-            $conventions = Convention::where("type", "LIKE", "%senac%")
-                                        ->orderBy("updated_at", "desc")
-                                        ->get();
-        }
-
-        return view("system.conventions.senac", ["conventions" => $conventions]);
+        return $this->educationSystem("senac", "system.conventions.senac");
     }
 
     public function conventionForm() {
         $type = request("type");
 
         return view("system.conventions.convention-form", ["type" => $type]);
-    }
-
-    public function uploadDocumentToStorage(Request $request, string $type) {
-        $file = $request->file("file");
-        $fileName = md5($file->getClientOriginalName() . strtotime("now")) . "." . $file->extension();
-        $firebaseStoragePath = "conventions/" . $type . "/" . $fileName;
-
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->upload(
-            fopen($file->getRealPath(), "r"),
-            ["name" => $firebaseStoragePath]
-        );
-
-        $documentUrl = "https://firebasestorage.googleapis.com/v0/b/" . $bucketName . "/o/" . urlencode($firebaseStoragePath) . "?alt=media";
-        return [
-            $documentUrl,
-            $firebaseStoragePath
-        ];
     }
 
     public function conventionRegister(Request $request) {
@@ -141,7 +86,10 @@ class ConventionsController extends Controller {
             "file.required" => "Insira uma convenção.",
         ]);
 
-        [$documentUrl, $firebaseStoragePath] = $this->uploadDocumentToStorage($request, $request->type);
+        [$documentUrl, $firebaseStoragePath] = $this->storageService->uploadFile(
+            $request,
+            "conventions/" . $request->type . "/"
+        );
 
         $convention = new Convention;
 
@@ -169,14 +117,6 @@ class ConventionsController extends Controller {
         return view("system.conventions.convention-update-form", ["convention" => $convention]);
     }
 
-    public function deleteDocumentFromStorage($filePath) {
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->object($filePath)->delete();
-        return;
-    }
-
     public function conventionUpdate(Request $request) {
         $request->validate([
             "title" => "required",
@@ -187,18 +127,12 @@ class ConventionsController extends Controller {
         ]);
 
         $oldConvention = Convention::findOrFail($request->id);
-        $type = $request->type;
 
-        if ($request->hasFile("file") && $request->file("file")->isValid()) {
-            $this->deleteDocumentFromStorage($oldConvention->document_path);
-            [$documentUrl, $firebaseStoragePath] = $this->uploadDocumentToStorage($request, $type);
-            $oldConvention->document_url = $documentUrl;
-            $oldConvention->document_path = $firebaseStoragePath;
-        }
+        $this->storageService->updateFile($request, $oldConvention);
 
         $oldConvention->update($request->only(["title", "type"]));
 
-        return redirect("/sistema/" . $type)->with("success", "Convenção atualizada com sucesso!");
+        return redirect("/sistema/" . $request->type)->with("success", "Convenção atualizada com sucesso!");
     }
 
     public function conventionDelete($id) {
@@ -209,7 +143,7 @@ class ConventionsController extends Controller {
             return redirect("/sistema/" . $type)->with("error", "Convenção não encontrada.");
         }
 
-        $this->deleteDocumentFromStorage($convention->document_path);
+        $this->storageService->deleteFile($convention->document_path);
         $convention->delete();
 
         return redirect("/sistema/" . $type)->with("success", "Convenção excluída com sucesso!");

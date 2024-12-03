@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use App\Models\News;
+use App\Services\FirebaseStorageService;
 
 class NewsController extends Controller {
-    protected $storage;
+    protected $storageService;
 
-    public function __construct() {
-        $this->storage = App::make("firebase")->createStorage();
+    public function __construct(FirebaseStorageService $storageService) {
+        $this->storageService = $storageService;
     }
 
     // Todas as notícias da tela de notícias
@@ -35,8 +35,8 @@ class NewsController extends Controller {
 
         if ($search) {
             $news = News::where("title", "LIKE", "%{$search}%")
-                        ->orWhere("content", "LIKE", "%{$search}%")
-                        ->get();
+                            ->orWhere("content", "LIKE", "%{$search}%")
+                            ->get();
         } else {
             $news = News::orderBy("updated_at", "desc")->get();
         }
@@ -69,26 +69,6 @@ class NewsController extends Controller {
         return view("system.news.news-form");
     }
 
-    public function uploadImageToStorage(Request $request) {
-        $file = $request->file("image");
-        $fileName = md5($file->getClientOriginalName() . strtotime("now")) . "." . $file->extension();
-        $firebaseStoragePath = "news/" . $fileName;
-
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->upload(
-            fopen($file->getRealPath(), "r"),
-            ["name" => $firebaseStoragePath]
-        );
-
-        $imageUrl = "https://firebasestorage.googleapis.com/v0/b/" . $bucketName . "/o/" . urlencode($firebaseStoragePath) . "?alt=media";
-        return [
-            $imageUrl,
-            $firebaseStoragePath
-        ];
-    }
-
     // Cadastra a notícia
     public function noticeRegister(Request $request) {
         $request->validate([
@@ -101,7 +81,7 @@ class NewsController extends Controller {
             "image.required" => "Adicione uma imagem.",
         ]);
 
-        [$imageUrl, $firebaseStoragePath] = $this->uploadImageToStorage($request);
+        [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile($request, "news/");
 
         $notice = new News;
 
@@ -132,15 +112,6 @@ class NewsController extends Controller {
         return view("system.news.news-update-form", ["notice" => $notice]);
     }
 
-    // Deleta uma imagem do Storage
-    public function deleteImageFromStorage($filePath) {
-        $bucketName = env("FIREBASE_BUCKET");
-        $bucket = $this->storage->getBucket($bucketName);
-
-        $bucket->object($filePath)->delete();
-        return;
-    }
-
     public function noticeUpdate(Request $request) {
         $request->validate([
             "title" => "required",
@@ -152,12 +123,7 @@ class NewsController extends Controller {
 
         $oldNotice = News::findOrFail($request->id);
 
-        if ($request->hasFile("image") && $request->file("image")->isValid()) {
-            $this->deleteImageFromStorage($oldNotice->image_path);
-            [$imageUrl, $firebaseStoragePath] = $this->uploadImageToStorage($request);
-            $oldNotice->image_url = $imageUrl;
-            $oldNotice->image_path = $firebaseStoragePath;
-        }
+        $this->storageService->updateFile($request, $oldNotice);
 
         $oldNotice->salary_campaign = $request->has("salary_campaign") ? true : false;
         $oldNotice->is_trending = $request->has("is_trending") ? true : false;
@@ -173,7 +139,7 @@ class NewsController extends Controller {
             return redirect("/sistema/noticias")->with("error", "Notícia não encontrada.");
         }
 
-        $this->deleteImageFromStorage($notice->image_path);
+        $this->storageService->deleteFile($notice->image_path);
         $notice->delete();
 
         return redirect("/sistema/noticias")->with("success", "Notícia excluída com sucesso!");

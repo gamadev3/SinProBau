@@ -33,29 +33,6 @@ class IndexController extends Controller {
                             ->limit(8)
                             ->get();
 
-        // $carousel = collect([
-        //     [
-        //         "src" => "/images/banners/banner_educacao.webp",
-        //         "alt" => "Educação"
-        //     ],
-        //     [
-        //         "src" => "/images/banners/banner_carteirinha.webp",
-        //         "alt" => "Carteirinha"
-        //     ],
-        //     [
-        //         "src" => "/images/banners/atendimento-presencial2.webp",
-        //         "alt" => "Atendimento presencial"
-        //     ],
-        //     [
-        //         "src" => "/images/banners/banner.webp",
-        //         "alt" => "SINPROBAU"
-        //     ],
-        //     [
-        //         "src" => "/images/banners/2.webp",
-        //         "alt" => "Fale conosco"
-        //     ],
-        // ]);
-
         $carousel = CarouselImage::all();
 
         return view("home", [
