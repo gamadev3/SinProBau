@@ -16,9 +16,9 @@ class ConventionsController extends Controller {
     }
 
     public function education($type, $view) {
-        $conventions = Convention::where("type", "LIKE", "%educacao-basica%")->get();
+        $conventions = Convention::where("type", "LIKE", "%{$type}%")->get();
 
-        return view("conventions.basic-education", ["conventions" => $conventions]);
+        return view($view, ["conventions" => $conventions]);
     }
 
     public function basicEducation() {
