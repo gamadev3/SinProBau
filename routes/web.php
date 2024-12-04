@@ -20,6 +20,7 @@ Route::get("/convencoes/educacao-basica", [ConventionsController::class, "basicE
 Route::get("/convencoes/ensino-superior", [ConventionsController::class, "higherEducation"]);
 Route::get("/convencoes/sesi-senai", [ConventionsController::class, "sesiSenai"]);
 Route::get("/convencoes/senac", [ConventionsController::class, "senac"]);
+Route::get("/convencoes/apae", [ConventionsController::class, "apae"]);
 
 Route::get("/sindicato", [SyndicateController::class, "syndicate"]);
 
@@ -38,6 +39,7 @@ Route::middleware([FirebaseAuthMiddleware::class])->group(function () {
     Route::get("/sistema/ensino-superior", [ConventionsController::class, "higherEducationSystem"]);
     Route::get("/sistema/sesi-senai", [ConventionsController::class, "sesiSenaiSystem"]);
     Route::get("/sistema/senac", [ConventionsController::class, "senacSystem"]);
+    Route::get("/sistema/apae", [ConventionsController::class, "apaeSystem"]);
 
     // CRUD das convenções
     Route::get("/sistema/convencao-formulario/{type}", [ConventionsController::class, "conventionForm"]);
