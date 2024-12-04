@@ -30,10 +30,10 @@ class CarouselController extends Controller {
     public function carouselImageRegister(Request $request) {
         $request->validate([
             "alt" => "required",
-            "image" => "required|file"
+            "file" => "required|file"
         ], [
             "alt.required" => "Digite um texto alternativo para a imagem.",
-            "image.required" => "Adicione uma imagem.",
+            "file.required" => "Adicione uma imagem.",
         ]);
 
         [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile(
@@ -78,8 +78,13 @@ class CarouselController extends Controller {
 
         $oldCarouselImage = CarouselImage::findOrFail($request->id);
 
-        $this->storageService->updateFile($request, $oldCarouselImage);
+        [$imageUrl, $firebaseStoragePath] = $this->storageService->updateFile(
+            $request,
+            $oldCarouselImage->image_path
+        );
 
+        $oldCarouselImage->image_url = $imageUrl;
+        $oldCarouselImage->image_path = $firebaseStoragePath;
         $oldCarouselImage->update($request->only(["alt"]));
 
         return redirect("/sistema/carrossel")->with("success", "Imagem atualizada com sucesso!");

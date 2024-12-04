@@ -74,11 +74,11 @@ class NewsController extends Controller {
         $request->validate([
             "title" => "required",
             "content" => "required",
-            "image" => "required|file",
+            "file" => "required|file",
         ], [
             "title.required" => "Digite um título para a notícia.",
             "content.required" => "Digite o conteúdo da notícia.",
-            "image.required" => "Adicione uma imagem.",
+            "file.required" => "Adicione uma imagem.",
         ]);
 
         [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile($request, "news/");
@@ -123,10 +123,15 @@ class NewsController extends Controller {
 
         $oldNotice = News::findOrFail($request->id);
 
-        $this->storageService->updateFile($request, $oldNotice);
+        [$imageUrl, $firebaseStoragePath] = $this->storageService->updateFile(
+            $request,
+            $oldNotice->image_path
+        );
 
         $oldNotice->salary_campaign = $request->has("salary_campaign") ? true : false;
         $oldNotice->is_trending = $request->has("is_trending") ? true : false;
+        $oldNotice->image_url = $imageUrl;
+        $oldNotice->image_path = $firebaseStoragePath;
         $oldNotice->update($request->only(["title", "content"]));
 
         return redirect("/sistema/noticias")->with("success", "Notícia atualizada com sucesso!");
