@@ -128,8 +128,13 @@ class ConventionsController extends Controller {
 
         $oldConvention = Convention::findOrFail($request->id);
 
-        $this->storageService->updateFile($request, $oldConvention);
+        [$imageUrl, $firebaseStoragePath] = $this->storageService->updateFile(
+            $request,
+            $oldConvention->document_path
+        );
 
+        $oldConvention->document_url = $imageUrl;
+        $oldConvention->document_path = $firebaseStoragePath;
         $oldConvention->update($request->only(["title", "type"]));
 
         return redirect("/sistema/" . $request->type)->with("success", "Convenção atualizada com sucesso!");

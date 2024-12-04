@@ -14,7 +14,7 @@ class FirebaseStorageService {
     }
 
     public function uploadFile(Request $request, $path) {
-        $file = $request->file("image");
+        $file = $request->file("file");
         $fileName = md5($file->getClientOriginalName() . strtotime("now")) . "." . $file->extension();
         $firebaseStoragePath = $path . $fileName;
 
@@ -38,17 +38,14 @@ class FirebaseStorageService {
         }
     }
 
-    public function updateFile(Request $request, $oldData) {
-        if ($request->hasFile("image") && $request->file("image")->isValid()) {
-            $this->deleteFile($oldData->image_path);
+    public function updateFile(Request $request, $path) {
+        if ($request->hasFile("file") && $request->file("file")->isValid()) {
+            $this->deleteFile($path);
 
-            [$imageUrl, $firebaseStoragePath] = $this->uploadFile(
+            return $this->uploadFile(
                 $request,
                 "carousel/"
             );
-
-            $oldData->image_url = $imageUrl;
-            $oldData->image_path = $firebaseStoragePath;
         }
     }
 

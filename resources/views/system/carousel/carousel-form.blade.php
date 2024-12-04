@@ -30,7 +30,7 @@
                             </div>
                             <input
                                 id="dropzone-file"
-                                name="image"
+                                name="file"
                                 type="file"
                                 class="hidden"
                                 accept="image/*"
