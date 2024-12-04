@@ -29,7 +29,7 @@
                     @endforeach
                 </div>
             @else
-                <p class="py-4 text-gray-900">Ainda não há nenhuma notícia relacionada à Campanha Salarial</p>
+                <p class="py-4 text-gray-900">Ainda não há nenhuma notícia.</p>
             @endif
         </div>
         <div class="flex flex-col gap-2">
@@ -50,7 +50,7 @@
                     @endforeach
                 </div>
             @else
-                <p class="py-4 text-gray-900">Ainda não há nenhuma notícia relacionada à Campanha Salarial</p>
+                <p class="py-4 text-gray-900">Ainda não há nenhuma notícia relacionada à Campanha Salarial.</p>
             @endif
         </div>
     </div>
