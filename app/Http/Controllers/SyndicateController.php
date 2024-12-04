@@ -62,7 +62,6 @@ class SyndicateController extends Controller {
         $director = new Director;
 
         $director->fill($request->only(["name", "role"]));
-        $director->direction_id = 1;
 
         try {
             $director->save();
