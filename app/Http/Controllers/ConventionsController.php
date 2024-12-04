@@ -39,6 +39,10 @@ class ConventionsController extends Controller {
         return $this->education("senac", "conventions.senac");
     }
 
+    public function apae() {
+        return $this->education("apae", "conventions.apae");
+    }
+
     public function educationSystem($type, $view) {
         $search = request("search");
 
@@ -69,6 +73,10 @@ class ConventionsController extends Controller {
 
     public function senacSystem() {
         return $this->educationSystem("senac", "system.conventions.senac");
+    }
+
+    public function apaeSystem() {
+        return $this->educationSystem("apae", "system.conventions.apae");
     }
 
     public function conventionForm() {

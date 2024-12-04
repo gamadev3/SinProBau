@@ -38,6 +38,9 @@
                                     <li>
                                         <a href="/convencoes/senac" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">SENAC</a>
                                     </li>
+                                    <li>
+                                        <a href="/convencoes/apae" class="block px-4 py-2 hover:text-[#138942] hover:bg-gray-200 font-bold">APAE</a>
+                                    </li>
                                 </ul>
                             </div>
                         </a>
