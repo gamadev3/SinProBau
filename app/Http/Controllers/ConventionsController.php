@@ -16,7 +16,9 @@ class ConventionsController extends Controller {
     }
 
     public function education($type, $view) {
-        $conventions = Convention::where("type", "LIKE", "%{$type}%")->get();
+        $conventions = Convention::where("type", "LIKE", "%{$type}%")
+                                    ->orderBy("updated_at", "desc")
+                                    ->get();
 
         return view($view, ["conventions" => $conventions]);
     }
