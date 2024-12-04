@@ -123,15 +123,19 @@ class NewsController extends Controller {
 
         $oldNotice = News::findOrFail($request->id);
 
+        $oldNotice->salary_campaign = $request->has("salary_campaign") ? true : false;
+        $oldNotice->is_trending = $request->has("is_trending") ? true : false;
+
         [$imageUrl, $firebaseStoragePath] = $this->storageService->updateFile(
             $request,
             $oldNotice->image_path
         );
 
-        $oldNotice->salary_campaign = $request->has("salary_campaign") ? true : false;
-        $oldNotice->is_trending = $request->has("is_trending") ? true : false;
-        $oldNotice->image_url = $imageUrl;
-        $oldNotice->image_path = $firebaseStoragePath;
+        if ($imageUrl) {
+            $oldNotice->image_url = $imageUrl;
+            $oldNotice->image_path = $firebaseStoragePath;
+        }
+
         $oldNotice->update($request->only(["title", "content"]));
 
         return redirect("/sistema/noticias")->with("success", "Notícia atualizada com sucesso!");

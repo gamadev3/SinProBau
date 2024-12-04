@@ -83,8 +83,11 @@ class CarouselController extends Controller {
             $oldCarouselImage->image_path
         );
 
-        $oldCarouselImage->image_url = $imageUrl;
-        $oldCarouselImage->image_path = $firebaseStoragePath;
+        if ($imageUrl) {
+            $oldCarouselImage->image_url = $imageUrl;
+            $oldCarouselImage->image_path = $firebaseStoragePath;
+        }
+
         $oldCarouselImage->update($request->only(["alt"]));
 
         return redirect("/sistema/carrossel")->with("success", "Imagem atualizada com sucesso!");
