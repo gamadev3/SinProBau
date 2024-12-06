@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </button>
-                <button type="button" class="flex items-center justify-center md:w-48 mt-3 text-white bg-black rounded-lg h-14">
+                <a href="https://play.google.com/store/apps/details?id=com.trdsystem.sinprobau2&pcampaignid=web_share" class="flex items-center justify-center md:w-48 mt-3 text-white bg-black rounded-lg h-14">
                     <div class="mr-3">
                         <img src="/images/icons/google-play.svg" alt="Google Play">
                     </div>
@@ -45,7 +45,7 @@
                             Google Play
                         </div>
                     </div>
-                </button>
+                </a>
             </div>
         </div>
     </div>
