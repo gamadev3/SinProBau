@@ -22,8 +22,5 @@ export default {
             },
         },
     },
-    plugins: [
-        require("flowbite/plugin"),
-        require("tw-elements/plugin.cjs")
-    ],
+    plugins: [require("flowbite/plugin"), require("tw-elements/plugin.cjs")],
 };

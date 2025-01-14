@@ -110,9 +110,9 @@
                     <p>6-74 - Bauru - SP</p>
                     <p>Fone-Fax: (14) 3879-5313</p>
                     <div class="flex gap-2">
-                        <img src="/images/icons/contee.webp" alt="Logo CONTEE" class="h-12 w-1/3 object-contain">
-                        <img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 w-1/3 object-contain">
-                        <img src="/images/icons/fepesp.webp" alt="Logo FEPESP" class="h-12 w-1/3 object-contain">
+                        <a href="https://contee.org.br/contee/" target="_blank"><img src="/images/icons/contee.webp" alt="Logo CONTEE" class="h-12 object-contain"></a>
+                        <a href="https://adital.org.br" target="_blank"><img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 object-contain"></a>
+                        <a href="https://fepesp.org.br" target="_blank"><img src="/images/icons/fepesp.webp" alt="Logo FEPESP" class="h-12 object-contain"></a>
                     </div>
                 </div>
 
