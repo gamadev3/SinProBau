@@ -85,7 +85,7 @@
                         </a>
                     </div>
                     <a href="/sistema" class="text-white hover:text-black border border-white hover:bg-white focus:ring-4 focus:outline-none focus:ring-[#A5D6A7] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                        Logar como admin
+                        Logar como Admin
                     </a>
                 </div>
 
@@ -111,7 +111,7 @@
                     <p>Fone-Fax: (14) 3879-5313</p>
                     <div class="flex gap-2">
                         <a href="https://contee.org.br/contee/" target="_blank"><img src="/images/icons/contee.webp" alt="Logo CONTEE" class="h-12 object-contain"></a>
-                        <a href="https://adital.org.br" target="_blank"><img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 object-contain"></a>
+                        <a href="https://www.ctb.org.br/" target="_blank"><img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 object-contain"></a>
                         <a href="https://fepesp.org.br" target="_blank"><img src="/images/icons/fepesp.webp" alt="Logo FEPESP" class="h-12 object-contain"></a>
                     </div>
                 </div>
