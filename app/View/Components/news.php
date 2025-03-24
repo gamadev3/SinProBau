@@ -12,7 +12,7 @@ class News extends Component
      * Create a new component instance.
      */
     public function __construct(
-        protected string $image,
+        protected string | null $image,
         protected string $date,
         protected string $title,
         protected string $content,

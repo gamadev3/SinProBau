@@ -85,7 +85,6 @@
                                 type="file"
                                 class="hidden"
                                 accept="image/*"
-                                required
                             />
                         </label>
                     </div>

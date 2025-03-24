@@ -40,7 +40,9 @@ class FirebaseStorageService {
 
     public function updateFile(Request $request, $path) {
         if ($request->hasFile("file") && $request->file("file")->isValid()) {
-            $this->deleteFile($path);
+            if ($path) {
+                $this->deleteFile($path);
+            }
 
             return $this->uploadFile(
                 $request,

@@ -74,22 +74,28 @@ class NewsController extends Controller {
         $request->validate([
             "title" => "required",
             "content" => "required",
-            "file" => "required|file",
+            // "file" => "required|file",
         ], [
             "title.required" => "Digite um título para a notícia.",
             "content.required" => "Digite o conteúdo da notícia.",
-            "file.required" => "Adicione uma imagem.",
+            // "file.required" => "Adicione uma imagem.",
         ]);
 
-        [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile($request, "news/");
+        if ($request->file) {
+            [$imageUrl, $firebaseStoragePath] = $this->storageService->uploadFile($request, "news/");
+        }
+
 
         $notice = new News;
 
         $notice->fill($request->only(["title", "content"]));
         $notice->salary_campaign = $request->has("salary_campaign") ? true : false;
         $notice->is_trending = $request->has("is_trending") ? true : false;
-        $notice->image_url = $imageUrl;
-        $notice->image_path = $firebaseStoragePath;
+        
+        if ($request->file) {
+            $notice->image_url = $imageUrl;
+            $notice->image_path = $firebaseStoragePath;
+        }
 
         try {
             $notice->save();

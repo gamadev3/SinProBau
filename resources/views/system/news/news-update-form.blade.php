@@ -80,11 +80,17 @@
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center justify-center w-full">
                         <label for="dropzone-file" class="flex flex-col items-center justify-center w-fit h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                            <img id="image-preview" src="{{ $notice->image_url }}" alt="Preview da imagem" class="w-full h-full object-contain rounded-lg">
-                            <div id="upload-placeholder" class="hidden flex-col items-center justify-center pt-5 pb-6">
-                                <img src="/images/icons/upload.svg" alt="Upload" class="w-8 h-8 mb-4 text-gray-500">
-                                <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Clique para enviar</span> ou arraste e solte</p>
-                            </div>
+                            @if ($notice->image_url)
+                                <img id="image-preview" src="{{ $notice->image_url }}" alt="Preview da imagem" class="w-full h-full object-contain rounded-lg">
+                            @else
+                                <img id="image-preview" src="" alt="Preview da imagem" class="hidden w-full h-full object-contain rounded-lg">
+                            @endif
+                            @if (!$notice->image_url)
+                                <div id="upload-placeholder" class="flex flex-col items-center justify-center pt-5 pb-6 px-5">
+                                    <img src="/images/icons/upload.svg" alt="Upload" class="w-8 h-8 mb-4 text-gray-500">
+                                    <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Clique para enviar</span> ou arraste e solte</p>
+                                </div>
+                            @endif
                             <input
                                 id="dropzone-file"
                                 name="file"
