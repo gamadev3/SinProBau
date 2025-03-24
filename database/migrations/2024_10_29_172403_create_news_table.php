@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->longText("content");
-            $table->mediumText("image_url");
-            $table->mediumText("image_path");
+            $table->mediumText("image_url")->nullable();
+            $table->mediumText("image_path")->nullable();
             $table->boolean("salary_campaign")->default(false);
             $table->boolean("is_trending")->default(false);
             $table->timestamps();

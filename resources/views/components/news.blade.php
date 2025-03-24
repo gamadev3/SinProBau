@@ -1,7 +1,9 @@
 <div class="flex flex-col md2:flex-row shadow-md rounded-2xl overflow-hidden">
-    <div class="md2:w-1/3">
-        <img src="{{ $image }}" class="w-full max-h-72 object-cover" alt="{{ $title }}">
-    </div>
+    @if ($image)
+        <div class="md2:w-1/3">
+            <img src="{{ $image }}" class="w-full max-h-72 object-cover" alt="{{ $title }}">
+        </div>
+    @endif
     <div class="md2:w-2/3 flex flex-col gap-4 px-6 py-5 flex-1">
         <p>{{ date("d/m/Y", strtotime($date)) }}</p>
         <h1 class="text-xl font-bold">{{ $title }}</h1>

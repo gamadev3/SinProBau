@@ -17,9 +17,11 @@
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     @foreach ($news as $notice)
                         <div class="w-full flex flex-col mt-4 shadow-md rounded-lg">
-                            <div class="rounded-t-2xl overflow-hidden">
-                                <img src="{{ $notice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $notice->title }}">
-                            </div>
+                            @if ($notice->image_url)
+                                <div class="rounded-t-2xl overflow-hidden">
+                                    <img src="{{ $notice->image_url }}" class="w-full max-h-72 object-cover" alt="{{ $notice->title }}">
+                                </div>
+                            @endif
                             <div class="flex flex-col gap-4 px-6 py-10 flex-1">
                                 <p>{{ date("d/m/Y", strtotime($notice->created_at)) }}</p>
                                 <h1 class="text-xl font-bold">{{ $notice->title }}</h1>
