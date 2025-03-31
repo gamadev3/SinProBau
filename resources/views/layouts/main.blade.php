@@ -52,7 +52,7 @@
                         <a href="/carteirinha-virtual" class="hover:text-[#138942] font-bold outline-none">Carteirinha Virtual</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-[#138942] font-bold outline-none">Convênios</a>
+                        <a href="/convenios" class="hover:text-[#138942] font-bold outline-none">Convênios</a>
                     </li>
                     <li>
                         <a href="/noticias" class="hover:text-[#138942] font-bold outline-none">Notícias</a>

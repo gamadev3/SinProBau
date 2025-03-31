@@ -11,6 +11,7 @@ use App\Http\Middleware\FirebaseAuthMiddleware;
 
 Route::get("/", [IndexController::class, "index"]);
 Route::get("/carteirinha-virtual", [IndexController::class, "virtualCard"]);
+Route::get('/convenios', [IndexController::class, "covenants"]);
 Route::get("/contato", [IndexController::class, "contact"]);
 Route::post("/enviar-email-contato", [IndexController::class, "sendContactEmail"]);
 Route::get("/seja-socio", [IndexController::class, "becomeAMember"]);

@@ -46,6 +46,11 @@ class IndexController extends Controller {
         return view("virtual-card");
     }
 
+    public function covenants()
+    {
+        return view('covenants');
+    }
+
     public function contact() {
         return view("contact");
     }
