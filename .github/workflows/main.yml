@@ -24,4 +24,4 @@ jobs:
 
       - name: Deploy
         run: |
-          ssh sinprobau_admin@4.228.229.11 'echo "Connected successfully"'
+          ssh -v sinprobau_admin@4.228.229.11 'echo "Connected successfully"'
