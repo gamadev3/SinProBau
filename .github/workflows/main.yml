@@ -20,7 +20,7 @@ jobs:
 
     - name: Connect to Server and update repo + run artisan
       run: |
-        ssh -o StrictHostKeyChecking=no sinprobau_admin@4.228.229.11:22 << 'EOF'
+        ssh -o StrictHostKeyChecking=no sinprobau_admin@4.228.229.11 << 'EOF'
           cd /var/www/SinProBau_2025_01 || exit
           git pull origin main || exit
           composer install --no-dev --optimize-autoloader || exit
