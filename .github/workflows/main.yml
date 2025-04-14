@@ -1,0 +1,32 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+    - main # trigger deploy on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Install sshpass
+      - name: Install sshpass
+        run: sudo apt-get install sshpass
+
+      # Step 3: Deploy using SSH with password
+      - name: Deploy using SSH with password
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no sinprobau_admin@4.228.229.11 << 'EOF'
+            cd /var/www/SinProBau_2025_01 || exit
+            git pull origin main || exit
+            composer install --no-dev --optimize-autoloader || exit
+            php artisan migrate --force || exit
+            php artisan config:clear || exit
+            php artisan cache:clear || exit
+            php artisan optimize || exit
+            echo "Deployment successful"
+          EOF
