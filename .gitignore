@@ -5,7 +5,6 @@
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
 .env
 .env.backup
 .env.production
@@ -20,5 +19,7 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+
+.vercel
 
 .vercel
