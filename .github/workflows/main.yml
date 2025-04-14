@@ -18,4 +18,13 @@ jobs:
       - name: Deploy using SSH with password
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no sinprobau_admin@4.228.229.11 'echo "Connected successfully"'
+            cd /var/www/SinProBau_2025_01 || exit
+            git pull origin main || exit
+            composer install --no-dev --optimize-autoloader || exit
+            php artisan migrate --force || exit
+            php artisan config:clear || exit
+            php artisan cache:clear || exit
+            php artisan optimize || exit
+            echo "Deployment successfull"
+          EOF
 
