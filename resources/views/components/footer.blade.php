@@ -40,7 +40,7 @@
             <p>SINDICATO DOS PROFESSORES DE BAURU</p>
             <p>Rua Capitão Gomes Duarte,</p>
             <p>6-74 - Bauru - SP</p>
-            <p>Fone-Fax: (14) 3879-5313</p>
+            <p>Fone-Fax: (12) 3879-5313</p>
             <div class="flex gap-2">
                 <a href="https://contee.org.br/contee/" target="_blank"><img src="/images/icons/contee.webp" alt="Logo CONTEE" class="h-12 object-contain"></a>
                 <a href="https://www.ctb.org.br/" target="_blank"><img src="/images/icons/ctb.webp" alt="Logo CTB" class="h-12 object-contain"></a>
