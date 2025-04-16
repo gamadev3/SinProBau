@@ -78,6 +78,8 @@
             </p>
         </div>
 
+        {{-- Validação se há Diretoria para Exibir (correção do erro da data) --}}
+        @if ($direction)
         <h1 class="text-[#138942] font-bold text-3xl">
             Diretoria
         </h1>
@@ -98,5 +100,13 @@
                 @endforeach
             </div>
         </div>
+        @else
+        <h1 class="text-[#138942] font-bold text-3xl">
+            Não há mandato disponível.
+        </h1>
+        @endif
+
+
+
     </div>
 @endsection
