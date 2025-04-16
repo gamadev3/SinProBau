@@ -51,7 +51,7 @@
     </div>
     <div class="bg-[#1A2C17] p-2 text-center">
         <p class="text-white text-sm">
-            Sindicato dos Professores de Bauru <?= date('Y') ?> - Todos os direitos reservados
+            Sindicato dos Professores de Bauru {{ date('Y') }} - Todos os direitos reservados
         </p>
     </div>
 </footer>
