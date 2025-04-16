@@ -26,7 +26,6 @@
                         id="file_input"
                         name="file"
                         type="file"
-                        required
                     >
                     @error("title")
                         <x-error :message="$message" />
