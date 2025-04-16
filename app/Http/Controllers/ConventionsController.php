@@ -89,11 +89,10 @@ class ConventionsController extends Controller {
         $request->validate([
             "title" => "required",
             "type" => "required",
-            "file" => "required|file",
+            "file" => "file",
         ], [
             "title.required" => "Digite um título para a convenção.",
             "type.required" => "Selecione o tipo da convenção.",
-            "file.required" => "Insira uma convenção.",
         ]);
 
         [$documentUrl, $firebaseStoragePath] = $this->storageService->uploadFile(
