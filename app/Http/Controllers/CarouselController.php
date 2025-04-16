@@ -16,7 +16,9 @@ class CarouselController extends Controller {
     }
 
     public function systemCarousel() {
-        $carousel = CarouselImage::all();
+        $carousel = CarouselImage::whereNotNull('image_url')
+                        ->where('image_url', '!=', '')
+                        ->get();
 
         return view("system.carousel.carousel", [
             "carousel" => $carousel
@@ -30,7 +32,7 @@ class CarouselController extends Controller {
     public function carouselImageRegister(Request $request) {
         $request->validate([
             "alt" => "required",
-            "file" => "required|file"
+            "file" => "required|file|image"
         ], [
             "alt.required" => "Digite um texto alternativo para a imagem.",
             "file.required" => "Adicione uma imagem.",
