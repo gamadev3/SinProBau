@@ -52,13 +52,17 @@ class FirebaseStorageService {
     }
 
     public function deleteFile($filePath) {
+        if (empty($filePath)) {
+            return; // ou lance uma exceção se for necessário tratar
+        }
+    
         $bucketName = env("FIREBASE_BUCKET");
         $bucket = $this->storage->getBucket($bucketName);
-
+    
         try {
             $bucket->object($filePath)->delete();
         } catch (Exception $error) {
-            throw new Exception("Erro ao deletar o arquivo: ", $error->getMessage());
+            throw new Exception("Erro ao deletar o arquivo: " . $error->getMessage());
         }
     }
 }

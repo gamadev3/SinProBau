@@ -154,7 +154,10 @@ class NewsController extends Controller {
             return redirect("/sistema/noticias")->with("error", "Notícia não encontrada.");
         }
 
-        $this->storageService->deleteFile($notice->image_path);
+        if (!empty($notice->image_path)) {
+            $this->storageService->deleteFile($notice->image_path);
+        }
+        
         $notice->delete();
 
         return redirect("/sistema/noticias")->with("success", "Notícia excluída com sucesso!");
